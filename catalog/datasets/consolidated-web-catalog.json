@@ -14,7 +14,12 @@
         "github_username": "jbusecke"
       }
     ],
-    "tags": ["climate", "oceanography", "sea surface temperature", "zarr"],
+    "tags": [
+      "climate",
+      "oceanography",
+      "sea surface temperature",
+      "zarr"
+    ],
     "license": {
       "name": "UK Non-Commercial Government License",
       "url": "https://www.nationalarchives.gov.uk/doc/non-commercial-government-licence/version/2/"
