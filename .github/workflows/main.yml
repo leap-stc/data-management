@@ -32,7 +32,12 @@ jobs:
           environment-name: leap-data-management
           cache-env: true
           cache-downloads: true
-      - name: Run tests
+      - name: Validate schema
         run: |
           cd catalog/validator
           python schema.py
+
+      - name: Validate datasets
+        run: |
+          cd catalog/validator
+          python validate.py --path ../datasets
