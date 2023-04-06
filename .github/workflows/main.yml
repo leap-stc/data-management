@@ -41,3 +41,20 @@ jobs:
         run: |
           cd catalog/validator
           python validate.py --path ../datasets
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: consolidated-web-catalog
+          path: catalog/datasets/consolidated-web-catalog.json
+
+  update-catalog:
+    # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: consolidated-web-catalog
+          path: catalog/datasets/consolidated-web-catalog.json
