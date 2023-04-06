@@ -1,0 +1,149 @@
+{
+  "title": "Dataset",
+  "type": "object",
+  "properties": {
+    "name": {
+      "title": "Name",
+      "description": "Name of the dataset",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "description": "Description of the dataset",
+      "type": "string"
+    },
+    "stores": {
+      "title": "Stores",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Store"
+      }
+    },
+    "maintainers": {
+      "title": "Maintainers",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Maintainer"
+      }
+    },
+    "thumbnail": {
+      "title": "Thumbnail",
+      "description": "Thumbnail of the dataset",
+      "minLength": 1,
+      "maxLength": 2083,
+      "format": "uri",
+      "type": "string"
+    },
+    "license": {
+      "$ref": "#/definitions/License"
+    },
+    "tags": {
+      "title": "Tags",
+      "description": "Tags of the dataset",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "links": {
+      "title": "Links",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Link"
+      }
+    },
+    "doi_citation": {
+      "title": "Doi Citation",
+      "minLength": 1,
+      "maxLength": 2083,
+      "format": "uri",
+      "type": "string"
+    },
+    "demo": {
+      "title": "Demo",
+      "description": "Whether the dataset is a demo dataset",
+      "default": false,
+      "type": "boolean"
+    }
+  },
+  "required": ["name", "description", "stores", "maintainers"],
+  "definitions": {
+    "Store": {
+      "title": "Store",
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "Name of the store",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "description": "URL of the store",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": ["name", "url"]
+    },
+    "Maintainer": {
+      "title": "Maintainer",
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "Name of the maintainer",
+          "type": "string"
+        },
+        "github_username": {
+          "title": "Github Username",
+          "description": "GitHub username of the maintainer",
+          "type": "string"
+        }
+      },
+      "required": ["name"]
+    },
+    "License": {
+      "title": "License",
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "Name of the license",
+          "type": "string"
+        },
+        "href": {
+          "title": "Href",
+          "description": "URL of the license",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": ["name"]
+    },
+    "Link": {
+      "title": "Link",
+      "type": "object",
+      "properties": {
+        "label": {
+          "title": "Label",
+          "description": "Label of the link",
+          "type": "string"
+        },
+        "href": {
+          "title": "Href",
+          "description": "URL of the link",
+          "minLength": 1,
+          "maxLength": 65536,
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": ["label", "href"]
+    }
+  }
+}
