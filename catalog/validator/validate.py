@@ -5,7 +5,7 @@ from schema import Dataset
 
 
 class ValidationError(Exception):
-    def __init__(self, errors: list[dict[str, str]]) -> None:
+    def __init__(self, errors: list[dict[str, str]] | str) -> None:
         self.errors = errors
         super().__init__(self.errors)
 
@@ -58,7 +58,7 @@ def validate_datasets(datasets: upath.UPath) -> None:
     print('\n\n')
 
     if errors:
-        raise ValidationError(errors)
+        raise ValidationError('Validation failed')
 
 
 if __name__ == '__main__':
