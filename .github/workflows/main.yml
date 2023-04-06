@@ -26,9 +26,13 @@ jobs:
       - name: Set up conda environment
         uses: mamba-org/provision-with-micromamba@v15
         with:
-        micromamba-version: latest
-        channel-priority: strict
-        environment-file: ci/environment.yaml
-        environment-name: leap-data-management
-        cache-env: true
-        cache-downloads: true
+          micromamba-version: latest
+          channel-priority: strict
+          environment-file: ci/environment.yaml
+          environment-name: leap-data-management
+          cache-env: true
+          cache-downloads: true
+      - name: Run tests
+        run: |
+          cd catalog/validator
+          python schema.py
