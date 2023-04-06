@@ -1,6 +1,8 @@
+import json
 import traceback
 
 import upath
+import yaml
 from schema import Dataset
 
 
@@ -21,14 +23,14 @@ def collect_datasets(path: str) -> list[upath.UPath]:
         # raise path is not a directory
         raise NotADirectoryError(f'{path} is not a directory')
 
-    if datasets := sorted(path.glob('*.json')):
+    if datasets := sorted(path.glob('*.yaml')) + sorted(path.glob('*.yml')):
         return datasets
     else:
         # raise no json files found
-        raise FileNotFoundError(f'No json files found in {path}')
+        raise FileNotFoundError(f'No YAML files (.yaml or .yml) found in {path}')
 
 
-def validate_datasets(datasets: upath.UPath) -> None:
+def validate_datasets(*, datasets: upath.UPath, catalog_dir: upath.UPath) -> None:
     def format_report(title: str, datasets: list[dict], include_traceback: bool = False) -> str:
         report = f'{title} ({len(datasets)})\n'
         if not datasets:
@@ -42,11 +44,14 @@ def validate_datasets(datasets: upath.UPath) -> None:
 
     errors = []
     valid = []
+    catalog = []
 
     for dataset in datasets:
         try:
-            Dataset.parse_file(dataset)
+            ds = yaml.load(dataset.read_text(), Loader=yaml.FullLoader)
+            Dataset.parse_obj(ds)
             valid.append({'dataset': str(dataset), 'status': 'valid'})
+            catalog.append(ds)
         except Exception:
             errors.append({'dataset': str(dataset), 'traceback': traceback.format_exc()})
 
@@ -60,6 +65,10 @@ def validate_datasets(datasets: upath.UPath) -> None:
     if errors:
         raise ValidationError('Validation failed')
 
+    # write catalog to JSON file for use in the website
+    with open(f'{catalog_dir}/consolidated-web-catalog.json', 'w') as f:
+        json.dump(catalog, f, indent=2)
+
 
 if __name__ == '__main__':
     import argparse
@@ -68,4 +77,4 @@ if __name__ == '__main__':
     parser.add_argument('--path', type=str, help='Path to the datasets directory', required=True)
     args = parser.parse_args()
     datasets = collect_datasets(args.path)
-    validate_datasets(datasets)
+    validate_datasets(datasets=datasets, catalog_dir=args.path)
