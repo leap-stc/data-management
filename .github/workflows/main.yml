@@ -52,22 +52,41 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: validate
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
     steps:
       - uses: actions/checkout@v3
         with:
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Set up conda environment
+        uses: mamba-org/provision-with-micromamba@v15
+        with:
+          micromamba-version: latest
+          channel-priority: strict
+          environment-file: ci/environment.yaml
+          environment-name: leap-data-management
+          cache-env: true
+          cache-downloads: true
 
       - uses: actions/download-artifact@v3
         with:
           name: consolidated-web-catalog.json
           path: catalog/datasets
 
+      - name: Fix formatting
+        run: |
+          pre-commit install
+          git add catalog/datasets/consolidated-web-catalog.json
+          # run pre-commit and return 0 to avoid failing the job
+          pre-commit run || true
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
           commit-message: "update consolidated-web-catalog.json"
           committer: GitHub <noreply@github.com>
-          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          author: 41898282+github-actions[bot]@users.noreply.github.com
           title: Update catalog
           body: |
             - Updates the consolidated web catalog for changes on `main`
