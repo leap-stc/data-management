@@ -3,7 +3,7 @@ import pydantic
 
 class Store(pydantic.BaseModel):
     name: str = pydantic.Field(..., description='Name of the store')
-    url: pydantic.AnyUrl = pydantic.Field(..., description='URL of the store')
+    href: pydantic.AnyUrl = pydantic.Field(..., description='URL of the store')
 
 
 class Link(pydantic.BaseModel):
@@ -40,15 +40,18 @@ class Dataset(pydantic.BaseModel):
 
 if __name__ == '__main__':
     import json
+    import pathlib
 
     import yaml
+
+    here = pathlib.Path(__file__).parent
 
     schema = Dataset.schema()
 
     # Save the schema to a file
-    with open('schema.json', 'w') as f:
+    with open(f'{here}/schema.json', 'w') as f:
         json.dump(schema, f, indent=2)
 
     # Save the schema to YAML
-    with open('schema.yaml', 'w') as f:
+    with open(f'{here}/schema.yaml', 'w') as f:
         yaml.dump(schema, f)
