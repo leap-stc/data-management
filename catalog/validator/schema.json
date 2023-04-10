@@ -77,8 +77,8 @@
           "description": "Name of the store",
           "type": "string"
         },
-        "url": {
-          "title": "Url",
+        "href": {
+          "title": "Href",
           "description": "URL of the store",
           "minLength": 1,
           "maxLength": 65536,
@@ -86,7 +86,7 @@
           "type": "string"
         }
       },
-      "required": ["name", "url"]
+      "required": ["name", "href"]
     },
     "Maintainer": {
       "title": "Maintainer",

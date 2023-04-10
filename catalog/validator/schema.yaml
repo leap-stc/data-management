@@ -50,20 +50,20 @@ definitions:
     type: object
   Store:
     properties:
-      name:
-        description: Name of the store
-        title: Name
-        type: string
-      url:
+      href:
         description: URL of the store
         format: uri
         maxLength: 65536
         minLength: 1
-        title: Url
+        title: Href
+        type: string
+      name:
+        description: Name of the store
+        title: Name
         type: string
     required:
       - name
-      - url
+      - href
     title: Store
     type: object
 properties:
