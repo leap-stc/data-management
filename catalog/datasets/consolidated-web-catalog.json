@@ -5,7 +5,7 @@
     "stores": [
       {
         "name": "hadisst.zarr",
-        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/HadISST-feedstock/hadisst.zarr"
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/HadISST-feedstock/hadisst.zarr"
       }
     ],
     "maintainers": [
@@ -17,7 +17,7 @@
     "tags": ["climate", "oceanography", "sea surface temperature", "zarr"],
     "license": {
       "name": "UK Non-Commercial Government License",
-      "url": "https://www.nationalarchives.gov.uk/doc/non-commercial-government-licence/version/2/"
+      "href": "https://www.nationalarchives.gov.uk/doc/non-commercial-government-licence/version/2/"
     }
   }
 ]
