@@ -1,0 +1,14 @@
+name: leap-data-management
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.10
+  - black
+  - fsspec >= 2023.2
+  - pre-commit
+  - pydantic
+  - pytest
+  - pyyaml
+  - ruff
+  - universal_pathlib

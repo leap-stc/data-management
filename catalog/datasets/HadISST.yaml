@@ -1,0 +1,18 @@
+name: Hadley Centre Sea Ice and Sea Surface Temperature (HadISST)
+description: Analysis-ready Zarr datasets derived from HadISST NetCDF
+stores:
+  - name: hadisst.zarr
+    href: "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/HadISST-feedstock/hadisst.zarr"
+
+maintainers:
+  - name: Julius Busecke
+    github_username: jbusecke
+tags:
+  - climate
+  - oceanography
+  - sea surface temperature
+  - zarr
+
+license:
+  name: UK Non-Commercial Government License
+  href: "https://www.nationalarchives.gov.uk/doc/non-commercial-government-licence/version/2/"
