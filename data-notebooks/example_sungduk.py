@@ -6,7 +6,12 @@ import gcsfs
 import xarray as xr
 from dask.diagnostics import ProgressBar
 
-## group file lists
+## Group file lists
+# Total dataset: 10 years
+# Train subset:  8 years
+# Test subset:   2 years
+# (Each suset has separate files for input and output.)
+
 datadir = '/ocean/projects/atm200007p/sungduk/LEAP/E3SM_MMF_dataset/preprocess/hugging/E3SM-MMF_ne4'
 FLIST = {}
 FLIST['train'] = {}
@@ -25,7 +30,7 @@ for k in ['input', 'output']:
     FLIST['test'][k] = sorted([*f_test_1, *f_test_2, *f_test_3, *f_test_4])
 
 
-## Group files and turn to a mf dataset
+## Turn to a mf dataset
 def postprocess(ds):
     if 'pbuf_00060' in ds.dims:
         ds = ds.rename({'pbuf_00060': 'lev'})
@@ -59,10 +64,8 @@ with open('path/to/authentication/file.json') as f:
 
 
 # Transfer data to GC
-# for j in ['train', 'test']:
-#    for k in ['input', 'output']:
-for j in ['train']:
-    for k in ['input']:
+for j in ['train', 'test']:
+    for k in ['input', 'output']:
         ds = DS[j][k]
         mapper = fs.get_mapper(f'gs://leap-persistent/sungdukyu/E3SM-MMF_ne4.{j}.{k}.zarr')
         print(j, k)
