@@ -1,7 +1,7 @@
 name: New Dataset
 description: Propose a new dataset for the LEAP Data Library
 title: 'New Dataset [Dataset Name]'
-labels: ['proposed dataset']
+labels: ['dataset']
 body:
   - type: markdown
     attributes:
