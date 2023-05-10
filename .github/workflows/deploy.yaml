@@ -1,0 +1,51 @@
+name: Deploy recipes
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    types: [ opened, reopened, synchronize, labeled ]
+    
+jobs:
+  deploy-recipes:
+    name: deploy-recipes
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: 'Authenticate to Google Cloud'
+      id: 'auth'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GCP_DATAFLOW_SERVICE_KEY }}'
+    - name: 'Deploy recipes'
+      uses: 'pangeo-forge/deploy-recipe-action@first-pass'
+      with:
+        pangeo_forge_runner_config: >
+          {
+          "Bake": {
+              "prune": false,
+              "bakery_class": "pangeo_forge_runner.bakery.dataflow.DataflowBakery"
+          },
+          "DataflowBakery": {
+              "use_public_ips": true,
+              "service_account_email": "julius-leap-dataflow@leap-pangeo.iam.gserviceaccount.com",
+              "project_id": "leap-pangeo",
+              "temp_gcs_location": "gs://leap-scratch/data-library/temp/{job_name}"
+          },
+          "TargetStorage": {
+              "fsspec_class": "gcsfs.GCSFileSystem",
+              "fsspec_kwargs": {"project": "leap-pangeo"},
+              "root_path": "gs://leap-persistent/data-library"
+          },
+          "InputCacheStorage": {
+              "fsspec_class": "gcsfs.GCSFileSystem",
+              "fsspec_kwargs": {"project": "leap-pangeo"},
+              "root_path": "gs://leap-scratch/data-library/cache"
+          }
+          }
+      env:
+        GOOGLE_APPLICATION_CREDENTIALS: '${{ steps.auth.outputs.credentials_file_path }}'
