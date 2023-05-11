@@ -1,0 +1,41 @@
+title: "LEAP Data Library"
+description: >
+  A collection of Pangeo Forge Recipes to ingest datasets into the LEAP Data Library.
+recipes:
+  - id: "METAFLUX_GPP_RECO_monthly"
+    object: "metaflux:METAFLUX_GPP_RECO_monthly"
+    description: Monthly METAFLUX_GPP_RECO data
+    provenance:
+      providers:
+        - name: "Zenodo"
+          description: "Zenodo"
+          roles:
+            - host
+          url: https://zenodo.org/record/7761881#.ZFv9OS-B30p
+        - name: "Nathaniel et al."
+          description: "Authors of MetaFlux: Meta-learning global carbon fluxes from sparse spatiotemporal observations"
+          roles:
+            - producer
+            - licensor
+      license: "CC-BY-4.0"
+  - id: "METAFLUX_GPP_RECO_daily"
+    object: "metaflux:METAFLUX_GPP_RECO_daily"
+    description: Daily METAFLUX_GPP_RECO data
+    provenance:
+      providers:
+        - name: "Zenodo"
+          description: "Zenodo"
+          roles:
+            - host
+          url: https://zenodo.org/record/7761881#.ZFv9OS-B30p
+        - name: "Nathaniel et al."
+          description: "Authors of MetaFlux: Meta-learning global carbon fluxes from sparse spatiotemporal observations"
+          roles:
+            - producer
+            - licensor
+      license: "CC-BY-4.0"
+
+maintainers:
+  - name: "Julius Busecke"
+    orcid: 0000-0001-8571-865X
+    github: jbusecke
