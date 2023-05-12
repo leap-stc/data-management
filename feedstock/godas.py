@@ -8,7 +8,7 @@ from pangeo_forge_recipes.transforms import OpenURLWithFSSpec, OpenWithXarray, S
 variables = ['sshg', 'thflx'] 
 
 def make_full_path(variable):
-    return f'https://downloads.psl.noaa.gov/Datasets/godas/Derived/{var}.mon.ltm.nc'
+    return f'https://downloads.psl.noaa.gov/Datasets/godas/Derived/{variable}.mon.ltm.nc'
 variable_merge_dim = MergeDim("variable", variables)
 
 pattern = FilePattern(make_full_path, variable_merge_dim)
