@@ -34,7 +34,8 @@ recipes:
             - producer
             - licensor
       license: "CC-BY-4.0"
-
+  - id: "GODAS"
+    object: "godas:GODAS"
 maintainers:
   - name: "Julius Busecke"
     orcid: 0000-0001-8571-865X
