@@ -11,7 +11,7 @@ def make_full_path(variable, year):
     return f"'https://downloads.psl.noaa.gov/Datasets/godas/{variable}.{year}.nc'"
     return f'https://downloads.psl.noaa.gov/Datasets/godas/Derived/{variable}.mon.ltm.nc'
 variable_merge_dim = MergeDim("variable", variables)
-time_concat_dim = ConcatDim("time", years)
+time_concat_dim = ConcatDim("year", years)
 
 ## preprocessing transform
 
