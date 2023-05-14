@@ -35,12 +35,12 @@ class Preprocess(beam.PTransform):
         return pcoll | beam.Map(self._set_bnds_as_coords)
 
 
-pattern = FilePattern(make_full_path, variable_merge_dim, time_concat_dim)
+pattern = FilePattern(make_full_path, variable_merge_dim, time_concat_dim, file_type="netcdf")
 
 GODAS = (
     beam.Create(pattern.items())
     | OpenURLWithFSSpec()
-    | OpenWithXarray()
+    | OpenWithXarray(file_type=pattern.file_type)
     | Preprocess() # New preprocessor
     | StoreToZarr(
         target_chunks={'time':120},
