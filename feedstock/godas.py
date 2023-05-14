@@ -35,7 +35,7 @@ class Preprocess(beam.PTransform):
         return pcoll | beam.Map(self._set_bnds_as_coords)
 
 
-pattern = FilePattern(make_full_path, variable_merge_dim, time_concat_dim, file_type="netcdf")
+pattern = FilePattern(make_full_path, variable_merge_dim, time_concat_dim, file_type="netcdf4")
 
 GODAS = (
     beam.Create(pattern.items())
