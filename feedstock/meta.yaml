@@ -34,6 +34,9 @@ recipes:
             - producer
             - licensor
       license: "CC-BY-4.0"
+  - id: CASM
+    object: "casm:CASM"
+    description: A long-term Consistent Artificial-intelligence based Soil Moisture dataset based on machine learning and remote sensing
 
 maintainers:
   - name: "Julius Busecke"
