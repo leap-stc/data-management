@@ -7,7 +7,7 @@ from pangeo_forge_recipes.transforms import OpenURLWithFSSpec, OpenWithXarray, S
 
 
 #years = range(2002, 2021)
-years = range(2002, 2012) # for debugging
+years = range(2012, 2021) # for debugging
 
 input_urls = [
     f"https://zenodo.org/record/7072512/files/CASM_SM_{year}.nc" for year in years]
