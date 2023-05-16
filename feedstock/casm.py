@@ -16,6 +16,7 @@ CASM = (
     | OpenURLWithFSSpec()
     | OpenWithXarray()
     | StoreToZarr(
+        target_chunks={'date':20},
         store_name="CASM.zarr",
         combine_dims=pattern.combine_dim_keys,
     )
