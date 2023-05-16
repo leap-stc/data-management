@@ -10,7 +10,7 @@ from pangeo_forge_recipes.transforms import OpenURLWithFSSpec, OpenWithXarray, S
 
 # Common Parameters
 # years = range(2001, 2022)
-years = range(2006, 2022) # for debugging
+years = range(2008, 2022) # for debugging
 months = range(1, 13)
 dataset_url = 'https://zenodo.org/record/7761881/files'
 
