@@ -1,3 +1,1 @@
 git+https://github.com/pangeo-forge/pangeo-forge-recipes.git@beam-refactor
-fsspec==2023.5.0
-gcsfs==2023.5.0
