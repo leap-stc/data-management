@@ -36,6 +36,22 @@ recipes:
       license: "CC-BY-4.0"
   - id: "GODAS"
     object: "godas:GODAS"
+  - id: CASM
+    object: "casm:CASM"
+    description: A long-term Consistent Artificial-intelligence based Soil Moisture dataset based on machine learning and remote sensing
+    provenance:
+      providers:
+        - name: "Zenodo"
+          description: "Zenodo"
+          roles:
+            - host
+          url: https://zenodo.org/record/7072512#.ZFj3h-zMK3J
+        - name: "Skulovich and Gentine"
+          description: "Authors of CASM: A long-term Consistent Artificial-intelligence based Soil Moisture dataset based on machine learning and remote sensing"
+          roles:
+            - producer
+            - licensor
+      license: "CC-BY-4.0"
 maintainers:
   - name: "Julius Busecke"
     orcid: 0000-0001-8571-865X
