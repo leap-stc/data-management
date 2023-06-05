@@ -7,11 +7,11 @@ from pangeo_forge_recipes.transforms import OpenURLWithFSSpec, OpenWithXarray, S
 variables = ['sshg', 'thflx'] 
 years = [1980, 1981, 1982]
 
-def make_full_path(variable, year):
-    return f"https://downloads.psl.noaa.gov/Datasets/godas/{variable}.{year}.nc"
+def make_full_path(variable, time):
+    return f"https://downloads.psl.noaa.gov/Datasets/godas/{variable}.{time}.nc"
 
 variable_merge_dim = MergeDim("variable", variables)
-time_concat_dim = ConcatDim("year", years)
+time_concat_dim = ConcatDim("time", years)
 
 ## preprocessing transform
 
