@@ -8,8 +8,8 @@ variables = ['sshg', 'thflx']
 years = [1980, 1981, 1982]
 
 def make_full_path(variable, year):
-    return f"'https://downloads.psl.noaa.gov/Datasets/godas/{variable}.{year}.nc'"
-    return f'https://downloads.psl.noaa.gov/Datasets/godas/Derived/{variable}.mon.ltm.nc'
+    return f"https://downloads.psl.noaa.gov/Datasets/godas/{variable}.{year}.nc"
+
 variable_merge_dim = MergeDim("variable", variables)
 time_concat_dim = ConcatDim("year", years)
 
