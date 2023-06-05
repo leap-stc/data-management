@@ -1,7 +1,7 @@
 name: New Dataset
 description: Propose a new dataset for the LEAP Data Library
-title: 'New Dataset [Dataset Name]'
-labels: ['dataset']
+title: "New Dataset [Dataset Name]"
+labels: ["dataset"]
 body:
   - type: markdown
     attributes:
@@ -9,7 +9,7 @@ body:
         Thanks for taking the time to add a dataset to the LEAP Data Library.
 
         The point of this form is to gather information about the dataset and discuss
-        options to add it to make it available to the LEAP community. 
+        options to add it to make it available to the LEAP community.
 
   - type: input
     id: name
@@ -23,7 +23,7 @@ body:
     attributes:
       label: Dataset URL
       description: Link to the official version of the dataset (if it exists)
-      placeholder: 'https://'
+      placeholder: "https://"
   - type: textarea
     id: description
     attributes:
@@ -36,7 +36,7 @@ body:
     attributes:
       label: Size
       description: "How large is the full dataset and is it split over multiple files"
-      placeholder: "E.g. The dataset consists of 2GB files with a total size of 400GB" 
+      placeholder: "E.g. The dataset consists of 2GB files with a total size of 400GB"
   - type: input
     id: license
     attributes:
@@ -96,7 +96,7 @@ body:
     attributes:
       label: Example URLs
       description: If possible, give some examples of some actual URLs that point to the data
-      placeholder: 'https://www.ncei.noaa.gov/data/sea-surface-temperature-optimum-interpolation/v2.1/access/avhrr/198112/oisst-avhrr-v02r01.19811209.nc'
+      placeholder: "https://www.ncei.noaa.gov/data/sea-surface-temperature-optimum-interpolation/v2.1/access/avhrr/198112/oisst-avhrr-v02r01.19811209.nc"
       render: shell
   - type: dropdown
     id: authorization
