@@ -22,7 +22,7 @@ jobs:
         with:
           credentials_json: "${{ secrets.GCP_DATAFLOW_SERVICE_KEY }}"
       - name: "Deploy recipes"
-        uses: "pangeo-forge/deploy-recipe-action@skip-deploy-if-no-labels"
+        uses: "pangeo-forge/deploy-recipe-action@stderr-output"
         with:
           select_recipe_by_label: true
           pangeo_forge_runner_config: >
