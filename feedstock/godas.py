@@ -2,18 +2,28 @@
 NCEP Global Ocean Data Assimilation System (GODAS)
 """
 import apache_beam as beam
-from pangeo_forge_recipes.patterns import MergeDim, ConcatDim, FilePattern
-from pangeo_forge_recipes.transforms import OpenURLWithFSSpec, OpenWithXarray, StoreToZarr, Indexed, T
-variables = ['sshg', 'thflx'] 
+from pangeo_forge_recipes.patterns import ConcatDim, FilePattern, MergeDim
+from pangeo_forge_recipes.transforms import (
+    Indexed,
+    OpenURLWithFSSpec,
+    OpenWithXarray,
+    StoreToZarr,
+    T,
+)
+
+variables = ['sshg', 'thflx']
 years = [1980, 1981, 1982]
 
-def make_full_path(variable, time):
-    return f"https://downloads.psl.noaa.gov/Datasets/godas/{variable}.{time}.nc"
 
-variable_merge_dim = MergeDim("variable", variables)
-time_concat_dim = ConcatDim("time", years)
+def make_full_path(variable, time):
+    return f'https://downloads.psl.noaa.gov/Datasets/godas/{variable}.{time}.nc'
+
+
+variable_merge_dim = MergeDim('variable', variables)
+time_concat_dim = ConcatDim('time', years)
 
 ## preprocessing transform
+
 
 class Preprocess(beam.PTransform):
     """
@@ -23,7 +33,7 @@ class Preprocess(beam.PTransform):
     @staticmethod
     def _set_bnds_as_coords(item: Indexed[T]) -> Indexed[T]:
         """
-        The netcdf lists some of the coordinate variables as data variables. 
+        The netcdf lists some of the coordinate variables as data variables.
         This is a fix which we want to apply to each dataset.
         """
         index, ds = item
@@ -35,16 +45,16 @@ class Preprocess(beam.PTransform):
         return pcoll | beam.Map(self._set_bnds_as_coords)
 
 
-pattern = FilePattern(make_full_path, variable_merge_dim, time_concat_dim, file_type="netcdf4")
+pattern = FilePattern(make_full_path, variable_merge_dim, time_concat_dim, file_type='netcdf4')
 
 GODAS = (
     beam.Create(pattern.items())
     | OpenURLWithFSSpec()
     | OpenWithXarray(file_type=pattern.file_type)
-    | Preprocess() # New preprocessor
+    | Preprocess()  # New preprocessor
     | StoreToZarr(
-        target_chunks={'time':120},
-        store_name="GODAS.zarr",
+        target_chunks={'time': 120},
+        store_name='GODAS.zarr',
         combine_dims=pattern.combine_dim_keys,
     )
 )
