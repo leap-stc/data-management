@@ -27,8 +27,10 @@ variables = [
 ]
 years = range(1980, 2024)
 
+
 def make_full_path(variable, time):
     return f'https://downloads.psl.noaa.gov/Datasets/godas/{variable}.{time}.nc'
+
 
 variable_merge_dim = MergeDim('variable', variables)
 time_concat_dim = ConcatDim('time', years)
