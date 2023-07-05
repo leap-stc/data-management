@@ -11,7 +11,20 @@ from pangeo_forge_recipes.transforms import (
     T,
 )
 
-variables = ['dbss_obil', 'dbss_obml', 'dzdt', 'pottmp', 'salt', 'sltfl', 'sshg', 'thflx', 'ucur', 'uflx', 'vcur', 'vflx']
+variables = [
+    'dbss_obil',
+    'dbss_obml',
+    'dzdt',
+    'pottmp',
+    'salt',
+    'sltfl',
+    'sshg',
+    'thflx',
+    'ucur',
+    'uflx',
+    'vcur',
+    'vflx',
+]
 years = [1980, 1981, 1982]
 
 
