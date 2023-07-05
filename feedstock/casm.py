@@ -7,8 +7,7 @@ from pangeo_forge_recipes.transforms import OpenURLWithFSSpec, OpenWithXarray, S
 
 years = range(2002, 2021)
 
-input_urls = [
-    f"https://zenodo.org/record/7072512/files/CASM_SM_{year}.nc" for year in years]
+input_urls = [f'https://zenodo.org/record/7072512/files/CASM_SM_{year}.nc' for year in years]
 
 pattern = pattern_from_file_sequence(input_urls, concat_dim='date')
 CASM = (
@@ -16,8 +15,8 @@ CASM = (
     | OpenURLWithFSSpec()
     | OpenWithXarray()
     | StoreToZarr(
-        target_chunks={'date':20},
-        store_name="CASM.zarr",
+        target_chunks={'date': 20},
+        store_name='CASM.zarr',
         combine_dims=pattern.combine_dim_keys,
     )
 )
