@@ -1,11 +1,11 @@
 import apache_beam as beam
-from pangeo_forge_recipes.patterns import 
+from pangeo_forge_recipes.patterns import
 from pangeo_forge_recipes.transforms import OpenURLWithFSSpec, OpenWithXarray, StoreToZarr
 
-# TODO: 
+# TODO:
 days_per_month = {1:31, 2:28, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
 var_names = ['mli']
-month_and_day = 
+month_and_day =
 
 def make_url(year, month_and_day, sample, var_name):
     month = month_and_day.split('_')[0]
