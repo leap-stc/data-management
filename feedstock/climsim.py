@@ -5,7 +5,7 @@ from pangeo_forge_recipes.patterns import ConcatDim, FilePattern, MergeDim
 from pangeo_forge_recipes.transforms import OpenURLWithFSSpec, OpenWithXarray, StoreToZarr
 
 
-var_names = ["mli"]
+var_names = ["mli", "mlo"]
 times = pd.date_range("0001-02-01", "0009-02-01", freq="1200S", unit="s", inclusive="left")
 
 
