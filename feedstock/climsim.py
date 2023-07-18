@@ -22,9 +22,10 @@ def make_url(t: pd.Timestamp, var_name: str):
         f"{t.year:04}-{t.month:02}-{t.day:02}-{seconds:05}.nc"
     )
 
-concat_dim = ConcatDim(...)
-merge_dim = MergeDim(...)
-pattern = FilePattern(...)
+
+concat_dim = ConcatDim("t", keys=times)
+merge_dim = MergeDim("var", keys=var_names)
+pattern = FilePattern(make_url, concat_dim, merge_dim)
 
 climsim = (
     beam.Create(pattern.items())
@@ -32,7 +33,7 @@ climsim = (
     | OpenWithXarray()
     | StoreToZarr(
         target_chunks={"time": 20},
-        store_name='ClimSim_high-res_train.zarr',
+        store_name='climsim-highres-train.zarr',
         combine_dims=pattern.combine_dim_keys,
     )
 )
