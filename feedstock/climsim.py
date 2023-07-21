@@ -79,40 +79,41 @@ class ExpandTimeDimAndRenameVars(beam.PTransform):
         return pcoll | beam.Map(self._preproc)
 
 
-def create_recipe(pattern: FilePattern, store_name: str, target_chunks: dict):
-    """"""
-    return (
-        beam.Create(pattern.items())
-        | OpenURLWithFSSpec()
-        | OpenWithXarray(
-            # FIXME: Get files to open without `copy_to_local=True`
-            # Related: what is the filetype? Looks like netcdf3, but for some reason
-            # `scipy` backend can't open them, and `netcdf4` can?
-            copy_to_local=True,
-            xarray_open_kwargs=dict(engine='netcdf4'),
-        )
-        | ExpandTimeDimAndRenameVars()
-        | StoreToZarr(
-            target_chunks=target_chunks,
-            store_name=store_name,
-            combine_dims=pattern.combine_dim_keys,
-        )
+OpenAndPreprocess = (
+    OpenURLWithFSSpec()
+    | OpenWithXarray(
+        # FIXME: Get files to open without `copy_to_local=True`
+        # Related: what is the filetype? Looks like netcdf3, but for some reason
+        # `scipy` backend can't open them, and `netcdf4` can?
+        copy_to_local=True,
+        xarray_open_kwargs=dict(engine='netcdf4'),
     )
-
+    | ExpandTimeDimAndRenameVars()
+)
 
 times = [t for t in generate_times()]
 concat_dim = ConcatDim('time', keys=times)
 
-make_url_mli = functools.partial(make_url, ds_type='mli')
-climsim_highres_mli = create_recipe(
-    pattern=FilePattern(make_url_mli, concat_dim),
-    store_name='climsim-highres-mli.zarr',
-    target_chunks={'time': 20},
+mli_make_url = functools.partial(make_url, ds_type='mli')
+mli_pattern = FilePattern(mli_make_url, concat_dim)
+climsim_highres_mli = (
+    beam.Create(mli_pattern.items())
+    | OpenAndPreprocess
+    | StoreToZarr(
+        store_name='climsim-highres-mli.zarr',
+        target_chunks={'time': 20},
+        combine_dims=mli_pattern.combine_dim_keys,
+    )
 )
 
-make_url_mlo = functools.partial(make_url, ds_type='mlo')
-climsim_highres_mli = create_recipe(
-    pattern=FilePattern(make_url_mlo, concat_dim),
-    store_name='climsim-highres-mlo.zarr',
-    target_chunks={'time': 20},
+mlo_make_url = functools.partial(make_url, ds_type='mlo')
+mlo_pattern = FilePattern(mlo_make_url, concat_dim)
+climsim_highres_mli = (
+    beam.Create(mlo_pattern.items())
+    | OpenAndPreprocess
+    | StoreToZarr(
+        store_name='climsim-highres-mlo.zarr',
+        target_chunks={'time': 20},
+        combine_dims=mlo_pattern.combine_dim_keys,
+    )
 )
