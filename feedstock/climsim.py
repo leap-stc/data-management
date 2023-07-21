@@ -85,16 +85,8 @@ class ExpandTimeDimAndRenameVars(beam.PTransform):
         return pcoll | beam.Map(self._preproc)
 
 
-# FIXME:
-#  - remove tempdir stuff here and in pipeline (this is for local debugging)
-#  - remove `pruned_pattern`; pass full pattern to `beam.Create` instead
-from tempfile import TemporaryDirectory
-
-td = TemporaryDirectory()
-pruned_pattern = pattern.prune()
-
-climsim = (
-    beam.Create(pruned_pattern.items())  # beam.Create(pattern.items())
+climsim_highres = (
+    beam.Create(pattern.items())
     | OpenURLWithFSSpec()
     | OpenWithXarray(
         # FIXME: Get files to open without `copy_to_local=True`
@@ -105,7 +97,6 @@ climsim = (
     )
     | ExpandTimeDimAndRenameVars()
     | StoreToZarr(
-        target_root=td.name,  # FIXME: remove
         target_chunks={'time': 20},
         store_name='climsim-highres-train.zarr',
         combine_dims=pattern.combine_dim_keys,
