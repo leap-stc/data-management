@@ -1,7 +1,8 @@
 import datetime as dt
+import functools
 
 import apache_beam as beam
-from pangeo_forge_recipes.patterns import ConcatDim, FilePattern, MergeDim
+from pangeo_forge_recipes.patterns import ConcatDim, FilePattern
 from pangeo_forge_recipes.transforms import (
     Indexed,
     OpenURLWithFSSpec,
@@ -9,8 +10,6 @@ from pangeo_forge_recipes.transforms import (
     StoreToZarr,
     T,
 )
-
-var_names = ['mli', 'mlo']
 
 
 def generate_times():
@@ -32,7 +31,7 @@ def generate_times():
         yield start + (delta * i)
 
 
-def make_url(time: dt.datetime, var: str):
+def make_url(time: dt.datetime, ds_type: str):
     """Given a datetime and variable name, return a url pointing to the corresponding NetCDF file.
 
     For example, the inputs ``(dt.datetime(1, 2, 1, 0, 20), "mli")`` will return:
@@ -41,16 +40,9 @@ def make_url(time: dt.datetime, var: str):
     seconds = (time.hour * 3600) + (time.minute * 60)
     return (
         'https://huggingface.co/datasets/LEAP/ClimSim_high-res/resolve/main/train/'
-        f'{time.year:04}-{time.month:02}/E3SM-MMF.{var}.'
+        f'{time.year:04}-{time.month:02}/E3SM-MMF.{ds_type}.'
         f'{time.year:04}-{time.month:02}-{time.day:02}-{seconds:05}.nc'
     )
-
-
-times = [t for t in generate_times()]
-
-concat_dim = ConcatDim('time', keys=times)
-merge_dim = MergeDim('var', keys=var_names)
-pattern = FilePattern(make_url, concat_dim, merge_dim)
 
 
 class ExpandTimeDimAndRenameVars(beam.PTransform):
@@ -61,11 +53,13 @@ class ExpandTimeDimAndRenameVars(beam.PTransform):
         """"""
         index, ds = item
 
-        # FIXME: what's a better format to parse this into?
-        timestamp = str(ds.ymd.values) + str(ds.tod.values)
-
-        ds = ds.expand_dims(time=[timestamp])
-
+        ymd = str(ds.ymd.values)  # e.g., '10201'
+        year, month, day = int(ymd[:-4]), int(ymd[-4:-2]), int(ymd[-2:])
+        minute = int(ds.tod.values)
+        time = dt.datetime(year=year, month=month, day=day, minute=minute)
+        ds = ds.expand_dims(time=[time])
+        # FIXME: Drop ymd + tod vars now that time dimension is added?
+        # FIXME: Don't rename vars. Add metadata to vars below instead.
         overlapping = [
             'ymd',
             'tod',
@@ -85,20 +79,40 @@ class ExpandTimeDimAndRenameVars(beam.PTransform):
         return pcoll | beam.Map(self._preproc)
 
 
-climsim_highres = (
-    beam.Create(pattern.items())
-    | OpenURLWithFSSpec()
-    | OpenWithXarray(
-        # FIXME: Get files to open without `copy_to_local=True`
-        # Related: what is the filetype? Looks like netcdf3, but for some reason
-        # `scipy` backend can't open them, and `netcdf4` can?
-        copy_to_local=True,
-        xarray_open_kwargs=dict(engine='netcdf4'),
+def create_recipe(pattern: FilePattern, store_name: str, target_chunks: dict):
+    """"""
+    return (
+        beam.Create(pattern.items())
+        | OpenURLWithFSSpec()
+        | OpenWithXarray(
+            # FIXME: Get files to open without `copy_to_local=True`
+            # Related: what is the filetype? Looks like netcdf3, but for some reason
+            # `scipy` backend can't open them, and `netcdf4` can?
+            copy_to_local=True,
+            xarray_open_kwargs=dict(engine='netcdf4'),
+        )
+        | ExpandTimeDimAndRenameVars()
+        | StoreToZarr(
+            target_chunks=target_chunks,
+            store_name=store_name,
+            combine_dims=pattern.combine_dim_keys,
+        )
     )
-    | ExpandTimeDimAndRenameVars()
-    | StoreToZarr(
-        target_chunks={'time': 20},
-        store_name='climsim-highres-train.zarr',
-        combine_dims=pattern.combine_dim_keys,
-    )
+
+
+times = [t for t in generate_times()]
+concat_dim = ConcatDim('time', keys=times)
+
+make_url_mli = functools.partial(make_url, ds_type='mli')
+climsim_highres_mli = create_recipe(
+    pattern=FilePattern(make_url_mli, concat_dim),
+    store_name='climsim-highres-mli.zarr',
+    target_chunks={'time': 20},
+)
+
+make_url_mlo = functools.partial(make_url, ds_type='mlo')
+climsim_highres_mli = create_recipe(
+    pattern=FilePattern(make_url_mlo, concat_dim),
+    store_name='climsim-highres-mlo.zarr',
+    target_chunks={'time': 20},
 )
