@@ -68,7 +68,7 @@ class ExpandTimeDimAndRenameVars(beam.PTransform):
         minute = tod_as_minutes % 60  # e.g., 620 min % 60 (min/hr) -> 20 min
 
         time = dt.datetime(year=year, month=month, day=day, hour=hour, minute=minute)
-        ds = ds.expand_dims(time=np.array([time]))
+        ds = ds.expand_dims(time=np.array([np.datetime64(time)]))
         # FIXME: Drop ymd + tod vars now that time dimension is added?
         # FIXME: Don't rename vars. Add metadata to vars below instead.
         overlapping = [
