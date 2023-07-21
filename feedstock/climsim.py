@@ -108,7 +108,7 @@ climsim_highres_mli = (
 
 mlo_make_url = functools.partial(make_url, ds_type='mlo')
 mlo_pattern = FilePattern(mlo_make_url, concat_dim)
-climsim_highres_mli = (
+climsim_highres_mlo = (
     beam.Create(mlo_pattern.items())
     | OpenAndPreprocess
     | StoreToZarr(
