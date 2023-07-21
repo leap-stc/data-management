@@ -52,8 +52,7 @@ class ExpandTimeDimAndRenameVars(beam.PTransform):
     def _preproc(item: Indexed[T]) -> Indexed[T]:
         """"""
         # import function-scope deps here (for beam serialization issue)
-        import datetime as dt
-
+        import cftime
         import numpy as np
 
         index, ds = item
@@ -67,8 +66,8 @@ class ExpandTimeDimAndRenameVars(beam.PTransform):
         hour = tod_as_minutes // 60  # e.g., 620 min // 60 (min/hr) -> 10 hrs
         minute = tod_as_minutes % 60  # e.g., 620 min % 60 (min/hr) -> 20 min
 
-        time = dt.datetime(year=year, month=month, day=day, hour=hour, minute=minute)
-        ds = ds.expand_dims(time=np.array([np.datetime64(time)]))
+        time = cftime.datetime(year=year, month=month, day=day, hour=hour, minute=minute)
+        ds = ds.expand_dims(time=np.array([time]))
         # FIXME: Drop ymd + tod vars now that time dimension is added?
         # FIXME: Don't rename vars. Add metadata to vars below instead.
         overlapping = [
