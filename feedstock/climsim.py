@@ -94,7 +94,7 @@ td = TemporaryDirectory()
 pruned_pattern = pattern.prune()
 
 climsim = (
-    beam.Create(pattern.items())  # beam.Create(pattern.items())
+    beam.Create(pruned_pattern.items())  # beam.Create(pattern.items())
     | OpenURLWithFSSpec()
     | OpenWithXarray(
         # FIXME: Get files to open without `copy_to_local=True`
