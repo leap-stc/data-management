@@ -56,9 +56,15 @@ class ExpandTimeDimAndRenameVars(beam.PTransform):
         index, ds = item
 
         ymd = str(ds.ymd.values)  # e.g., '10201'
-        year, month, day = int(ymd[:-4]), int(ymd[-4:-2]), int(ymd[-2:])
-        minute = int(ds.tod.values)
-        time = dt.datetime(year=year, month=month, day=day, minute=minute)
+        year = int(ymd[:-4])  # e.g., '10201'[:-4] -> '1'
+        month = int(ymd[-4:-2])  # e.g., '10201'[-4:-2] -> '02'
+        day = int(ymd[-2:])  # e.g., '10201'[-2:] -> '01'
+
+        tod_as_minutes = int(ds.tod.values) // 60  # e.g., 37200 (sec) // 60 (sec/min) -> 620 min
+        hour = tod_as_minutes // 60  # e.g., 620 min // 60 (min/hr) -> 10 hrs
+        minute = tod_as_minutes % 60  # e.g., 620 min % 60 (min/hr) -> 20 min
+
+        time = dt.datetime(year=year, month=month, day=day, hour=hour, minute=minute)
         ds = ds.expand_dims(time=[time])
         # FIXME: Drop ymd + tod vars now that time dimension is added?
         # FIXME: Don't rename vars. Add metadata to vars below instead.
