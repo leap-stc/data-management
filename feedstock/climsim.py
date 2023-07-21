@@ -51,6 +51,8 @@ class ExpandTimeDimAndRenameVars(beam.PTransform):
     @staticmethod
     def _preproc(item: Indexed[T]) -> Indexed[T]:
         """"""
+        import datetime as dt  # re-import here (for beam serialization issue)
+
         index, ds = item
 
         ymd = str(ds.ymd.values)  # e.g., '10201'
