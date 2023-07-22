@@ -36,7 +36,7 @@ def generate_times():
 def make_url(time: cftime.DatetimeNoLeap, ds_type: str):
     """Given a datetime and variable name, return a url pointing to the corresponding NetCDF file.
 
-    For example, the inputs ``(dt.datetime(1, 2, 1, 0, 20), "mli")`` will return:
+    For example, the inputs ``(cftime.DatetimeNoLeap(1, 2, 1, 0, 20, 0, 0, has_year_zero=True), "mli")`` will return:
     https://huggingface.co/datasets/LEAP/ClimSim_high-res/resolve/main/train/0001-02/E3SM-MMF.mli.0001-02-01-01200.nc
     """
     seconds = (time.hour * 3600) + (time.minute * 60)
@@ -47,12 +47,12 @@ def make_url(time: cftime.DatetimeNoLeap, ds_type: str):
     )
 
 
-class ExpandTimeDimAndRenameVars(beam.PTransform):
-    """ """
+class ExpandTimeDimAndAddMetadata(beam.PTransform):
+    """Preprocessor transform for ClimSim datasets."""
 
     @staticmethod
     def _preproc(item: Indexed[T]) -> Indexed[T]:
-        """"""
+        """The preprocessor function, which is applied in `.expand` method of this class."""
         # import function-scope deps here (for beam serialization issue)
         import cftime
         import numpy as np
@@ -147,7 +147,7 @@ OpenAndPreprocess = (
         copy_to_local=True,
         xarray_open_kwargs=dict(engine='netcdf4'),
     )
-    | ExpandTimeDimAndRenameVars()
+    | ExpandTimeDimAndAddMetadata()
 )
 
 times = [t for t in generate_times()]
