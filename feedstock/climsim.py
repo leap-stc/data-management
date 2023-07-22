@@ -78,6 +78,8 @@ class ExpandTimeDimAndAddMetadata(beam.PTransform):
         )
         ds = ds.expand_dims(time=np.array([time]))
         ds.time.encoding = {
+            # for 'units' naming convention, xref:
+            # https://cfconventions.org/Data/cf-conventions/cf-conventions-1.10/cf-conventions.html#time-coordinate
             'units': 'minutes since 0001-02-01 00:00:00',
             'calendar': 'noleap',
         }
