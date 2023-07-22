@@ -77,7 +77,10 @@ class ExpandTimeDimAndRenameVars(beam.PTransform):
             calendar='noleap',
         )
         ds = ds.expand_dims(time=np.array([time]))
-        # FIXME: Drop ymd + tod vars now that time dimension is added?
+        ds.time.encoding = {
+            'units': 'minutes since 0001-02-01 00:00:00',
+            'calendar': 'noleap',
+        }
         # FIXME: Don't rename vars. Add metadata to vars below instead.
         overlapping = [
             'ymd',
