@@ -81,20 +81,57 @@ class ExpandTimeDimAndRenameVars(beam.PTransform):
             'units': 'minutes since 0001-02-01 00:00:00',
             'calendar': 'noleap',
         }
-        # FIXME: Don't rename vars. Add metadata to vars below instead.
-        overlapping = [
-            'ymd',
-            'tod',
-            'state_q0001',
-            'state_q0002',
-            'state_q0003',
-            'state_t',
-            'state_u',
-            'state_v',
-        ]
-        ds_type = 'mli' if 'cam_in_ALDIF' in ds.data_vars else 'mlo'
-        rename = {vname: f'{ds_type}_{vname}' for vname in overlapping}
-        ds = ds.rename(rename)
+        variable_metadata = {
+            # TODO: Add additional CF metadata, e.g. `standard_name`, to this dict.
+            'pbuf_SOLIN': dict(long_name='Solar insolation', units='W/m2'),
+            'pbuf_COSZRS': dict(long_name='Cosine of solar zenith angle', units=''),
+            'pbuf_LHFLX': dict(long_name='Surface latent heat flux', units='W/m2'),
+            'pbuf_SHFLX': dict(long_name='Surface sensible heat flux', units='W/m2'),
+            'pbuf_TAUX': dict(long_name='Zonal surface stress', units='N/m2'),
+            'pbuf_TAUY': dict(long_name='Meridional surface stress', units='N/m2'),
+            'pbuf_ozone': dict(long_name='Ozone volume mixing ratio', units='mol/mol'),
+            'pbuf_N2O': dict(long_name='N2O volume mixing ratio', units='mol/mol'),
+            'pbuf_CH4': dict(long_name='CH4 volume mixing ratio', units='mol/mol'),
+            'state_ps': dict(long_name='Surface pressure', units='Pa'),
+            'state_q0001': dict(long_name='Specific humidity', units='kg/kg'),
+            'state_q0002': dict(long_name='Cloud liquid mixing ratio', units='kg/kg'),
+            'state_q0003': dict(long_name='Cloud ice mixing ratio', units='kg/kg'),
+            'state_t': dict(long_name='Air temperature', units='K'),
+            'state_u': dict(long_name='Zonal wind speed', units='m/s'),
+            'state_v': dict(long_name='Meridional wind speed', units='m/s'),
+            'state_pmid': dict(long_name='Mid-level pressure', units='Pa'),
+            'cam_in_ASDIR': dict(long_name='Albedo for direct shortwave radiation', units=''),
+            'cam_in_ASDIF': dict(long_name='Albedo for diffuse shortwave radiation', units=''),
+            'cam_in_ALDIR': dict(long_name='Albedo for direct longwave radiation', units=''),
+            'cam_in_ALDIF': dict(long_name='Albedo for diffuse longwave radiation', units=''),
+            'cam_in_LWUP': dict(long_name='Upward longwave flux', units='W/m2'),
+            'cam_in_SNOWHLAND': dict(
+                long_name='Snow depth over land (liquid water equivalent)', units='m'
+            ),
+            'cam_in_SNOWHICE': dict(long_name='Snow depth over ice', units='m'),
+            'cam_in_LANDFRAC': dict(long_name='Land areal fraction', units=''),
+            'cam_in_ICEFRAC': dict(long_name='Sea-ice areal fraction', units=''),
+            'cam_out_NETSW': dict(long_name='Net shortwave flux at surface', units='W/m2'),
+            'cam_out_FLWDS': dict(long_name='Downward longwave flux at surface', units='W/m2'),
+            'cam_out_PRECSC': dict(long_name='Snow rate (liquid water equivalent)', units='m/s'),
+            'cam_out_PRECC': dict(long_name='Rain rate', units='m/s'),
+            'cam_out_SOLS': dict(
+                long_name='Downward visible direct solar flux to surface', units='W/m2'
+            ),
+            'cam_out_SOLL': dict(
+                long_name='Downward near-infrared direct solar flux to surface', units='W/m2'
+            ),
+            'cam_out_SOLSD': dict(
+                long_name='Downward visible diffuse solar flux to surface', units='W/m2'
+            ),
+            'cam_out_SOLLD': dict(
+                long_name='Downward near-infrared diffuse solar flux to surface', units='W/m2'
+            ),
+        }
+        for vname in variable_metadata:
+            if vname in ds:
+                ds[vname].attrs = variable_metadata[vname]
+
         return index, ds
 
     def expand(self, pcoll: beam.PCollection) -> beam.PCollection:
