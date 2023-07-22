@@ -2,6 +2,7 @@ import datetime as dt
 import functools
 
 import apache_beam as beam
+import cftime
 from pangeo_forge_recipes.patterns import ConcatDim, FilePattern
 from pangeo_forge_recipes.transforms import (
     Indexed,
@@ -24,14 +25,15 @@ def generate_times():
     # to pass the ``unit='s'`` option, however this option was added in `pandas==2.0.0`, which is
     # not yet supported in Beam: https://github.com/apache/beam/issues/27221.
 
-    start = dt.datetime(year=1, month=2, day=1, minute=0)
+    start = cftime.datetime(year=1, month=2, day=1, minute=0, calendar='noleap')
     delta = dt.timedelta(minutes=20)
-    # FIXME: calendar is noleap, remove extra feb day from leap year
-    for i in range(210_384):  # means the last value yielded is `dt.datetime(9, 1, 31, 23, 40)`
+    # `range(210_240)` means the last value yielded is
+    # `cftime.DatetimeNoLeap(9, 1, 31, 23, 40, 0, 0, has_year_zero=True)`
+    for i in range(210_240):
         yield start + (delta * i)
 
 
-def make_url(time: dt.datetime, ds_type: str):
+def make_url(time: cftime.DatetimeNoLeap, ds_type: str):
     """Given a datetime and variable name, return a url pointing to the corresponding NetCDF file.
 
     For example, the inputs ``(dt.datetime(1, 2, 1, 0, 20), "mli")`` will return:
@@ -66,7 +68,14 @@ class ExpandTimeDimAndRenameVars(beam.PTransform):
         hour = tod_as_minutes // 60  # e.g., 620 min // 60 (min/hr) -> 10 hrs
         minute = tod_as_minutes % 60  # e.g., 620 min % 60 (min/hr) -> 20 min
 
-        time = cftime.datetime(year=year, month=month, day=day, hour=hour, minute=minute)
+        time = cftime.datetime(
+            year=year,
+            month=month,
+            day=day,
+            hour=hour,
+            minute=minute,
+            calendar='noleap',
+        )
         ds = ds.expand_dims(time=np.array([time]))
         # FIXME: Drop ymd + tod vars now that time dimension is added?
         # FIXME: Don't rename vars. Add metadata to vars below instead.
