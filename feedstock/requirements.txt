@@ -1,1 +1,1 @@
-pangeo-forge-recipes==0.10.0
+git+https://github.com/pangeo-forge/pangeo-forge-recipes.git@combine-fragments-debug-logging
