@@ -140,17 +140,23 @@ class ExpandTimeDimAndAddMetadata(beam.PTransform):
         return pcoll | beam.Map(self._preproc)
 
 
-OpenAndPreprocess = (
-    OpenURLWithFSSpec()
-    | OpenWithXarray(
-        # FIXME: Get files to open without `copy_to_local=True`
-        # Related: what is the filetype? Looks like netcdf3, but for some reason
-        # `scipy` backend can't open them, and `netcdf4` can?
-        copy_to_local=True,
-        xarray_open_kwargs=dict(engine='netcdf4'),
-    )
-    | ExpandTimeDimAndAddMetadata()
-)
+class OpenAndPreprocess(beam.PTransform):
+    """Composite transform shared by all recipes in this module."""
+
+    def expand(self, pcoll: beam.PCollection) -> beam.PCollection:
+        return (
+            pcoll
+            | OpenURLWithFSSpec()
+            | OpenWithXarray(
+                # FIXME: Get files to open without `copy_to_local=True`
+                # Related: what is the filetype? Looks like netcdf3, but for some reason
+                # `scipy` backend can't open them, and `netcdf4` can?
+                copy_to_local=True,
+                xarray_open_kwargs=dict(engine='netcdf4'),
+            )
+            | ExpandTimeDimAndAddMetadata()
+        )
+
 
 times = [t for t in generate_times()]
 concat_dim = ConcatDim('time', keys=times)
@@ -159,7 +165,7 @@ mli_make_url = functools.partial(make_url, ds_type='mli')
 mli_pattern = FilePattern(mli_make_url, concat_dim)
 climsim_highres_mli = (
     beam.Create(mli_pattern.items())
-    | OpenAndPreprocess
+    | OpenAndPreprocess()
     | StoreToZarr(
         store_name='climsim-highres-mli.zarr',
         target_chunks={'time': 20},
@@ -171,7 +177,7 @@ mlo_make_url = functools.partial(make_url, ds_type='mlo')
 mlo_pattern = FilePattern(mlo_make_url, concat_dim)
 climsim_highres_mlo = (
     beam.Create(mlo_pattern.items())
-    | OpenAndPreprocess
+    | OpenAndPreprocess()
     | StoreToZarr(
         store_name='climsim-highres-mlo.zarr',
         target_chunks={'time': 20},
