@@ -67,23 +67,23 @@ recipes:
             - licensor
           url: https://arxiv.org/abs/2306.08754
       license: "Apache-2.0"
-  - id: climsim-highres-mlo
-    object: "climsim:climsim_highres_mlo"
-    description: "..."
-    provenance:
-      providers:
-        - name: "Hugging Face"
-          description: "Hugging Face"
-          roles:
-            - host
-          url: https://huggingface.co/datasets/LEAP/ClimSim_high-res
-        - name: "Sungduk Yu et al"
-          description: "ClimSim: An open large-scale dataset for training high-resolution physics emulators in hybrid multi-scale climate simulators"
-          roles:
-            - producer
-            - licensor
-          url: https://arxiv.org/abs/2306.08754
-    license: "Apache-2.0"
+  # - id: climsim-highres-mlo
+  #   object: "climsim:climsim_highres_mlo"
+  #   description: "..."
+  #   provenance:
+  #     providers:
+  #       - name: "Hugging Face"
+  #         description: "Hugging Face"
+  #         roles:
+  #           - host
+  #         url: https://huggingface.co/datasets/LEAP/ClimSim_high-res
+  #       - name: "Sungduk Yu et al"
+  #         description: "ClimSim: An open large-scale dataset for training high-resolution physics emulators in hybrid multi-scale climate simulators"
+  #         roles:
+  #           - producer
+  #           - licensor
+  #         url: https://arxiv.org/abs/2306.08754
+  #   license: "Apache-2.0"
 maintainers:
   - name: "Julius Busecke"
     orcid: 0000-0001-8571-865X
