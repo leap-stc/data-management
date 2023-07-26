@@ -1,3 +1,3 @@
-git+https://github.com/norlandrhagen/pangeo-forge-recipes.git@dynamic_chunks_2
+git+https://github.com/jbusecke/pangeo-forge-recipes.git@dynamic_chunks_2
 fsspec==2023.5.0
 gcsfs==2023.5.0
