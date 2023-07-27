@@ -173,14 +173,14 @@ climsim_highres_mli = (
     )
 )
 
-# mlo_make_url = functools.partial(make_url, ds_type='mlo')
-# mlo_pattern = FilePattern(mlo_make_url, concat_dim)
-# climsim_highres_mlo = (
-#     beam.Create(mlo_pattern.items())
-#     | OpenAndPreprocess()
-#     | StoreToZarr(
-#         store_name='climsim-highres-mlo.zarr',
-#         target_chunks={'time': 20},
-#         combine_dims=mlo_pattern.combine_dim_keys,
-#     )
-# )
+mlo_make_url = functools.partial(make_url, ds_type='mlo')
+mlo_pattern = FilePattern(mlo_make_url, concat_dim)
+climsim_highres_mlo = (
+    beam.Create(mlo_pattern.items())
+    | OpenAndPreprocess()
+    | StoreToZarr(
+        store_name='climsim-highres-mlo.zarr',
+        target_chunks={'time': 20},
+        combine_dims=mlo_pattern.combine_dim_keys,
+    )
+)
