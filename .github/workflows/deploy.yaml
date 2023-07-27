@@ -42,15 +42,15 @@ jobs:
                 "use_public_ips": true,
                 "service_account_email": "julius-leap-dataflow@leap-pangeo.iam.gserviceaccount.com",
                 "project_id": "leap-pangeo",
-                "temp_gcs_location": "gs://leap-persistent/data-library/temp"
+                "temp_gcs_location": "gs://leap-scratch/data-library/temp"
             },
             "TargetStorage": {
                 "fsspec_class": "gcsfs.GCSFileSystem",
-                "root_path": "gs://leap-persistent/data-library/{job_name}"
+                "root_path": "gs://leap-persistent-ro/data-library/{job_name}"
             },
             "InputCacheStorage": {
                 "fsspec_class": "gcsfs.GCSFileSystem",
-                "root_path": "gs://leap-persistent/data-library/cache"
+                "root_path": "gs://leap-scratch/data-library/cache"
             }
             }
         env:
