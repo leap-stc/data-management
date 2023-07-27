@@ -1,6 +1,1 @@
-# this commit represents the point at which https://github.com/pangeo-forge/pangeo-forge-recipes/pull/548
-# was merged into `main`. we are installing from here to unblock the climsim `mli` recipe added in
-# https://github.com/leap-stc/data-management/pull/33 (see PR discussion for details).
-# once a `0.10.1` release of `pangeo-forge-recipes` is available that includes this fix, we should
-# install from that release instead.
 git+https://github.com/pangeo-forge/pangeo-forge-recipes.git@a22e6aafc938be05809b55d9a3fced5598e71698
