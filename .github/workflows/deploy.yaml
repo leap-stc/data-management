@@ -21,6 +21,13 @@ jobs:
         uses: "google-github-actions/auth@v1"
         with:
           credentials_json: "${{ secrets.GCP_DATAFLOW_SERVICE_KEY }}"
+      - name: "Set conditional config based on github event type"
+        run: >
+          if ${{ github.event_name == 'pull_request' }}; then
+            echo prune=true >> $GITHUB_ENV
+          else
+            echo prune=false >> $GITHUB_ENV
+          fi
       - name: "Deploy recipes"
         uses: "pangeo-forge/deploy-recipe-action@skip-deploy-if-no-labels"
         with:
@@ -28,22 +35,22 @@ jobs:
           pangeo_forge_runner_config: >
             {
             "Bake": {
-                "prune": false,
+                "prune": ${{ env.prune }},
                 "bakery_class": "pangeo_forge_runner.bakery.dataflow.DataflowBakery"
             },
             "DataflowBakery": {
                 "use_public_ips": true,
                 "service_account_email": "julius-leap-dataflow@leap-pangeo.iam.gserviceaccount.com",
                 "project_id": "leap-pangeo",
-                "temp_gcs_location": "gs://leap-persistent/data-library/temp"
+                "temp_gcs_location": "gs://leap-scratch/data-library/temp"
             },
             "TargetStorage": {
                 "fsspec_class": "gcsfs.GCSFileSystem",
-                "root_path": "gs://leap-persistent/data-library/{job_name}"
+                "root_path": "gs://leap-persistent-ro/data-library/{job_name}"
             },
             "InputCacheStorage": {
                 "fsspec_class": "gcsfs.GCSFileSystem",
-                "root_path": "gs://leap-persistent/data-library/cache"
+                "root_path": "gs://leap-scratch/data-library/cache"
             }
             }
         env:
