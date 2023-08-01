@@ -3,4 +3,4 @@
 # https://github.com/leap-stc/data-management/pull/33 (see PR discussion for details).
 # once a `0.10.1` release of `pangeo-forge-recipes` is available that includes this fix, we should
 # install from that release instead.
-git+https://github.com/pangeo-forge/pangeo-forge-recipes.git@a22e6aafc938be05809b55d9a3fced5598e71698
+git+https://github.com/pangeo-forge/pangeo-forge-recipes.git@6eab39f26d1d2ee63dc17f69c2fd582d605d2ad6
