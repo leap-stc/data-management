@@ -31,7 +31,7 @@ jobs:
       - name: "Set max_num_workers based on PR label if present"
         run: >
           max_num_workers=`
-          echo ${{ github.event.pull_request.labels.*.name }} |
+          echo ${{ toJSON(github.event.pull_request.labels.*.name) }} |
           python -c "
           import json, sys
           labels = json.loads(sys.stdin.read())
