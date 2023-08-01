@@ -29,7 +29,7 @@ jobs:
             echo prune=false >> $GITHUB_ENV
           fi
       - name: "Deploy recipes"
-        uses: "pangeo-forge/deploy-recipe-action@29cd2736f71eb00addb540632eb286e90da2d17f"
+        uses: "pangeo-forge/deploy-recipe-action@6eab39f26d1d2ee63dc17f69c2fd582d605d2ad6"
         with:
           select_recipe_by_label: true
           pangeo_forge_runner_config: >
