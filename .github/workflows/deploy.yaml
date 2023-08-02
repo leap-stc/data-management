@@ -21,13 +21,23 @@ jobs:
         uses: "google-github-actions/auth@v1"
         with:
           credentials_json: "${{ secrets.GCP_DATAFLOW_SERVICE_KEY }}"
-      - name: "Set conditional config based on github event type"
+      - name: "Set prune config based on github event type"
         run: >
           if ${{ github.event_name == 'pull_request' }}; then
             echo prune=true >> $GITHUB_ENV
           else
             echo prune=false >> $GITHUB_ENV
           fi
+      - name: "Set max_num_workers based on PR label if present"
+        run: >
+          echo max_num_workers=`
+          echo '${{ toJSON(github.event.pull_request.labels.*.name) }}' |
+          python -c "import json, sys;
+          labels = json.loads(sys.stdin.read());
+          max_num_workers = [l.split(':')[-1] for l in labels if l.startswith('max_num_workers:')];
+          print((int(max_num_workers[0]) if max_num_workers else 1000));
+          "
+          ` >> $GITHUB_ENV
       - name: "Deploy recipes"
         uses: "pangeo-forge/deploy-recipe-action@v0.1"
         with:
@@ -42,7 +52,8 @@ jobs:
                 "use_public_ips": true,
                 "service_account_email": "julius-leap-dataflow@leap-pangeo.iam.gserviceaccount.com",
                 "project_id": "leap-pangeo",
-                "temp_gcs_location": "gs://leap-scratch/data-library/temp"
+                "temp_gcs_location": "gs://leap-scratch/data-library/temp",
+                "max_num_workers": ${{ env.max_num_workers }}
             },
             "TargetStorage": {
                 "fsspec_class": "gcsfs.GCSFileSystem",
