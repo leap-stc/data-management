@@ -1,11 +1,11 @@
 name: Large ensemble pCO2 testbed
 description: Large ensemble pCO2 testbed (manually ingested)
 stores:
-  - CESM.zarr
+  - name: CESM.zarr
     href: "gs://leap-persistent-ro/data-library-manual/CESM.zarr"
-  - CanESM2.zarr
+  - name: CanESM2.zarr
     href: "gs://leap-persistent-ro/data-library-manual/CanESM2.zarr"
-  - GFDL.zarr
+  - name: GFDL.zarr
     href: "gs://leap-persistent-ro/data-library-manual/GFDL.zarr"
 maintainers:
   - name: Julius Busecke
