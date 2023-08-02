@@ -33,17 +33,20 @@ jobs:
           echo max_num_workers=`
           echo ${{ toJSON(github.event.pull_request.labels.*.name) }} |
           python -c "
-          import json, sys
-          labels = json.loads(sys.stdin.read())
+          import json, sys;
+          labels = json.loads(sys.stdin.read());
           max_num_workers = [
               l.split(':')[-1]
               for l in labels
               if l.startswith("max_num_workers:")
-          ]
-          max_num_workers = int(max_num_workers[0]) if max_num_workers else 1000
-          print(max_num_workers)
+          ];
+          max_num_workers = int(max_num_workers[0]) if max_num_workers else 1000;
+          print(max_num_workers);
           "
           ` >> $GITHUB_ENV
+      - name: "check value"
+        run: >
+          echo ${{ env.max_num_workers }}
       # - name: "Deploy recipes"
       #   uses: "pangeo-forge/deploy-recipe-action@v0.1"
       #   with:
