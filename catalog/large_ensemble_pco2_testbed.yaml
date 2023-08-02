@@ -1,0 +1,23 @@
+name: Large ensemble pCO2 testbed
+description: Large ensemble pCO2 testbed (manually ingested)
+stores:
+  - CESM.zarr
+    href: "gs://leap-persistent-ro/data-library-manual/CESM.zarr"
+  - CanESM2.zarr
+    href: "gs://leap-persistent-ro/data-library-manual/CanESM2.zarr"
+  - GFDL.zarr
+    href: "gs://leap-persistent-ro/data-library-manual/GFDL.zarr"
+
+maintainers:
+  - name: Julius Busecke
+    github_username: jbusecke
+tags:
+  - climate
+  - oceanography
+  - pco2
+  - carbon
+  - zarr
+
+license:
+  name: CC-BY
+  href: "https://creativecommons.org/licenses/by/4.0"
