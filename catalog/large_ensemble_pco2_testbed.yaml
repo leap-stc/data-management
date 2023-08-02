@@ -16,7 +16,6 @@ tags:
   - pco2
   - carbon
   - zarr
-
 license:
   name: CC-BY
   href: "https://creativecommons.org/licenses/by/4.0"
