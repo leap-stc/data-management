@@ -29,15 +29,32 @@ jobs:
             echo prune=false >> $GITHUB_ENV
           fi
       - name: "Set max_num_workers based on PR label if present"
+        # This is a little complicated, but the only way I know to retrieve labels on both
+        # `pull_request` *and* `push` events (and we want the ability to do so in both cases).
+        # Adapted from the following (note question in comment there re: external prs):
+        # https://github.com/pangeo-forge/deploy-recipe-action/blob/256da2916b5f17f358c5e5b0442458645cadb9f0/action/deploy_recipe.py#L34-L68
+        shell: python3 {0}
         run: >
-          echo max_num_workers=`
-          echo '${{ toJSON(github.event.pull_request.labels.*.name) }}' |
-          python -c "import json, sys;
-          labels = json.loads(sys.stdin.read());
-          max_num_workers = [l.split(':')[-1] for l in labels if l.startswith('max_num_workers:')];
-          print((int(max_num_workers[0]) if max_num_workers else 1000));
-          "
-          ` >> $GITHUB_ENV
+          import json
+          import os
+          import urllib.request
+
+          repository = os.environ["GITHUB_REPOSITORY"]
+          api_url = os.environ["GITHUB_API_URL"]
+          head_ref = os.environ["GITHUB_HEAD_REF"]
+          sha = os.environ["GITHUB_SHA"]
+
+          commit_sha = head_ref if head_ref else sha
+          pulls_url = "/".join([api_url, "repos", repository, "commits", commit_sha, "pulls"])
+          pulls_txt = urllib.request.urlopen(pulls_url).read()
+          pulls_json = json.loads(pulls_txt)
+          labels = [label["name"] for label in pulls_json[0]["labels"]]
+
+          max_num_workers = [l.split(":")[-1] for l in labels if l.startswith("max_num_workers:")]
+          max_num_workers = (max_num_workers[0] if max_num_workers else "1000")
+          with open(os.environ["GITHUB_ENV"], mode="a") as f:
+              f.write(f"max_num_workers={max_num_workers}")
+
       - name: "Deploy recipes"
         uses: "pangeo-forge/deploy-recipe-action@v0.1"
         with:
