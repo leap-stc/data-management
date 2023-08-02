@@ -146,6 +146,9 @@ class OpenAndPreprocess(beam.PTransform):
     def expand(self, pcoll: beam.PCollection) -> beam.PCollection:
         return (
             pcoll
+            # FIXME: rate limiting on caching step is probably required to get this to run
+            # end-to-end, without globally capping workers at a low value for all stages,
+            # see discussion in: https://github.com/leap-stc/data-management/issues/36.
             | OpenURLWithFSSpec()
             | OpenWithXarray(
                 # FIXME: Get files to open without `copy_to_local=True`
