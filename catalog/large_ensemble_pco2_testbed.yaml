@@ -7,7 +7,6 @@ stores:
     href: "gs://leap-persistent-ro/data-library-manual/CanESM2.zarr"
   - GFDL.zarr
     href: "gs://leap-persistent-ro/data-library-manual/GFDL.zarr"
-
 maintainers:
   - name: Julius Busecke
     github_username: jbusecke
