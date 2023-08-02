@@ -34,7 +34,7 @@ jobs:
         # Adapted from the following (note question in comment there re: external prs):
         # https://github.com/pangeo-forge/deploy-recipe-action/blob/256da2916b5f17f358c5e5b0442458645cadb9f0/action/deploy_recipe.py#L34-L68
         shell: python3 {0}
-        run: >
+        run: |
           import json
           import os
           import urllib.request
