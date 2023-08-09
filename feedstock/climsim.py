@@ -149,7 +149,7 @@ class OpenAndPreprocess(beam.PTransform):
             # FIXME: rate limiting on caching step is probably required to get this to run
             # end-to-end, without globally capping workers at a low value for all stages,
             # see discussion in: https://github.com/leap-stc/data-management/issues/36.
-            | OpenURLWithFSSpec()
+            | OpenURLWithFSSpec(max_concurrency=20)
             | OpenWithXarray(
                 # FIXME: Get files to open without `copy_to_local=True`
                 # Related: what is the filetype? Looks like netcdf3, but for some reason
