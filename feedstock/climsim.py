@@ -146,7 +146,7 @@ class OpenAndPreprocess(beam.PTransform):
     def expand(self, pcoll: beam.PCollection) -> beam.PCollection:
         return (
             pcoll
-            | OpenURLWithFSSpec(max_concurrency=30)
+            | OpenURLWithFSSpec(max_concurrency=20)
             | OpenWithXarray(
                 # FIXME: Get files to open without `copy_to_local=True`
                 # Related: what is the filetype? Looks like netcdf3, but for some reason
