@@ -1,0 +1,25 @@
+name: CM2_6
+description: GFDL CM2.6 Ocean Simulation 
+stores:
+  - name: GFDL_CM2_6_CONTROL_5DAY_FIELD.zarr
+    href: "gs://leap-persistent-ro/groundpepper/GFDL_cm2.6/GFDL_CM2_6_CONTROL_5-DAY_FIELD.zarr"
+  - name: GFDL_CM2_6_CONTROL_DAILY_100M.zarr
+    href: "gs://leap-persistent-ro/groundpepper/GFDL_GFDL_CM2_6_CONTROL_DAILY_100M.zarr"
+  - name: GFDL_CM2_6_CONTROL_DAILY_ADDITIONAL.zarr
+    href: "gs://leap-persistent-ro/groundpepper/GFDL_CM2_6_CONTROL_DAILY_ADDITIONAL.zarr"
+  - name: GFDL_CM2_6_CONTROL_DAILY_SURF.zarr
+    href: "gs://leap-persistent-ro/groundpepper/GFDL_cm2.6/GFDL_CM2_6_CONTROL_DAILY_SURF.zarr"
+  - name: GFDL_CM2_6_CONTROL_MONTHLY_ADVTERM.zarr
+    href: "gs://leap-persistent-ro/groundpepper/GFDL_cm2.6/GFDL_CM2_6_CONTROL_MONTHLY_ADVTERM.zarr"
+  - name: GFDL_CM2_6_CONTROL_MONTHLY_UPPER100M.zarr
+    href: "gs://leap-persistent-ro/groundpepper/GFDL_cm2.6/GFDL_CM2_6_CONTROL_MONTHLY_UPPER100M.zarr"
+maintainers:
+  - name: Julius Busecke, Leo Liu
+    github_username: jbusecke, groundpepper
+tags:
+  - climate
+  - oceanography
+  - zarr
+license:
+  name: CC-BY
+  href: "https://creativecommons.org/licenses/by/4.0"
