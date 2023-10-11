@@ -8,8 +8,6 @@ The catalog uses a schema defined in [schema.json](./validator/schema.json). The
 
 Here are some key fields you will need to include in your dataset YAML file:
 
-## Dataset Fields Breakdown
-
 ### Required Fields
 
 | Field         | Type             | Description                                    | Object Properties                                                                                                    |
