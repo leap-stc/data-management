@@ -15,7 +15,7 @@ for y in years:
 
 def make_full_path(date: tuple[int, int]):
     year, month = date
-    return f"https://data-dataref.ifremer.fr/ww3/GLOBMULTI_ERA5_GLOBCUR_01/GLOB-30M/{year}/FIELD_NC/LOPS_WW3-GLOB-30M_{year}{month:02d}.nc"
+    return f'https://data-dataref.ifremer.fr/ww3/GLOBMULTI_ERA5_GLOBCUR_01/GLOB-30M/{year}/FIELD_NC/LOPS_WW3-GLOB-30M_{year}{month:02d}.nc'
 
 
 input_urls = [make_full_path(date) for date in dates]
