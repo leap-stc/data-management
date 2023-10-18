@@ -5,7 +5,7 @@ import apache_beam as beam
 from pangeo_forge_recipes.patterns import pattern_from_file_sequence
 from pangeo_forge_recipes.transforms import OpenURLWithFSSpec, OpenWithXarray, StoreToZarr
 
-years = range(2020, 2023)
+years = range(1993, 2023)
 months = range(1, 13)
 dates = []
 for y in years:
