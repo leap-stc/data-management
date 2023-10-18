@@ -84,6 +84,18 @@ recipes:
             - licensor
           url: https://arxiv.org/abs/2306.08754
     license: "Apache-2.0"
+  - id: modis-cosp
+    object: "modis:modis_cosp"
+    description: "MCD06COSP_M3_MODIS - MODIS (Aqua/Terra) Cloud Properties "
+    provenance:
+      providers:
+        - name: "NASA"
+          description: "NASA"
+          roles:
+            - producer
+            - host
+          url: https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/MCD06COSP_M3_MODIS#overview
+      license: "unknown"
 maintainers:
   - name: "Julius Busecke"
     orcid: 0000-0001-8571-865X
