@@ -1,0 +1,19 @@
+name: "Sea-surface altimetry data from The Copernicus Marine Environment"
+description: "This dataset was moved from the legacy pangeo catalog."
+stores:
+  - name: "AVISO (Pangeo Legacy copy)"
+    href: "https://ncsa.osn.xsede.org/Pangeo/pangeo-cmems-duacs"
+maintainers:
+  - name: "Julius Busecke"
+    github_username: "jbusecke"
+license:
+  name: "unknown"
+tags:
+  - "ocean"
+  - "satellite"
+links:
+  - label: "Data Source (not original source)"
+    href: "https://catalog.pangeo.io/browse/master/ocean/sea_surface_height/"
+  - label: "Original Documentation (not available anymore)"
+    href: "https://data.marine.copernicus.eu/product/SEALEVEL_GLO_PHY_L4_REP_OBSERVATIONS_008_047/description"
+demo: false
