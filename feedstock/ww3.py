@@ -28,5 +28,6 @@ WW3 = (
     | StoreToZarr(
         store_name='WW3.zarr',
         combine_dims=pattern.combine_dim_keys,
+        target_chunks={'time': 200},
     )
 )
