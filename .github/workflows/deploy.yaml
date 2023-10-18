@@ -83,3 +83,5 @@ jobs:
             }
         env:
           GOOGLE_APPLICATION_CREDENTIALS: "${{ steps.auth.outputs.credentials_file_path }}"
+          EARTHDATA_USERNAME: "${{ secrets.EARTHDATA_USERNAME }}"
+          EARTHDATA_PASSWORD: "${{ secrets.EARTHDATA_PASSWORD }}"
