@@ -85,7 +85,7 @@ recipes:
           url: https://arxiv.org/abs/2306.08754
     license: "Apache-2.0"
   - id: MODIS_COSP
-    object: "modis:MODIS_COSP"
+    object: "modis-cosp:MODIS_COSP"
     description: "MCD06COSP_M3_MODIS - MODIS (Aqua/Terra) Cloud Properties "
     provenance:
       providers:
