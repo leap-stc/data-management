@@ -71,7 +71,8 @@ jobs:
                 "project_id": "leap-pangeo",
                 "temp_gcs_location": "gs://leap-scratch/data-library/temp",
                 "max_num_workers": ${{ env.max_num_workers }},
-                "use_dataflow_prime": true
+                # "use_dataflow_prime": true
+                "machine_type": n2-highmem-16
             },
             "TargetStorage": {
                 "fsspec_class": "gcsfs.GCSFileSystem",
