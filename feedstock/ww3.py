@@ -3,7 +3,7 @@ Wave Watch 3
 """
 import apache_beam as beam
 from pangeo_forge_recipes.patterns import pattern_from_file_sequence
-from pangeo_forge_recipes.transforms import OpenURLWithFSSpec, OpenWithXarray, StoreToZarr
+from pangeo_forge_recipes.transforms import OpenURLWithFSSpec, OpenWithXarray, StoreToZarr, Indexed, T
 
 years = range(1993, 2023)
 months = range(1, 13)
@@ -23,13 +23,6 @@ pattern = pattern_from_file_sequence(input_urls, concat_dim='time')
 
 # does this succeed with all coords stripped?
 class StripCoords(beam.PTransform):
-    """
-    Preprocessor for xarray datasets.
-    Set all data_variables except for `variable_id` attrs to coord
-    Add additional information 
-
-    """
-
     @staticmethod
     def _strip_all_coords(item: Indexed[T]) -> Indexed[T]:
         """
