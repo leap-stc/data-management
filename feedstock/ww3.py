@@ -21,10 +21,37 @@ def make_full_path(date: tuple[int, int]):
 input_urls = [make_full_path(date) for date in dates]
 pattern = pattern_from_file_sequence(input_urls, concat_dim='time')
 
+# does this succeed with all coords stripped?
+class StripCoords(beam.PTransform):
+    """
+    Preprocessor for xarray datasets.
+    Set all data_variables except for `variable_id` attrs to coord
+    Add additional information 
+
+    """
+
+    @staticmethod
+    def _strip_all_coords(item: Indexed[T]) -> Indexed[T]:
+        """
+        Many netcdfs contain variables other than the one specified in the `variable_id` facet. 
+        Set them all to coords
+        """
+        index, ds = item
+        print(f"Preprocessing before {ds =}")
+        ds = ds.reset_coords(drop=True)
+        print(f"Preprocessing after {ds =}")
+        return index, ds
+  
+    def expand(self, pcoll: beam.PCollection) -> beam.PCollection:
+        return ( pcoll 
+            | "Debug: Remove coordinates" >> beam.Map(self._strip_all_coords)
+        )
+
 WW3 = (
     beam.Create(pattern.items())
     | OpenURLWithFSSpec()
     | OpenWithXarray()
+    | StripCoords()
     | StoreToZarr(
         store_name='WW3.zarr',
         combine_dims=pattern.combine_dim_keys,
