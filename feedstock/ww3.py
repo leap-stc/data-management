@@ -3,7 +3,13 @@ Wave Watch 3
 """
 import apache_beam as beam
 from pangeo_forge_recipes.patterns import pattern_from_file_sequence
-from pangeo_forge_recipes.transforms import OpenURLWithFSSpec, OpenWithXarray, StoreToZarr, Indexed, T
+from pangeo_forge_recipes.transforms import (
+    Indexed,
+    OpenURLWithFSSpec,
+    OpenWithXarray,
+    StoreToZarr,
+    T,
+)
 
 years = range(1993, 2023)
 months = range(1, 13)
@@ -21,24 +27,24 @@ def make_full_path(date: tuple[int, int]):
 input_urls = [make_full_path(date) for date in dates]
 pattern = pattern_from_file_sequence(input_urls, concat_dim='time')
 
+
 # does this succeed with all coords stripped?
 class StripCoords(beam.PTransform):
     @staticmethod
     def _strip_all_coords(item: Indexed[T]) -> Indexed[T]:
         """
-        Many netcdfs contain variables other than the one specified in the `variable_id` facet. 
+        Many netcdfs contain variables other than the one specified in the `variable_id` facet.
         Set them all to coords
         """
         index, ds = item
-        print(f"Preprocessing before {ds =}")
+        print(f'Preprocessing before {ds =}')
         ds = ds.reset_coords(drop=True)
-        print(f"Preprocessing after {ds =}")
+        print(f'Preprocessing after {ds =}')
         return index, ds
-  
+
     def expand(self, pcoll: beam.PCollection) -> beam.PCollection:
-        return ( pcoll 
-            | "Debug: Remove coordinates" >> beam.Map(self._strip_all_coords)
-        )
+        return pcoll | 'Debug: Remove coordinates' >> beam.Map(self._strip_all_coords)
+
 
 WW3 = (
     beam.Create(pattern.items())
