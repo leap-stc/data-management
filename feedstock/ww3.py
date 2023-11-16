@@ -49,7 +49,7 @@ class StripCoords(beam.PTransform):
 WW3 = (
     beam.Create(pattern.items())
     | OpenURLWithFSSpec()
-    | OpenWithXarray()
+    | OpenWithXarray(xarray_open_kwargs={'preprocess':lambda ds: ds.set_coords('MAPSTA')})
     | StripCoords()
     | StoreToZarr(
         store_name='WW3.zarr',
