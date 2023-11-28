@@ -34,7 +34,7 @@ Note: The fields `name`, `description`, `stores`, and `maintainers` are mandator
 
 ### Step 1: Create a new YAML file
 
-Navigate to the [`catlog/datasets`](./datasets/) directory and create a new YAML file. Name the file after your dataset—like `my-awesome-dataset.yaml`.
+Navigate to the [`catalog/datasets`](./datasets/) directory and create a new YAML file. Name the file after your dataset—like `my-awesome-dataset.yaml`.
 
 Here's a sample YAML file to guide you:
 
