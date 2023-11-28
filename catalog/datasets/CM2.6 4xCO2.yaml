@@ -13,7 +13,7 @@ stores:
     href: "leap-persistent-ro/groundpepper/GFDL_cm2.6_4xCO2/GFDL_CM2_6_CONTROL_MONTHLY_UPPER100M2023-10-15 13:23:16.373001.zarr"
 maintainers:
   - name: "Julius Busecke"
-    github_username:  "jbusecke"
+    github_username: "jbusecke"
   - name: "Leo Liu"
     github_username: "groundpepper"
 tags:
