@@ -34,7 +34,7 @@ Note: The fields `name`, `description`, `stores`, and `maintainers` are mandator
 
 ### Step 1: Create a new YAML file
 
-Navigate to the [datasets](./datasets/) directory and create a new YAML file. Name the file after your dataset—like `my-awesome-dataset.yaml`.
+Navigate to the [`catalog/datasets`](./datasets/) directory and create a new YAML file. Name the file after your dataset—like `my-awesome-dataset.yaml`.
 
 Here's a sample YAML file to guide you:
 
@@ -72,7 +72,7 @@ demo: false
 It's always good to validate your YAML file against the schema locally before creating a pull request. This ensures that your dataset meets all the criteria.
 
 1. **Install Dependencies**: Make sure you have the required Python packages installed. The list is in [`ci/environment.yaml`](../ci/environment.yaml).
-2. **Run the Validator**: Go to the [`datasets/validator`](./validator/) directory and run:
+2. **Run the Validator**: Go to the [`catalog/validator`](./validator/) directory and run:
 
 ```bash
 python validate.py --path ../datasets

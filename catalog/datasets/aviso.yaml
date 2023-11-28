@@ -8,6 +8,7 @@ maintainers:
     github_username: "jbusecke"
 license:
   name: "unknown"
+thumbnail: "https://www.aviso.altimetry.fr/fileadmin/_processed_/0/0/csm_glob_da7c0c3eaf.jpg"
 tags:
   - "ocean"
   - "satellite"
