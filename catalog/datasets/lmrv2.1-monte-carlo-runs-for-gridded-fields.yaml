@@ -1,0 +1,15 @@
+description:
+  Gridded variables from ensemble runs executed as part of the Last Millennium
+  Reanalysis (LMR) project (v2.1) which utilizes an ensemble methodology to assimilate
+  paleoclimate data for the production of annually resolved climate field reconstructions
+  of the Common Era.
+links:
+  - href: https://github.com/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock
+    label: Pangeo Forge Feedstock
+maintainers:
+  - github_username: jordanplanders
+    name: Jordan Landers
+name: LMRv2.1 Monte Carlo Runs for gridded fields
+stores:
+  - href: https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock/LMRv2p1_MCruns_ensemble_gridded.zarr
+    name: LMRv2p1_MCruns_ensemble_gridded

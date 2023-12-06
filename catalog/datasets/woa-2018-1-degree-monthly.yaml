@@ -1,0 +1,11 @@
+description: 1 Degree monthly climatology from WOA
+links:
+  - href: https://github.com/pangeo-forge/WOA_1degree_monthly-feedstock
+    label: Pangeo Forge Feedstock
+maintainers:
+  - github_username: dhruvbalwada
+    name: Dhruv Balwada
+name: WOA 2018 1 degree monthly
+stores:
+  - href: https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/WOA_1degree_monthly-feedstock/woa18-1deg-monthly.zarr
+    name: woa18-1deg-monthly

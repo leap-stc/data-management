@@ -1,0 +1,15 @@
+description:
+  eVolv2k includes estimates of the magnitudes and approximate source latitudes
+  of major volcanic stratospheric sulfur injection (VSSI) events from 500BCE to 1900CE.
+links:
+  - href: https://github.com/pangeo-forge/eVolv2k-feedstock
+    label: Pangeo Forge Feedstock
+maintainers:
+  - github_username: jordanplanders
+    name: Jordan Landers
+name: eVolv2k VSSI database
+stores:
+  - href: https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/eVolv2k-feedstock/eVolv2k.zarr
+    name: eVolv2k
+  - href: https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/eVolv2k-feedstock/eVolv2k.zarr
+    name: eVolv2k

@@ -1,0 +1,13 @@
+description:
+  NOAA Geo-Polar Blended Global Sea Surface Temperature Analysis (Level
+  4)
+links:
+  - href: https://github.com/pangeo-forge/noaa-coastwatch-geopolar-sst-feedstock
+    label: Pangeo Forge Feedstock
+maintainers:
+  - github_username: rwegener2
+    name: Rachel Wegener
+name: NOAA Coastwatch Geo-Polar SST
+stores:
+  - href: https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/noaa-coastwatch-geopolar-sst-feedstock/noaa-coastwatch-geopolar-sst.zarr
+    name: noaa-coastwatch-geopolar-sst
