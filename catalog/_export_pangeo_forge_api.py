@@ -1,11 +1,13 @@
 # This will be deleted before merge
 
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
+from pathlib import Path
 
 import requests
 import yaml
 
-api = 'https://api.pangeo-forge.org'
+API = 'https://api.pangeo-forge.org'
+HERE = Path(__file__).parent
 
 
 @dataclass
@@ -42,10 +44,10 @@ class LEAPCatalogEntry:
 
 
 if __name__ == '__main__':
-    feedstocks = requests.get(api + '/feedstocks').json()
+    feedstocks = requests.get(API + '/feedstocks').json()
     datasets = {}
     for f in feedstocks:
-        dss = requests.get(f"{api}/feedstocks/{f['id']}/datasets?type=production").json()
+        dss = requests.get(f"{API}/feedstocks/{f['id']}/datasets?type=production").json()
         if dss:  # not all feedstocks have datasets
             datasets.update(
                 {f['spec']: [Dataset(ds['recipe_id'], ds['dataset_public_url']) for ds in dss]}
@@ -64,7 +66,7 @@ if __name__ == '__main__':
         ]
     }
 
-    leap_catalog_entries = []
+    leap_catalog_entries: list[LEAPCatalogEntry] = []
     for feedstock, datasets in openable_datasets.items():
         meta_text = requests.get(
             f'https://raw.githubusercontent.com/{feedstock}/main/feedstock/meta.yaml'
@@ -91,4 +93,8 @@ if __name__ == '__main__':
         )
         leap_catalog_entries.append(lce)
 
-        print(leap_catalog_entries)
+    for lce in leap_catalog_entries:
+        fname = f"{lce.name.lower().replace(' ', '-')}.yaml"
+        fname = fname.replace('(', '').replace(')', '')
+        with open(HERE / 'datasets' / fname, mode='w') as f:
+            yaml.dump(asdict(lce), f)
