@@ -1,9 +1,9 @@
 description:
-  "The Australian Gridded Climate Data dataset is a 5KM gridded daily product\
-  \ provided by the Australian Bureau of Meteorology. \nVersion 1 contains precipitation,\
-  \ vapour pressure and minimum and maximum temperature. Australian Bureau of Meteorology\
-  \ (2020), \nAustralian Gridded Climate Data (AGCD); v1.0.0 Snapshot (1900-01-01\
-  \ to 2020-05-31). Downloaded from NCI on 09-21-2021.\n"
+  The Australian Gridded Climate Data dataset is a 5KM gridded daily product
+  provided by the Australian Bureau of Meteorology. Version 1 contains precipitation,
+  vapour pressure and minimum and maximum temperature. Australian Bureau of Meteorology
+  (2020), \nAustralian Gridded Climate Data (AGCD); v1.0.0 Snapshot (1900-01-01
+  to 2020-05-31). Downloaded from NCI on 09-21-2021.
 links:
   - href: https://github.com/pangeo-forge/AGDC-feedstock
     label: Pangeo Forge Feedstock
