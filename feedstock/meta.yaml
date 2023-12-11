@@ -84,6 +84,22 @@ recipes:
             - licensor
           url: https://arxiv.org/abs/2306.08754
     license: "Apache-2.0"
+  - id: enatl
+    object: "eNATL60:eNATL60_BLBT02"
+    description: "eNATL60-TSW-60m is an extraction of a very high resolution oceanic simulation of the North Atlantic performed at MEOM, IGE (FRANCE)"
+    provenance:
+      providers:
+        - name: "Zenodo"
+          description: "Zenodo"
+          roles:
+            - host
+          url: https://zenodo.org/records/10261274
+        - name: "TBD"
+          description: "TODO"
+          roles:
+            - producer
+            - licensor
+    license: "unknown"
 maintainers:
   - name: "Julius Busecke"
     orcid: 0000-0001-8571-865X
