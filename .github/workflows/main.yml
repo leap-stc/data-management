@@ -43,7 +43,7 @@ jobs:
           python validate.py --path ../datasets
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: consolidated-web-catalog.json
           path: catalog/datasets/consolidated-web-catalog.json
@@ -70,7 +70,7 @@ jobs:
           cache-env: true
           cache-downloads: true
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: consolidated-web-catalog.json
           path: catalog/datasets
