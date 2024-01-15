@@ -8,10 +8,10 @@ from pangeo_forge_recipes.transforms import OpenURLWithFSSpec, OpenWithXarray, S
 
 # Common Parameters
 days = range(1, 32)
-dataset_url = 'https://zenodo.org/records/10261274/files'
+dataset_url = 'https://zenodo.org/records/10513552/files'
 
 ## Monthly version
-input_urls = [f'{dataset_url}/eNATL60-BLBT02_y2009m07d{d:02d}.1d_TSW_60m.nc' for d in days]
+input_urls = [f'{dataset_url}/eNATL60-BLBT02_y2009m07d{d:02d}.1d_TSWm_60m.nc' for d in days]
 pattern = pattern_from_file_sequence(input_urls, concat_dim='time_counter')
 
 # does this succeed with all coords stripped?
