@@ -17,7 +17,7 @@ dataset_url = 'https://zenodo.org/records/10513552/files'
 
 ## Monthly version
 input_urls = [f'{dataset_url}/eNATL60-BLBT02_y2009m07d{d:02d}.1d_TSWm_60m.nc' for d in days]
-pattern = pattern_from_file_sequence(input_urls, concat_dim='time_counter')
+pattern = pattern_from_file_sequence(input_urls, concat_dim='time')
 
 
 # does this succeed with all coords stripped?
@@ -25,7 +25,8 @@ class Preprocess(beam.PTransform):
     @staticmethod
     def _set_coords(item: Indexed[T]) -> Indexed[T]:
         index, ds = item
-        ds = ds.set_coords(['depthw', 'nav_lon', 'nav_lat'])
+        ds = ds.set_coords(['deptht', 'depthw', 'nav_lon', 'nav_lat', 'time_counter', 'tmask'])
+        ds = ds.assign_coords(tmask = ds.coords['tmask'].squeeze(), deptht=ds.coords['deptht'].squeeze()) 
         return index, ds
 
     def expand(self, pcoll: beam.PCollection) -> beam.PCollection:
