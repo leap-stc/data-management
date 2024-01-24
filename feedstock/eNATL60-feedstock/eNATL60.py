@@ -43,6 +43,6 @@ eNATL60_BLBT02 = (
     | StoreToZarr(
         store_name='eNATL60_BLBT02.zarr',
         combine_dims=pattern.combine_dim_keys,
-        target_chunks={'x':2000, 'y':2000, time':2},
+        target_chunks={'x':2000, 'y':2000, 'time':2},
     )
 )
