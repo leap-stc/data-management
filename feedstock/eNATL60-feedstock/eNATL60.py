@@ -26,7 +26,9 @@ class Preprocess(beam.PTransform):
     def _set_coords(item: Indexed[T]) -> Indexed[T]:
         index, ds = item
         ds = ds.set_coords(['deptht', 'depthw', 'nav_lon', 'nav_lat', 'time_counter', 'tmask'])
-        ds = ds.assign_coords(tmask = ds.coords['tmask'].squeeze(), deptht=ds.coords['deptht'].squeeze()) 
+        ds = ds.assign_coords(
+            tmask=ds.coords['tmask'].squeeze(), deptht=ds.coords['deptht'].squeeze()
+        )
         return index, ds
 
     def expand(self, pcoll: beam.PCollection) -> beam.PCollection:
