@@ -44,8 +44,16 @@ select = [
 ]
 
 
-[tool.ruff.mccabe]
+[tool.ruff.lint.mccabe]
 max-complexity = 18
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 known-first-party = []
+combine-as-imports = true
+
+[tool.ruff.format]
+quote-style = "single"
+docstring-code-format = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
