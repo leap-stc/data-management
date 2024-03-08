@@ -91,4 +91,14 @@ jobs:
           git config --global user.email "noreply@github.com"
           git config --global user.name "github-actions"
           git add catalog/datasets/consolidated-web-catalog.json
-          git diff --staged --exit-code --quiet || (git commit -m "Auto-update consolidated-web-catalog.json" && git push origin ${{ github.head_ref }})
+          git diff --staged --exit-code --quiet || {
+            git commit -m "Auto-update consolidated-web-catalog.json"
+            # Determine the branch to push to
+            BRANCH_NAME=${{ github.head_ref }}
+            if [ -z "$BRANCH_NAME" ]; then
+              BRANCH_NAME=${{ github.ref }}
+            fi
+            # Extract branch name if in refs/heads/branch-name format
+            BRANCH_NAME=${BRANCH_NAME#refs/heads/}
+            git push origin $BRANCH_NAME
+          }
