@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  re-generate-and-validate:
+  generate-and-validate:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -48,9 +48,9 @@ jobs:
           name: consolidated-web-catalog.json
           path: catalog/datasets/consolidated-web-catalog.json
 
-  update-catalog:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: re-generate-and-validate
+  update:
+    if: github.event_name == 'pull_request'
+    needs: generate-and-validate
     runs-on: ubuntu-latest
     defaults:
       run:
