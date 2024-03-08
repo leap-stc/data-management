@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   generate-and-validate:
-    if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch' || github.event_name == 'pull_request_target'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -53,7 +53,6 @@ jobs:
           path: catalog/datasets/consolidated-web-catalog.json
 
   update:
-    if: github.event_name == 'pull_request_target'
     needs: generate-and-validate
     runs-on: ubuntu-latest
     defaults:
