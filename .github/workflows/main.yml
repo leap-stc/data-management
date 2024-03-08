@@ -4,12 +4,12 @@ on:
   push:
     branches:
       - main
-  # pull_request:
-  #   branches:
-  #     - main
-  pull_request_target:
+  pull_request:
     branches:
       - main
+  # pull_request_target:
+  #   branches:
+  #     - main
   workflow_dispatch:
 #   schedule:
 #     - cron: '0 0 * * *' # Daily “At 00:00” UTC
@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   generate-and-validate:
-    if: github.event_name == 'workflow_dispatch' || github.event_name == 'pull_request_target'
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     defaults:
       run:
