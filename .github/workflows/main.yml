@@ -1,4 +1,4 @@
-name: CI
+name: Catalog
 
 on:
   push:
@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  validate:
+  re-generate-and-validate:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -50,7 +50,7 @@ jobs:
 
   update-catalog:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: validate
+    needs: re-generate-and-validate
     runs-on: ubuntu-latest
     defaults:
       run:
