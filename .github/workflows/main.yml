@@ -87,5 +87,5 @@ jobs:
         run: |
           git config --global user.email "noreply@github.com"
           git config --global user.name "github-actions"
-          git commit -m "Auto-update consolidated-web-catalog.json"
-          git push origin ${{ github.head_ref }}
+          git add catalog/datasets/consolidated-web-catalog.json
+          git diff --staged --exit-code --quiet || (git commit -m "Auto-update consolidated-web-catalog.json" && git push origin ${{ github.head_ref }})
