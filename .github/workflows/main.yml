@@ -89,8 +89,8 @@ jobs:
           git add catalog/datasets/consolidated-web-catalog.json
           # run pre-commit and return 0 to avoid failing the job
           pre-commit run || true
-          git add catalog/datasets/consolidated-web-catalog.json
-          git commit -m "Auto-update consolidated-web-catalog.json"
+          git add catalog/datasets/consolidated-web-catalog.json || true
+          git commit -m "Auto-update consolidated-web-catalog.json" || true
 
       - name: Push changes
         uses: ad-m/github-push-action@master
