@@ -95,5 +95,5 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          ssh: true
           branch: ${{ github.head_ref }}
