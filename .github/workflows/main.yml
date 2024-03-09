@@ -59,7 +59,7 @@ jobs:
 
       - name: Pull Remote Changes
         run: |
-          git pull origin ${{ github.head_ref }} --rebase
+          git pull origin ${{ github.head_ref }} --rebase --autostash
 
       - name: set up conda environment
         uses: mamba-org/setup-micromamba@v1
@@ -89,7 +89,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: ${{ github.head_ref }}
           commit-message: "Auto-update consolidated-web-catalog.json"
-          # force-add: 'true'
+          force-add: "true"
           files: catalog/datasets/consolidated-web-catalog.json
-          name: github-actions
-          email: noreply@github.com
+          name: github-actions[bot]
+          email: 41898282+github-actions[bot]@users.noreply.github.com
