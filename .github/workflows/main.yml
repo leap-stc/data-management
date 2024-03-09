@@ -8,6 +8,10 @@ on:
 #   schedule:
 #     - cron: '0 0 * * *' # Daily “At 00:00” UTC
 
+permissions:
+  contents: read
+  pull-requests: write
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -54,8 +58,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 1
-          # ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Pull Remote Changes
         run: |
@@ -76,20 +81,19 @@ jobs:
           name: consolidated-web-catalog.json
           path: catalog/datasets
 
-      - name: Fix formatting
+      - name: Commit and Push
         run: |
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
           pre-commit install
           git add catalog/datasets/consolidated-web-catalog.json
           # run pre-commit and return 0 to avoid failing the job
           pre-commit run || true
+          git add catalog/datasets/consolidated-web-catalog.json || true
+          git commit -m "Auto-update consolidated-web-catalog.json" || true
 
-      - name: Commit and Push
-        uses: github-actions-x/commit@v2.9
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          push-branch: ${{ github.head_ref }}
-          commit-message: "Auto-update consolidated-web-catalog.json"
-          force-add: "true"
-          files: catalog/datasets/consolidated-web-catalog.json
-          name: github-actions[bot]
-          email: 41898282+github-actions[bot]@users.noreply.github.com
+          ssh: true
+          branch: ${{ github.head_ref }}
