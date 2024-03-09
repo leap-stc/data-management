@@ -55,7 +55,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Pull Remote Changes
         run: |
@@ -86,7 +86,7 @@ jobs:
       - name: Commit and Push
         uses: github-actions-x/commit@v2.9
         with:
-          # github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: ${{ github.head_ref }}
           commit-message: "Auto-update consolidated-web-catalog.json"
           # force-add: 'true'
