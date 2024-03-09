@@ -89,7 +89,7 @@ jobs:
           # run pre-commit and return 0 to avoid failing the job
           pre-commit run || true
           git add catalog/datasets/consolidated-web-catalog.json
-          git commit -m "Auto-update consolidated-web-catalog.json" -a
+          git commit -m "Auto-update consolidated-web-catalog.json"
           git push origin ${{ github.head_ref }}
 
       - name: Push changes
