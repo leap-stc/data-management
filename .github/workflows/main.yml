@@ -58,8 +58,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 1
-          # ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Pull Remote Changes
         run: |
@@ -90,10 +91,9 @@ jobs:
           pre-commit run || true
           git add catalog/datasets/consolidated-web-catalog.json
           git commit -m "Auto-update consolidated-web-catalog.json"
-          git push origin ${{ github.head_ref }}
 
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          branch: ${{ github.head_ref }}
