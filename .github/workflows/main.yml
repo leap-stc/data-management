@@ -67,6 +67,10 @@ jobs:
           fetch-depth: 0
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+      - name: Github context
+        run: |
+          echo ${{ toJson(github) }}
+
       - name: Pull Remote Changes
         run: |
           git pull origin ${{ github.head_ref }} --rebase --autostash
