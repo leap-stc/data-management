@@ -67,9 +67,10 @@ jobs:
           fetch-depth: 0
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Github context
-        run: |
-          echo ${{ toJson(github) }}
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
 
       - name: Pull Remote Changes
         run: |
