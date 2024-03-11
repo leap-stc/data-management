@@ -58,12 +58,12 @@ jobs:
 
     environment:
       name: ${{ github.ref == 'refs/heads/main' && 'production' || github.head_ref }}
-      url: ${{ github.ref == 'refs/heads/main' && 'https://leap-data-catalog.vercel.app/?catalog=https://raw.githubusercontent.com/leap-stc/data-management/main/catalog/datasets/consolidated-web-catalog.json' || format('https://leap-data-catalog.vercel.app/?catalog=https://raw.githubusercontent.com/leap-stc/data-management/{0}/catalog/datasets/consolidated-web-catalog.json', github.head_ref) }}
-
+      url: ${{ github.ref == 'refs/heads/main' && 'https://leap-data-catalog.vercel.app/?catalog=https://raw.githubusercontent.com/leap-stc/data-management/main/catalog/datasets/consolidated-web-catalog.json' || format('https://leap-data-catalog.vercel.app/?catalog=https://raw.githubusercontent.com/{0}/{1}/catalog/datasets/consolidated-web-catalog.json', github.event.pull_request.head.repo.full_name, github.head_ref) }}
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
@@ -74,7 +74,7 @@ jobs:
 
       - name: Pull Remote Changes
         run: |
-          git pull origin ${{ github.head_ref }} --rebase --autostash
+          git pull origin ${{ github.event.pull_request.head.ref }} --rebase --autostash
 
       - name: set up conda environment
         uses: mamba-org/setup-micromamba@v1
@@ -106,4 +106,5 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           ssh: true
-          branch: ${{ github.head_ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          branch: ${{ github.event.pull_request.head.ref }}
