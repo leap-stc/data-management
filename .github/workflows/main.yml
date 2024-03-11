@@ -65,7 +65,7 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Pull Remote Changes
         run: |
@@ -100,5 +100,5 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          ssh: true
+          # ssh: true
           branch: ${{ github.head_ref }}
