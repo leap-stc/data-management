@@ -4,3 +4,4 @@
 # once a `0.10.1` release of `pangeo-forge-recipes` is available that includes this fix, we should
 # install from that release instead.
 git+https://github.com/pangeo-forge/pangeo-forge-recipes.git@2739f2264ec385eadd3c73226fb85f5cdbf32a1a
+gcsfs

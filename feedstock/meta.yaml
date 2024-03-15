@@ -84,6 +84,17 @@ recipes:
             - licensor
           url: https://arxiv.org/abs/2306.08754
     license: "Apache-2.0"
+  - id: WW3
+    object: "ww3:WW3"
+    description: "20 year global ocean surface wave hindcast provided by Ifremer (French Research Institute for Exploitation of the Sea)"
+    provenance:
+      providers:
+        - name: "Ifremer"
+          description: "Ifremer"
+          roles:
+            - host
+          url: https://www.ifremer.fr/en
+      license: "TBW"
 maintainers:
   - name: "Julius Busecke"
     orcid: 0000-0001-8571-865X
