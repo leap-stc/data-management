@@ -25,6 +25,7 @@ METAFLUX_GPP_RECO_monthly = (
     | StoreToZarr(
         store_name='METAFLUX_GPP_RECO_monthly.zarr',
         combine_dims=pattern_monthly.combine_dim_keys,
+        target_chunks={'time':36, 'longitude':200},
     )
 )
 
@@ -40,5 +41,6 @@ METAFLUX_GPP_RECO_daily = (
     | StoreToZarr(
         store_name='METAFLUX_GPP_RECO_daily.zarr',
         combine_dims=pattern_daily.combine_dim_keys,
+        target_chunks={'time':30},
     )
 )
