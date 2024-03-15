@@ -15,10 +15,38 @@
       }
     ],
     "tags": ["climate", "oceanography", "sea surface temperature", "zarr"],
+    "links": [
+      {
+        "href": "https://github.com/pangeo-forge/HadISST-feedstock",
+        "label": "Pangeo Forge Feedstock"
+      }
+    ],
     "license": {
       "name": "UK Non-Commercial Government License",
       "href": "https://www.nationalarchives.gov.uk/doc/non-commercial-government-licence/version/2/"
     }
+  },
+  {
+    "description": "The Australian Gridded Climate Data dataset is a 5KM gridded daily product provided by the Australian Bureau of Meteorology. Version 1 contains precipitation, vapour pressure and minimum and maximum temperature. Australian Bureau of Meteorology (2020), \\nAustralian Gridded Climate Data (AGCD); v1.0.0 Snapshot (1900-01-01 to 2020-05-31). Downloaded from NCI on 09-21-2021.",
+    "links": [
+      {
+        "href": "https://github.com/pangeo-forge/AGDC-feedstock",
+        "label": "Pangeo Forge Feedstock"
+      }
+    ],
+    "maintainers": [
+      {
+        "github_username": "norlandrhagen",
+        "name": "Raphael Hagen"
+      }
+    ],
+    "name": "Australian Gridded Climate Data (AGCD)",
+    "stores": [
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/AGDC-feedstock/AGCD.zarr",
+        "name": "AGCD"
+      }
+    ]
   },
   {
     "name": "Sea-surface altimetry data from The Copernicus Marine Environment",
@@ -53,6 +81,258 @@
     "demo": false
   },
   {
+    "description": "PMIP outputs from CMIP6 converted to zarr stores from ESGF files",
+    "links": [
+      {
+        "href": "https://github.com/pangeo-forge/CMIP6-PMIP-feedstock",
+        "label": "Pangeo Forge Feedstock"
+      }
+    ],
+    "maintainers": [
+      {
+        "github_username": "jbusecke",
+        "name": "Julius Busecke"
+      },
+      {
+        "github_username": "cisaacstern",
+        "name": "Charles Stern"
+      }
+    ],
+    "name": "CMIP6-PMIP",
+    "stores": [
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/CMIP6-PMIP-feedstock/CMIP6.PMIP.MPI-M.MPI-ESM1-2-LR.past2k.r1i1p1f1.Amon.tas.gn.v20210714.zarr",
+        "name": "CMIP6.PMIP.MPI-M.MPI-ESM1-2-LR.past2k.r1i1p1f1.Amon.tas.gn.v20210714"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/CMIP6-PMIP-feedstock/CMIP6.PMIP.MRI.MRI-ESM2-0.past1000.r1i1p1f1.Amon.tas.gn.v20200120.zarr",
+        "name": "CMIP6.PMIP.MRI.MRI-ESM2-0.past1000.r1i1p1f1.Amon.tas.gn.v20200120"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/CMIP6-PMIP-feedstock/CMIP6.PMIP.MIROC.MIROC-ES2L.past1000.r1i1p1f2.Amon.tas.gn.v20200318.zarr",
+        "name": "CMIP6.PMIP.MIROC.MIROC-ES2L.past1000.r1i1p1f2.Amon.tas.gn.v20200318"
+      }
+    ]
+  },
+  {
+    "description": "Grid mesh files for the native ocean grids of CMIP6 models",
+    "links": [
+      {
+        "href": "https://github.com/pangeo-forge/CMIP6_static_grids-feedstock",
+        "label": "Pangeo Forge Feedstock"
+      }
+    ],
+    "maintainers": [
+      {
+        "github_username": "jbusecke",
+        "name": "Julius Busecke"
+      }
+    ],
+    "name": "CMIP6 Static Ocean Grids",
+    "stores": [
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/NorESM2-LM.zarr",
+        "name": "NorESM2-LM"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/GFDL-ESM4.zarr",
+        "name": "GFDL-ESM4"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/NorESM2-MM.zarr",
+        "name": "NorESM2-MM"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/MPI-ESM1-2-HR.zarr",
+        "name": "MPI-ESM1-2-HR"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/MPI-ESM1-2-LR.zarr",
+        "name": "MPI-ESM1-2-LR"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/NorESM2-MM.zarr",
+        "name": "NorESM2-MM"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/GFDL-ESM4.zarr",
+        "name": "GFDL-ESM4"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/NorESM2-LM.zarr",
+        "name": "NorESM2-LM"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/MPI-ESM1-2-LR.zarr",
+        "name": "MPI-ESM1-2-LR"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/MPI-ESM1-2-HR.zarr",
+        "name": "MPI-ESM1-2-HR"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/MPI-ESM1-2-HR.zarr",
+        "name": "MPI-ESM1-2-HR"
+      }
+    ]
+  },
+  {
+    "description": "CMIP6 datasets converted to zarr stores from ESGF files",
+    "links": [
+      {
+        "href": "https://github.com/pangeo-forge/cmip6-feedstock",
+        "label": "Pangeo Forge Feedstock"
+      }
+    ],
+    "maintainers": [
+      {
+        "github_username": "jbusecke",
+        "name": "Julius Busecke"
+      },
+      {
+        "github_username": "cisaacstern",
+        "name": "Charles Stern"
+      }
+    ],
+    "name": "CMIP6",
+    "stores": [
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cmip6-feedstock/test_surface.zarr",
+        "name": "test_surface"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cmip6-feedstock/test_full_depth.zarr",
+        "name": "test_full_depth"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cmip6-feedstock/CMIP6.CMIP.CCCma.CanESM5.historical.r1i1p1f1.Omon.zos.gn.v20190429.zarr",
+        "name": "CMIP6.CMIP.CCCma.CanESM5.historical.r1i1p1f1.Omon.zos.gn.v20190429"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cmip6-feedstock/CMIP6.CMIP.CCCma.CanESM5.historical.r1i1p1f1.Omon.zos.gn.v20190429.zarr",
+        "name": "CMIP6.CMIP.CCCma.CanESM5.historical.r1i1p1f1.Omon.zos.gn.v20190429"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cmip6-feedstock/CMIP6.DAMIP.NOAA-GFDL.GFDL-ESM4.hist-aer.r1i1p1f1.Amon.pr.gr1.v20180701.zarr",
+        "name": "CMIP6.DAMIP.NOAA-GFDL.GFDL-ESM4.hist-aer.r1i1p1f1.Amon.pr.gr1.v20180701"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cmip6-feedstock/CMIP6.DAMIP.BCC.BCC-CSM2-MR.hist-aer.r1i1p1f1.Amon.pr.gn.v20190507.zarr",
+        "name": "CMIP6.DAMIP.BCC.BCC-CSM2-MR.hist-aer.r1i1p1f1.Amon.pr.gn.v20190507"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cmip6-feedstock/CMIP6.DAMIP.CCCma.CanESM5.hist-aer.r13i1p2f1.Amon.pr.gn.v20190429.zarr",
+        "name": "CMIP6.DAMIP.CCCma.CanESM5.hist-aer.r13i1p2f1.Amon.pr.gn.v20190429"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cmip6-feedstock/CMIP6.DAMIP.CCCma.CanESM5.hist-aer.r10i1p1f1.Amon.pr.gn.v20190429.zarr",
+        "name": "CMIP6.DAMIP.CCCma.CanESM5.hist-aer.r10i1p1f1.Amon.pr.gn.v20190429"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cmip6-feedstock/CMIP6.DAMIP.CCCma.CanESM5.hist-aer.r3i1p1f1.Amon.pr.gn.v20190429.zarr",
+        "name": "CMIP6.DAMIP.CCCma.CanESM5.hist-aer.r3i1p1f1.Amon.pr.gn.v20190429"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cmip6-feedstock/CMIP6.PMIP.MPI-M.MPI-ESM1-2-LR.past2k.r1i1p1f1.Amon.tas.gn.v20210714.zarr",
+        "name": "CMIP6.PMIP.MPI-M.MPI-ESM1-2-LR.past2k.r1i1p1f1.Amon.tas.gn.v20210714"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cmip6-feedstock/CMIP6.PMIP.MPI-M.MPI-ESM1-2-LR.past2k.r1i1p1f1.Amon.tas.gn.v20210714.zarr",
+        "name": "CMIP6.PMIP.MPI-M.MPI-ESM1-2-LR.past2k.r1i1p1f1.Amon.tas.gn.v20210714"
+      }
+    ]
+  },
+  {
+    "description": "E-OBS is a high resolution gridded climate dataset covering Europe and Northern Africa. This dataset is version 23.1e with a 0.1 degree spatial resolution. Variables available are TG (daily mean temperature), TN (daily minimum temperature), TX (daily maximum temperature), RR (daily precipitation sum), PP (daily mean sea-level pressure), HU (relative humidity), FG (daily mean wind speed), and QQ (global radiation). QQ and FG are have slightly different grids and are not concatenated with other variables.",
+    "links": [
+      {
+        "href": "https://github.com/pangeo-forge/EOBS-feedstock",
+        "label": "Pangeo Forge Feedstock"
+      }
+    ],
+    "maintainers": [
+      {
+        "github_username": "norlandrhagen",
+        "name": "Raphael Hagen"
+      }
+    ],
+    "name": "E-OBS dataset",
+    "stores": [
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-wind-speed.zarr",
+        "name": "eobs-wind-speed"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-surface-downwelling.zarr",
+        "name": "eobs-surface-downwelling"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-tg-tn-tx-rr-hu-pp.zarr",
+        "name": "eobs-tg-tn-tx-rr-hu-pp"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-wind-speed.zarr",
+        "name": "eobs-wind-speed"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-surface-downwelling.zarr",
+        "name": "eobs-surface-downwelling"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-tg-tn-tx-rr-hu-pp.zarr",
+        "name": "eobs-tg-tn-tx-rr-hu-pp"
+      }
+    ]
+  },
+  {
+    "description": "eVolv2k includes estimates of the magnitudes and approximate source latitudes of major volcanic stratospheric sulfur injection (VSSI) events from 500BCE to 1900CE.",
+    "links": [
+      {
+        "href": "https://github.com/pangeo-forge/eVolv2k-feedstock",
+        "label": "Pangeo Forge Feedstock"
+      }
+    ],
+    "maintainers": [
+      {
+        "github_username": "jordanplanders",
+        "name": "Jordan Landers"
+      }
+    ],
+    "name": "eVolv2k VSSI database",
+    "stores": [
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/eVolv2k-feedstock/eVolv2k.zarr",
+        "name": "eVolv2k"
+      },
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/eVolv2k-feedstock/eVolv2k.zarr",
+        "name": "eVolv2k"
+      }
+    ]
+  },
+  {
+    "description": "Global Precipitation Climatology Project (GPCP) Daily Version 1.3 gridded, merged ty satellite/gauge precipitation Climate data Record (CDR) from 1996 to present.",
+    "links": [
+      {
+        "href": "https://github.com/pangeo-forge/gpcp-feedstock",
+        "label": "Pangeo Forge Feedstock"
+      }
+    ],
+    "maintainers": [
+      {
+        "github_username": "rabernat",
+        "name": "Ryan Abernathey"
+      }
+    ],
+    "name": "Global Precipitation Climatology Project",
+    "stores": [
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/gpcp-feedstock/gpcp.zarr",
+        "name": "gpcp"
+      }
+    ]
+  },
+  {
     "name": "Large ensemble pCO2 testbed",
     "description": "Large ensemble pCO2 testbed (manually ingested)",
     "stores": [
@@ -80,5 +360,71 @@
       "name": "CC-BY",
       "href": "https://creativecommons.org/licenses/by/4.0"
     }
+  },
+  {
+    "description": "Gridded variables from ensemble runs executed as part of the Last Millennium Reanalysis (LMR) project (v2.1) which utilizes an ensemble methodology to assimilate paleoclimate data for the production of annually resolved climate field reconstructions of the Common Era.",
+    "links": [
+      {
+        "href": "https://github.com/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock",
+        "label": "Pangeo Forge Feedstock"
+      }
+    ],
+    "maintainers": [
+      {
+        "github_username": "jordanplanders",
+        "name": "Jordan Landers"
+      }
+    ],
+    "name": "LMRv2.1 Monte Carlo Runs for gridded fields",
+    "stores": [
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock/LMRv2p1_MCruns_ensemble_gridded.zarr",
+        "name": "LMRv2p1_MCruns_ensemble_gridded"
+      }
+    ]
+  },
+  {
+    "description": "NOAA Geo-Polar Blended Global Sea Surface Temperature Analysis (Level 4)",
+    "links": [
+      {
+        "href": "https://github.com/pangeo-forge/noaa-coastwatch-geopolar-sst-feedstock",
+        "label": "Pangeo Forge Feedstock"
+      }
+    ],
+    "maintainers": [
+      {
+        "github_username": "rwegener2",
+        "name": "Rachel Wegener"
+      }
+    ],
+    "name": "NOAA Coastwatch Geo-Polar SST",
+    "stores": [
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/noaa-coastwatch-geopolar-sst-feedstock/noaa-coastwatch-geopolar-sst.zarr",
+        "name": "noaa-coastwatch-geopolar-sst"
+      }
+    ]
+  },
+  {
+    "description": "1 Degree monthly climatology from WOA",
+    "links": [
+      {
+        "href": "https://github.com/pangeo-forge/WOA_1degree_monthly-feedstock",
+        "label": "Pangeo Forge Feedstock"
+      }
+    ],
+    "maintainers": [
+      {
+        "github_username": "dhruvbalwada",
+        "name": "Dhruv Balwada"
+      }
+    ],
+    "name": "WOA 2018 1 degree monthly",
+    "stores": [
+      {
+        "href": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/WOA_1degree_monthly-feedstock/woa18-1deg-monthly.zarr",
+        "name": "woa18-1deg-monthly"
+      }
+    ]
   }
 ]

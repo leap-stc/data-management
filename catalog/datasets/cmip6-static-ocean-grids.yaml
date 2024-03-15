@@ -1,0 +1,31 @@
+description: Grid mesh files for the native ocean grids of CMIP6 models
+links:
+  - href: https://github.com/pangeo-forge/CMIP6_static_grids-feedstock
+    label: Pangeo Forge Feedstock
+maintainers:
+  - github_username: jbusecke
+    name: Julius Busecke
+name: CMIP6 Static Ocean Grids
+stores:
+  - href: https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/NorESM2-LM.zarr
+    name: NorESM2-LM
+  - href: https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/GFDL-ESM4.zarr
+    name: GFDL-ESM4
+  - href: https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/NorESM2-MM.zarr
+    name: NorESM2-MM
+  - href: https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/MPI-ESM1-2-HR.zarr
+    name: MPI-ESM1-2-HR
+  - href: https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/MPI-ESM1-2-LR.zarr
+    name: MPI-ESM1-2-LR
+  - href: https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/NorESM2-MM.zarr
+    name: NorESM2-MM
+  - href: https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/GFDL-ESM4.zarr
+    name: GFDL-ESM4
+  - href: https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/NorESM2-LM.zarr
+    name: NorESM2-LM
+  - href: https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/MPI-ESM1-2-LR.zarr
+    name: MPI-ESM1-2-LR
+  - href: https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/MPI-ESM1-2-HR.zarr
+    name: MPI-ESM1-2-HR
+  - href: https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/CMIP6_static_grids-feedstock/MPI-ESM1-2-HR.zarr
+    name: MPI-ESM1-2-HR

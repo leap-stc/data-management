@@ -12,7 +12,9 @@ tags:
   - oceanography
   - sea surface temperature
   - zarr
-
+links:
+  - href: https://github.com/pangeo-forge/HadISST-feedstock
+    label: Pangeo Forge Feedstock
 license:
   name: UK Non-Commercial Government License
   href: "https://www.nationalarchives.gov.uk/doc/non-commercial-government-licence/version/2/"
