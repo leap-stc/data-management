@@ -1,0 +1,14 @@
+name: data-management-dev
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - fsspec
+  - xarray
+  - ipykernel
+  - requests
+  - aiohttp
+  - scipy
+  - netcdf4
+  - h5netcdf
