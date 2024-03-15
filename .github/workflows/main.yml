@@ -54,8 +54,8 @@ jobs:
         shell: bash -l {0}
 
     environment:
-      name: ${{ github.ref == 'refs/heads/main' && 'production' || github.head_ref }}
-      url: ${{ github.ref == 'refs/heads/main' && 'https://leap-data-catalog.vercel.app/?catalog=https://raw.githubusercontent.com/leap-stc/data-management/main/catalog/datasets/consolidated-web-catalog.json' || format('https://leap-data-catalog.vercel.app/?catalog=https://raw.githubusercontent.com/{0}/{1}/catalog/datasets/consolidated-web-catalog.json', github.event.pull_request.head.repo.full_name, github.head_ref) }}
+      name: ${{ github.event.pull_request.number }}
+      url: ${{ format('https://staging-leap-data-catalog.vercel.app/?catalog=https://raw.githubusercontent.com/{0}/{1}/catalog/datasets/consolidated-web-catalog.json', github.event.pull_request.head.repo.full_name, github.head_ref) }}
     steps:
       - uses: actions/checkout@v4
         with:
