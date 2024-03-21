@@ -164,7 +164,7 @@ urls = [
 ]
 
 pattern = pattern_from_file_sequence(urls, concat_dim='time')
-recipes = (
+test_full_dynamic_chunks = (
     f'Creating {iid}' >> beam.Create(pattern.items())
     | OpenURLWithFSSpec()
     # do not specify file type to accomodate both ncdf3 and ncdf4
