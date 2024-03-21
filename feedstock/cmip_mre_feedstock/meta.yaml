@@ -1,0 +1,26 @@
+title: "CMIP MRE Hanging Test"
+description: >
+  Just a test to see if we can reproduce the hanging issue with fsspec
+recipes:
+  - id: test_full_dynamic_chunks
+    object: "cmip_mre:recipe_test_full_dynamic_chunks"
+provenance:
+  providers:
+    - name: "Zenodo"
+      description: "Zenodo"
+      roles:
+        - host
+      url: https://zenodo.org/records/10261274
+    - name: "TBD"
+      description: "TODO"
+      roles:
+        - producer
+        - licensor
+  license: "unknown"
+maintainers:
+  - name: "Julius Busecke"
+    orcid: 0000-0001-8571-865X
+    github: jbusecke
+  - name: "Charles Stern"
+    orcid: 0000-0002-4078-0852
+    github: cisaacstern
