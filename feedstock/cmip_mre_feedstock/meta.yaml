@@ -3,7 +3,7 @@ description: >
   Just a test to see if we can reproduce the hanging issue with fsspec
 recipes:
   - id: test_full_dynamic_chunks
-    object: "cmip_mre:recipe_test_full_dynamic_chunks"
+    object: "cmip_mre:test_full_dynamic_chunks"
 provenance:
   providers:
     - name: "Zenodo"
