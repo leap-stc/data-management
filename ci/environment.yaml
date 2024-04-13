@@ -12,3 +12,6 @@ dependencies:
   - pyyaml
   - ruff
   - universal_pathlib
+  - aiohttp
+  - s3fs
+  - gcsfs
