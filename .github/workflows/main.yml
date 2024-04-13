@@ -76,7 +76,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: consolidated-web-catalog.json
-          path: catalog/datasets
+          path: catalog
 
       - name: Commit and Push
         run: |
