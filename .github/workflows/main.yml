@@ -30,21 +30,16 @@ jobs:
           cache-environment: true
           cache-downloads: true
           post-cleanup: "all"
-      - name: Validate schema
+      - name: Validate Feedstocks and Generate Catalog
         run: |
-          cd catalog/validator
-          python schema.py
-
-      - name: Validate datasets
-        run: |
-          cd catalog/validator
-          python validate.py --path ../datasets
+          cd catalog
+          python generate.py --path .
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: consolidated-web-catalog.json
-          path: catalog/datasets/consolidated-web-catalog.json
+          path: catalog/consolidated-web-catalog.json
 
   update:
     needs: generate-and-validate
@@ -55,7 +50,7 @@ jobs:
 
     environment:
       name: ${{ github.event.pull_request.number }}
-      url: ${{ format('https://staging-leap-data-catalog.vercel.app/?catalog=https://raw.githubusercontent.com/{0}/{1}/catalog/datasets/consolidated-web-catalog.json', github.event.pull_request.head.repo.full_name, github.head_ref) }}
+      url: ${{ format('https://staging-leap-data-catalog.vercel.app/?catalog=https://raw.githubusercontent.com/{0}/{1}/catalog/consolidated-web-catalog.json', github.event.pull_request.head.repo.full_name, github.head_ref) }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -88,10 +83,10 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
           pre-commit install
-          git add catalog/datasets/consolidated-web-catalog.json
+          git add catalog/consolidated-web-catalog.json
           # run pre-commit and return 0 to avoid failing the job
           pre-commit run || true
-          git add catalog/datasets/consolidated-web-catalog.json || true
+          git add catalog/consolidated-web-catalog.json || true
           git commit -m "Auto-update consolidated-web-catalog.json" || true
 
       - name: Push changes
