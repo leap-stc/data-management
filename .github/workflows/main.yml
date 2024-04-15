@@ -33,7 +33,7 @@ jobs:
       - name: Validate Feedstocks and Generate Catalog
         run: |
           cd catalog
-          python generate.py --path .
+          python generate.py --path input.yaml
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
