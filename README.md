@@ -8,7 +8,5 @@ This repository serves as the central coordination point for all LEAP Data inges
 
 Do you want to use a dataset for your research and at the same time make it available to the entire LEAP community? Start by filing an [issue](https://github.com/leap-stc/data-management/issues/new/choose) which describes the dataset!
 
-
-
 [pre-commit.ci-badge]: https://results.pre-commit.ci/badge/github/leap-stc/data-management/main.svg
 [pre-commit.ci-link]: https://results.pre-commit.ci/latest/github/leap-stc/data-management/main
