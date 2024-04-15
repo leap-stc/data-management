@@ -18,8 +18,7 @@ def collect_feedstocks(path: upath.UPath) -> list[upath.UPath]:
     path = upath.UPath(path).resolve()
     feedstocks = []
     for item in path.iterdir():
-        if item.name.startswith('leap-'):
-            feedstocks.extend(sorted(item.glob('*.yaml')) + sorted(item.glob('*.yml')))
+        feedstocks.extend(sorted(item.glob('*.yaml')) + sorted(item.glob('*.yml')))
 
     if feedstocks:
         return feedstocks
@@ -76,5 +75,5 @@ if __name__ == '__main__':
     here = upath.UPath(__file__).parent.resolve()
 
     # write catalog to JSON file for use in the website
-    with open(f'{here}/consolidated-web-catalog.json', 'w') as f:
+    with open(f'{here}/output/consolidated-web-catalog.json', 'w') as f:
         json.dump(catalog, f, indent=2, default=pydantic_core.to_jsonable_python)
