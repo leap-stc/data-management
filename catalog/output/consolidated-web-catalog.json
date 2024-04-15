@@ -1,7 +1,7 @@
 [
   {
-    "title": "Hadley Centre Sea Ice and Sea Surface Temperature (HadISST)",
-    "description": "Analysis-ready Zarr datasets derived from HadISST NetCDF",
+    "title": "LEAP Data Library Prototype",
+    "description": "A prototype test for the LEAP Data Library refactor\n",
     "maintainers": [
       {
         "name": "Julius Busecke",
@@ -11,172 +11,37 @@
     "provenance": {
       "providers": [
         {
-          "name": "Met Office Hadley Centre",
-          "description": "Met Office Hadley Centre",
+          "name": "Julius",
+          "description": "Just a guy testing some recipes. Nothing to see here.",
           "roles": ["producer", "licensor"],
-          "url": "https://www.metoffice.gov.uk/hadobs/hadisst/index.html"
+          "url": null
         }
       ],
-      "license": "proprietary",
-      "license_link": {
-        "title": "UK Non-Commercial Government License",
-        "url": "https://www.nationalarchives.gov.uk/doc/non-commercial-government-licence/version/2/"
-      }
-    },
-    "thumbnail": null,
-    "tags": ["climate", "oceanography", "sea surface temperature", "zarr"],
-    "links": null,
-    "stores": [
-      {
-        "name": "hadisst.zarr",
-        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/HadISST-feedstock/hadisst.zarr",
-        "ncviewjs:rechunking": null
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/HadISST-feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
-    "title": "Sea-surface altimetry data from The Copernicus Marine Environment",
-    "description": "This dataset was moved from the legacy pangeo catalog.",
-    "maintainers": [
-      {
-        "name": "Julius Busecke",
-        "github": "jbusecke"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "Pangeo",
-          "description": null,
-          "roles": null,
-          "url": "https://pangeo.io/"
-        }
-      ],
-      "license": "proprietary",
-      "license_link": {
-        "title": "unknown",
-        "url": "http://marine.copernicus.eu/web/27-service-commitments-and-licence.php"
-      }
-    },
-    "thumbnail": "https://www.aviso.altimetry.fr/fileadmin/_processed_/0/0/csm_glob_da7c0c3eaf.jpg",
-    "tags": ["ocean", "satellite"],
-    "links": [
-      {
-        "label": "Data Source (not original source)",
-        "url": "https://catalog.pangeo.io/browse/master/ocean/sea_surface_height/"
-      },
-      {
-        "label": "Original Documentation (not available anymore)",
-        "url": "https://data.marine.copernicus.eu/product/SEALEVEL_GLO_PHY_L4_REP_OBSERVATIONS_008_047/description"
-      }
-    ],
-    "stores": [
-      {
-        "name": "AVISO (Pangeo Legacy copy)",
-        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-cmems-duacs",
-        "ncviewjs:rechunking": null
-      }
-    ],
-    "ncviewjs:meta_yaml_url": null
-  },
-  {
-    "title": "Global Precipitation Climatology Project",
-    "description": "Global Precipitation Climatology Project (GPCP) Daily Version 1.3 gridded, merged ty satellite/gauge precipitation Climate data Record (CDR) from 1996 to present.\n",
-    "maintainers": [
-      {
-        "name": "Ryan Abernathey",
-        "github": "rabernat"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "NOAA NCEI",
-          "description": "National Oceanographic & Atmospheric Administration National Centers for Environmental Information",
-          "roles": ["host", "licensor"],
-          "url": "https://www.ncei.noaa.gov/products/global-precipitation-climatology-project"
-        },
-        {
-          "name": "University of Maryland",
-          "description": "University of Maryland College Park Earth System Science Interdisciplinary Center (ESSIC) and Cooperative Institute for Climate and Satellites (CICS).\n",
-          "roles": ["producer"],
-          "url": "http://gpcp.umd.edu/"
-        }
-      ],
-      "license": "No constraints on data access or use.",
+      "license": "Just a Test",
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["climatology", "zarr"],
+    "tags": ["my-custom-tag", "zarr"],
     "links": null,
     "stores": [
       {
-        "name": "gpcp.zarr",
-        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/gpcp-feedstock/gpcp.zarr",
+        "id": "small",
+        "name": "The cool small Proto Dataset",
+        "url": "gs://leap-scratch/data-library/feedstocks/latest/proto_feedstock/small.zarr",
         "ncviewjs:rechunking": [
           {
-            "path": "s3://carbonplan-share/LEAP/gpcp_pyramid.zarr",
+            "path": "gs://some-bucket/small.zarr",
             "use_case": "multiscales"
           }
         ]
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/gpcp-feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
-    "title": "Large ensemble pCO2 testbed",
-    "description": "Large ensemble pCO2 testbed (manually ingested)",
-    "maintainers": [
-      {
-        "name": "Julius Busecke",
-        "github": "jbusecke"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "CESM",
-          "description": "Community Earth System Model",
-          "roles": null,
-          "url": "https://www.cesm.ucar.edu/models"
-        },
-        {
-          "name": "CanESM2",
-          "description": "Canadian Earth System Model 2",
-          "roles": null,
-          "url": "https://www.canada.ca/en/environment-climate-change/services/climate-change/science-research-data/modeling-projections-analysis/centre-modelling-analysis/models/second-generation-earth-system-model.html"
-        },
-        {
-          "name": "GFDL",
-          "description": "Geophysical Fluid Dynamics Laboratory",
-          "roles": null,
-          "url": "https://www.gfdl.noaa.gov/"
-        }
-      ],
-      "license": "CC-BY",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": ["climate", "oceanography", "pco2", "carbon", "zarr"],
-    "links": null,
-    "stores": [
-      {
-        "name": "CESM.zarr",
-        "url": "gs://leap-persistent-ro/data-library-manual/CESM.zarr",
-        "ncviewjs:rechunking": null
       },
       {
-        "name": "CanESM2.zarr",
-        "url": "gs://leap-persistent-ro/data-library-manual/CanESM2.zarr",
-        "ncviewjs:rechunking": null
-      },
-      {
-        "name": "GFDL.zarr",
-        "url": "gs://leap-persistent-ro/data-library-manual/GFDL.zarr",
+        "id": "large",
+        "name": "The even cooler large Proto Dataset",
+        "url": "gs://leap-scratch/data-library/feedstocks/latest/proto_feedstock/large.zarr",
         "ncviewjs:rechunking": null
       }
     ],
-    "ncviewjs:meta_yaml_url": null
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/proto_feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
