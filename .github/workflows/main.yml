@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: consolidated-web-catalog.json
-          path: catalog/consolidated-web-catalog.json
+          path: catalog/output/consolidated-web-catalog.json
 
   update:
     needs: generate-and-validate
