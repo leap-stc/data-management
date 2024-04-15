@@ -1,8 +1,14 @@
-# data-management
+# The LEAP-Pangeo Community Bakery
 
 [![pre-commit.ci status][pre-commit.ci-badge]][pre-commit.ci-link]
 
-Collection of code to manually populate the persistent cloud bucket with data
+This repository serves as the central coordination point for all LEAP Data ingestion via [pangeo-forge](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://pangeo-forge.readthedocs.io/&ved=2ahUKEwi4zqL_jcWFAxVwMVkFHbZ1D4MQFnoECA0QAQ&usg=AOvVaw3LWGBAYD28rkT_iLnLAJUq)
+
+## Suggest a Dataset for ingestion
+
+Do you want to use a dataset for your research and at the same time make it available to the entire LEAP community? Start by filing an [issue](https://github.com/leap-stc/data-management/issues/new/choose) which describes the dataset!
+
+
 
 [pre-commit.ci-badge]: https://results.pre-commit.ci/badge/github/leap-stc/data-management/main.svg
 [pre-commit.ci-link]: https://results.pre-commit.ci/latest/github/leap-stc/data-management/main
