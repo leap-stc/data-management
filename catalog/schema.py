@@ -4,7 +4,8 @@ import yaml
 
 
 class Store(pydantic.BaseModel):
-    name: str = pydantic.Field(..., description='Name of the store')
+    id: str = pydantic.Field(..., description='ID of the store')
+    name: str = pydantic.Field(None, description='Name of the store')
     url: str = pydantic.Field(..., description='URL of the store')
     rechunking: list[dict[str, str]] | None = pydantic.Field(None, alias='ncviewjs:rechunking')
 

@@ -3,7 +3,8 @@ import traceback
 
 import pydantic_core
 import upath
-from schema import Feedstock
+import yaml
+from schema import Feedstock, convert_to_raw_github_url
 
 
 class ValidationError(Exception):
@@ -15,12 +16,9 @@ class ValidationError(Exception):
 def collect_feedstocks(path: upath.UPath) -> list[upath.UPath]:
     """Collects all the datasets in the given directory."""
 
-    path = upath.UPath(path).resolve()
-    feedstocks = []
-    for item in path.iterdir():
-        feedstocks.extend(sorted(item.glob('*.yaml')) + sorted(item.glob('*.yml')))
-
-    if feedstocks:
+    url = convert_to_raw_github_url(path)
+    if feedstocks := yaml.safe_load(upath.UPath(url).read_text())['feedstocks']:
+        print(feedstocks)
         return feedstocks
     else:
         # raise no json files found
@@ -45,7 +43,7 @@ def validate_feedstocks(*, feedstocks: upath.UPath) -> list[Feedstock]:
 
     for feedstock in feedstocks:
         try:
-            feed = Feedstock.from_yaml(feedstock)
+            feed = Feedstock.from_yaml(convert_to_raw_github_url(feedstock))
             valid.append({'feedstock': str(feedstock), 'status': 'valid'})
             catalog.append(feed)
         except Exception:
