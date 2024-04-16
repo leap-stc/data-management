@@ -10,6 +10,7 @@ dependencies:
   - cftime
   - fsspec >= 2023.2
   - gcsfs
+  - google-cloud-bigquery
   - pangeo-forge-recipes
   - pre-commit
   - pydantic-core
