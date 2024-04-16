@@ -1,2 +1,3 @@
 feedstocks:
+  - https://github.com/carbonplan/ocean-carbon-sink-data-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/proto_feedstock/blob/main/feedstock/catalog.yaml
