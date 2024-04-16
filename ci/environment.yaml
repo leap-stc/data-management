@@ -7,8 +7,12 @@ dependencies:
   - black
   - fsspec >= 2023.2
   - pre-commit
-  - pydantic
+  - pydantic>=2
+  - pydantic-core
   - pytest
   - pyyaml
   - ruff
   - universal_pathlib
+  - aiohttp
+  - s3fs
+  - gcsfs

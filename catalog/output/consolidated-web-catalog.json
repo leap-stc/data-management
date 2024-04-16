@@ -1,0 +1,57 @@
+[
+  {
+    "title": "LDEO-pCO2 HPD Back in Time",
+    "description": "The ocean reduces human impact on the climate by absorbing and sequestering CO2 . From 1950s to the 1980s, observations of pCO2 and related ocean carbon variables were sparse and uncertain. Thus, global ocean biogeochemical models (GOBMs) have been the basis for quantifying the ocean carbon sink. The LDEO-Hybrid Physics Data product (LDEO-HPD) interpolates sparse surface ocean pCO2 data to global coverage by using GOBMs as priors, and applying machine learning to estimate full-coverage corrections.\n",
+    "maintainers": [
+      {
+        "name": "Anderson Banihirwe",
+        "github": "andersy005"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "LDEO",
+          "description": "Lamont Doherty Earth Observatory at Columbia",
+          "roles": ["producer", "licensor"],
+          "url": null
+        },
+        {
+          "name": "LEAP",
+          "description": "STC: Center for Learning the Earth with Artificial Intelligence and Physics",
+          "roles": ["producer", "licensor"],
+          "url": null
+        }
+      ],
+      "license": "CC BY",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["ocean", "carbon", "zarr", "machine learning"],
+    "links": [
+      {
+        "label": "Lamont-Doherty Earth Observatory Hybrid Physics Data pCO2 Product",
+        "url": "https://oceancarbon.ldeo.columbia.edu/content/ldeo-hpd"
+      },
+      {
+        "label": "The ocean carbon sink data story",
+        "url": "https://leap-story-carbon-sink.vercel.app/"
+      }
+    ],
+    "stores": [
+      {
+        "id": "GCB-2023_dataprod_LDEO-HPD_1959-2022-updated-flipped-lon",
+        "name": "flux",
+        "url": "s3://carbonplan-data-viewer/demo/leap-data-stories/GCB-2023_dataprod_LDEO-HPD_1959-2022-updated-flipped-lon.zarr/",
+        "ncviewjs:rechunking": null
+      },
+      {
+        "id": "annual-sfco2",
+        "name": "Annual fgco2",
+        "url": "s3://carbonplan-data-viewer/demo/leap-data-stories/annual-sfco2.zarr/",
+        "ncviewjs:rechunking": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/carbonplan/ocean-carbon-sink-data-feedstock/blob/main/feedstock/meta.yaml"
+  }
+]
