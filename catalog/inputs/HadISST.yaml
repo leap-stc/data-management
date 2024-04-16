@@ -1,9 +1,0 @@
-"ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/HadISST-feedstock/blob/main/feedstock/meta.yaml"
-tags:
-  - climate
-  - oceanography
-  - sea surface temperature
-  - zarr
-stores:
-  - name: hadisst.zarr
-    url: "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/HadISST-feedstock/hadisst.zarr"

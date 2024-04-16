@@ -16,3 +16,5 @@ dependencies:
   - aiohttp
   - s3fs
   - gcsfs
+  - pip:
+      - git+https://github.com/leap-stc/leap-data-management-utils

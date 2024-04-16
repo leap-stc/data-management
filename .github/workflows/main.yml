@@ -31,8 +31,7 @@ jobs:
           post-cleanup: "all"
       - name: Validate Feedstocks and Generate Catalog
         run: |
-          cd catalog
-          python generate.py --path input.yaml
+          leap-catalog generate --path catalog/input.yaml --output catalog/
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
