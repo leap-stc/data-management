@@ -32,6 +32,10 @@
       {
         "label": "Lamont-Doherty Earth Observatory Hybrid Physics Data pCO2 Product",
         "url": "https://oceancarbon.ldeo.columbia.edu/content/ldeo-hpd"
+      },
+      {
+        "label": "The ocean carbon sink data story",
+        "url": "https://leap-story-carbon-sink.vercel.app/"
       }
     ],
     "stores": [
@@ -49,50 +53,5 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/carbonplan/ocean-carbon-sink-data-feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
-    "title": "LEAP Data Library Prototype",
-    "description": "A prototype test for the LEAP Data Library refactor\n",
-    "maintainers": [
-      {
-        "name": "Julius Busecke",
-        "github": "jbusecke"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "Julius",
-          "description": "Just a guy testing some recipes. Nothing to see here.",
-          "roles": ["producer", "licensor"],
-          "url": null
-        }
-      ],
-      "license": "Just a Test",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": ["my-custom-tag", "zarr"],
-    "links": null,
-    "stores": [
-      {
-        "id": "small",
-        "name": "The cool small Proto Dataset",
-        "url": "gs://leap-scratch/data-library/feedstocks/latest/proto_feedstock/small.zarr",
-        "ncviewjs:rechunking": [
-          {
-            "path": "gs://some-bucket/small.zarr",
-            "use_case": "multiscales"
-          }
-        ]
-      },
-      {
-        "id": "large",
-        "name": "The even cooler large Proto Dataset",
-        "url": "gs://leap-scratch/data-library/feedstocks/latest/proto_feedstock/large.zarr",
-        "ncviewjs:rechunking": null
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/proto_feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
