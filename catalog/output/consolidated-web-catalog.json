@@ -93,5 +93,52 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/gpcp-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "Hadley Centre Sea Ice and Sea Surface Temperature (HadISST)",
+    "description": "Analysis-ready Zarr datasets derived from HadISST NetCDF",
+    "maintainers": [
+      {
+        "name": "Julius Busecke",
+        "github": "jbusecke"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Met Office Hadley Centre",
+          "description": "Met Office Hadley Centre",
+          "roles": ["producer", "licensor"],
+          "url": "https://www.metoffice.gov.uk/hadobs/hadisst/index.html"
+        }
+      ],
+      "license": "proprietary",
+      "license_link": {
+        "title": "UK Non-Commercial Government License",
+        "url": "https://www.nationalarchives.gov.uk/doc/non-commercial-government-licence/version/2/"
+      }
+    },
+    "thumbnail": null,
+    "tags": [
+      "zarr",
+      "pangeo-forge",
+      "open-storage-network",
+      "osn",
+      "sea",
+      "ice",
+      "temperature",
+      "oceanography",
+      "climate"
+    ],
+    "links": null,
+    "stores": [
+      {
+        "id": "hadisst",
+        "name": "hadisst",
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/HadISST-feedstock/hadisst.zarr",
+        "ncviewjs:rechunking": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/HadISST-feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
