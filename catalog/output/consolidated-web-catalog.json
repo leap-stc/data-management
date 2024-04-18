@@ -140,5 +140,46 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/HadISST-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "Australian Gridded Climate Data (AGCD)",
+    "description": "The Australian Gridded Climate Data dataset is a 5KM gridded daily product provided by the Australian Bureau of Meteorology. \nVersion 1 contains precipitation, vapour pressure and minimum and maximum temperature. Australian Bureau of Meteorology (2020), \nAustralian Gridded Climate Data (AGCD); v1.0.0 Snapshot (1900-01-01 to 2020-05-31). Downloaded from NCI on 09-21-2021.\n",
+    "maintainers": [
+      {
+        "name": "Raphael Hagen",
+        "github": "norlandrhagen"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Australian Bureau of Meteorology",
+          "description": "The Australian Bureau of Meteorology is a government agency providing weather and climate data. (http://www.bom.gov.au/)",
+          "roles": ["producer", "licensor"],
+          "url": "https://dapds00.nci.org.au/thredds/catalogs/zv2/catalog.html"
+        }
+      ],
+      "license": "CC-BY-NC-4.0",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": [
+      "zarr",
+      "pangeo-forge",
+      "open-storage-network",
+      "osn",
+      "meteorology",
+      "precipitation"
+    ],
+    "links": null,
+    "stores": [
+      {
+        "id": "AGCD",
+        "name": "AGCD",
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/AGDC-feedstock/AGCD.zarr",
+        "ncviewjs:rechunking": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/AGDC-feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
