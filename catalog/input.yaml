@@ -2,3 +2,4 @@ feedstocks:
   - https://github.com/carbonplan/ocean-carbon-sink-data-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/gpcp-pangeo-forge-osn-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/HadISST-pangeo-forge-osn-feedstock/blob/main/feedstock/catalog.yaml
+  - https://github.com/leap-stc/AGDC-pangeo-forge-osn-feedstock/blob/main/feedstock/catalog.yaml
