@@ -6,3 +6,4 @@ feedstocks:
   - https://github.com/leap-stc/metaflux_feedstock/blob/436cb710443bb2f90eccd1f3688f878fe84ae8b1/feedstock/catalog.yaml
   - https://github.com/leap-stc/evolv2k-vssi-database-pangeo-forge-osn-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/LMRv2.1-Monte-Carlo-Gridded-pangeo-forge-osn-feedstock/blob/main/feedstock/catalog.yaml
+  - https://github.com/leap-stc/NOAA-Coastwatch-Geo-Polar-SST-pangeo-forge-osn-feedstock/blob/main/feedstock/catalog.yaml
