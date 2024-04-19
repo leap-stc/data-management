@@ -181,5 +181,45 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/AGDC-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "LEAP Data Library Prototype",
+    "description": "A prototype test for the LEAP Data Library refactor\n",
+    "maintainers": [
+      {
+        "name": "Julius Busecke",
+        "github": "jbusecke"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Julius",
+          "description": "Just a guy testing some recipes. Nothing to see here.",
+          "roles": ["producer", "licensor"],
+          "url": null
+        }
+      ],
+      "license": "Just a Test",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["my-custom-tag", "zarr"],
+    "links": null,
+    "stores": [
+      {
+        "id": "metaflux-daily",
+        "name": null,
+        "url": "gs://leap-persistent-ro/data-library/feedstocks/metaflux_feedstock/metaflux_daily.zarr",
+        "ncviewjs:rechunking": null
+      },
+      {
+        "id": "metaflux-monthly",
+        "name": null,
+        "url": "gs://leap-persistent-ro/data-library/feedstocks/metaflux_feedstock/meatflux_monthly.zarr",
+        "ncviewjs:rechunking": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/proto_feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
