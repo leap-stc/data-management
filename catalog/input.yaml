@@ -3,3 +3,4 @@ feedstocks:
   - https://github.com/leap-stc/gpcp-pangeo-forge-osn-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/HadISST-pangeo-forge-osn-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/AGDC-pangeo-forge-osn-feedstock/blob/main/feedstock/catalog.yaml
+  - https://github.com/leap-stc/metaflux_feedstock/blob/436cb710443bb2f90eccd1f3688f878fe84ae8b1/feedstock/catalog.yaml
