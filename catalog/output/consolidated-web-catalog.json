@@ -342,5 +342,61 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/noaa-coastwatch-geopolar-sst-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "E-OBS dataset",
+    "description": "E-OBS is a high resolution gridded climate dataset covering Europe and Northern Africa.\nThis dataset is version 23.1e with a 0.1 degree spatial resolution.\n\nVariables available are: TG: daily mean temperature, TN: daily minimum temperature,\nTX: daily maximum temperature, RR: daily precipitation sum, PP: daily mean sea-level pressure,\nHU: relative humidity, FG: daily mean wind speed and QQ: global radiation.\n\nQQ and FG are have slightly different grids and are not concatenated with other variables.\n",
+    "maintainers": [
+      {
+        "name": "Raphael Hagen",
+        "github": "norlandrhagen"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Copernicus Climate Change Service",
+          "description": "We acknowledge the E-OBS dataset from the EU-FP6 project UERRA (https://www.uerra.eu) and the Copernicus Climate Change Service, and the data providers in the ECA&D project (https://www.ecad.eu) Cornes, R., G. van der Schrier, E.J.M. van den Besselaar, and P.D. Jones. 2018: An Ensemble Version of the E-OBS Temperature and Precipitation Datasets, J. Geophys. Res. Atmos., 123. doi:10.1029/2017JD028200",
+          "roles": ["producer", "licensor"],
+          "url": "https://surfobs.climate.copernicus.eu/dataaccess/access_eobs.php#datafiles"
+        }
+      ],
+      "license": "proprietary",
+      "license_link": {
+        "title": "ECA&D and E-OBS terms and conditions of use",
+        "url": "https://www.ecad.eu/documents/ECAD_datapolicy.pdf"
+      }
+    },
+    "thumbnail": null,
+    "tags": [
+      "zarr",
+      "climate",
+      "regional",
+      "osn",
+      "open-storage-network",
+      "europe"
+    ],
+    "links": null,
+    "stores": [
+      {
+        "id": "eobs-wind-speed",
+        "name": null,
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-wind-speed.zarr",
+        "ncviewjs:rechunking": null
+      },
+      {
+        "id": "eobs-tg-tn-tx-rr-hu-pp",
+        "name": null,
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-tg-tn-tx-rr-hu-pp.zarr",
+        "ncviewjs:rechunking": null
+      },
+      {
+        "id": "eobs-surface-downwelling",
+        "name": null,
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-surface-downwelling.zarr",
+        "ncviewjs:rechunking": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/EOBS-feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
