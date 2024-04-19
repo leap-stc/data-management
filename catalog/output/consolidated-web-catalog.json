@@ -267,5 +267,39 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/eVolv2k-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "LMRv2.1 Monte Carlo Runs for gridded fields",
+    "description": "Gridded variables from ensemble runs executed as part of the Last Millennium Reanalysis (LMR) project (v2.1) which utilizes an ensemble methodology to assimilate paleoclimate data for the production of annually resolved climate field reconstructions of the Common Era.",
+    "maintainers": [
+      {
+        "name": "Jordan Landers",
+        "github": "jordanplanders"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "NCEI/NOAAA",
+          "description": "National Centers for Environmental Information",
+          "roles": ["licensor", "curator"],
+          "url": "https://www.ncei.noaa.gov/access/paleo-search/study/27850"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["zarr", "pangeo-forge", "open-storage-network", "osn"],
+    "links": null,
+    "stores": [
+      {
+        "id": "LMRv2.1 Monte Carlo Runs for gridded fields",
+        "name": "LMRv2p1_MCruns_ensemble_gridded",
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock/LMRv2p1_MCruns_ensemble_gridded.zarr",
+        "ncviewjs:rechunking": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
