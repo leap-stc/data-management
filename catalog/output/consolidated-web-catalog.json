@@ -301,5 +301,46 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "NOAA Coastwatch Geo-Polar SST",
+    "description": "NOAA Geo-Polar Blended Global Sea Surface Temperature Analysis (Level 4)",
+    "maintainers": [
+      {
+        "name": "Rachel Wegener",
+        "github": "rwegener2"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "NOAA Coastwatch/OceanWatch",
+          "description": "National Oceanographic & Atmospheric Administration Coastwatch/Oceanwatch",
+          "roles": ["licensor", "producer", "processor"],
+          "url": "https://coastwatch.noaa.gov/cw/satellite-data-products/sea-surface-temperature/sea-surface-temperature-near-real-time-geopolar-blended.html"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": [
+      "zarr",
+      "pangeo-forge",
+      "open-storage-network",
+      "osn",
+      "noaa",
+      "polar"
+    ],
+    "links": null,
+    "stores": [
+      {
+        "id": "NOAA Coastwatch Geo-Polar SST",
+        "name": "noaa-coastwatch-geopolar-sst",
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/noaa-coastwatch-geopolar-sst-feedstock/noaa-coastwatch-geopolar-sst.zarr",
+        "ncviewjs:rechunking": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/noaa-coastwatch-geopolar-sst-feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
