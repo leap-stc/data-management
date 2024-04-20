@@ -398,5 +398,57 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/EOBS-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "Sea-surface altimetry data from The Copernicus Marine Environment",
+    "description": "SSALTO/DUACS Delayed-Time Level-4 sea surface height and derived variables measured by multi-satellite altimetry observations over Global Ocean. This dataset was moved from the legacy pangeo catalog.\n",
+    "maintainers": [
+      {
+        "name": "Julius Busecke",
+        "github": "jbusecke"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Copernicus Marine Service",
+          "description": "The Copernicus Programme is the European Union's Earth Observation Programme, looking at our planet and its environment for the ultimate benefit of all European and global citizens.\n",
+          "roles": ["producer", "licensor"],
+          "url": "https://marine.copernicus.eu/"
+        },
+        {
+          "name": "LEAP",
+          "description": "STC: Center for Learning the Earth with Artificial Intelligence and Physics",
+          "roles": ["curator"],
+          "url": null
+        }
+      ],
+      "license": "proprietary",
+      "license_link": {
+        "title": "Service Commitments and Licence",
+        "url": "https://marine.copernicus.eu/user-corner/service-commitments-and-licence"
+      }
+    },
+    "thumbnail": null,
+    "tags": ["ocean", "satellite", "carbon", "zarr", "osn"],
+    "links": [
+      {
+        "label": "Data Source (not original source)",
+        "url": "https://catalog.pangeo.io/browse/master/ocean/sea_surface_height/"
+      },
+      {
+        "label": "Original Documentation (not available anymore)",
+        "url": "https://data.marine.copernicus.eu/product/SEALEVEL_GLO_PHY_L4_REP_OBSERVATIONS_008_047/description"
+      }
+    ],
+    "stores": [
+      {
+        "id": "AVISO (Pangeo Legacy copy)",
+        "name": "AVISO",
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-cmems-duacs",
+        "ncviewjs:rechunking": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/sea-surface-altimetry-data-from-copernicus-feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
