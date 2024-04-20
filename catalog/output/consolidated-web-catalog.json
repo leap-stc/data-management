@@ -450,5 +450,39 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/sea-surface-altimetry-data-from-copernicus-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "WOA 2018 1 degree monthly",
+    "description": "1 Degree monthly climatology from WOA",
+    "maintainers": [
+      {
+        "name": "Dhruv Balwada",
+        "github": "dhruvbalwada"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "NOAA NCEI",
+          "description": "National Oceanographic & Atmospheric Administration National Centers for Environmental Information",
+          "roles": ["producer", "licensor"],
+          "url": "https://www.ncdc.noaa.gov/oisst"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["zarr", "pangeo-forge", "open-storage-network", "osn"],
+    "links": null,
+    "stores": [
+      {
+        "id": "woa18-1deg-monthly",
+        "name": "woa18-1deg-monthly",
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/WOA_1degree_monthly-feedstock/woa18-1deg-monthly.zarr",
+        "ncviewjs:rechunking": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/WOA_1degree_monthly-feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
