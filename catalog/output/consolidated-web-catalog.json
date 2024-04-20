@@ -484,5 +484,51 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/WOA_1degree_monthly-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "Large ensemble pCO2 testbed",
+    "description": "Large ensemble pCO2 testbed (manually ingested)\n",
+    "maintainers": [
+      {
+        "name": "Julius Busecke",
+        "github": "jbusecke"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "LEAP",
+          "description": "STC: Center for Learning the Earth with Artificial Intelligence and Physics",
+          "roles": ["curator"],
+          "url": null
+        }
+      ],
+      "license": "CC-BY",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["carbon", "zarr", "gcp"],
+    "links": null,
+    "stores": [
+      {
+        "id": "CESM.zarr",
+        "name": null,
+        "url": "gs://leap-persistent-ro/data-library-manual/CESM.zarr",
+        "ncviewjs:rechunking": null
+      },
+      {
+        "id": "CanESM2.zarr",
+        "name": null,
+        "url": "gs://leap-persistent-ro/data-library-manual/CanESM2.zarr",
+        "ncviewjs:rechunking": null
+      },
+      {
+        "id": "GFDL.zarr",
+        "name": null,
+        "url": "gs://leap-persistent-ro/data-library-manual/GFDL.zarr",
+        "ncviewjs:rechunking": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/large-ensemble-pCO2-testbed-feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
