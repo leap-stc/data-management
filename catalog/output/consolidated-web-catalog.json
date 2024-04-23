@@ -183,46 +183,6 @@
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/AGDC-feedstock/blob/main/feedstock/meta.yaml"
   },
   {
-    "title": "LEAP Data Library Prototype",
-    "description": "A prototype test for the LEAP Data Library refactor\n",
-    "maintainers": [
-      {
-        "name": "Julius Busecke",
-        "github": "jbusecke"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "Julius",
-          "description": "Just a guy testing some recipes. Nothing to see here.",
-          "roles": ["producer", "licensor"],
-          "url": null
-        }
-      ],
-      "license": "Just a Test",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": ["my-custom-tag", "zarr"],
-    "links": null,
-    "stores": [
-      {
-        "id": "metaflux-daily",
-        "name": null,
-        "url": "gs://leap-persistent-ro/data-library/feedstocks/metaflux_feedstock/metaflux_daily.zarr",
-        "ncviewjs:rechunking": null
-      },
-      {
-        "id": "metaflux-monthly",
-        "name": null,
-        "url": "gs://leap-persistent-ro/data-library/feedstocks/metaflux_feedstock/meatflux_monthly.zarr",
-        "ncviewjs:rechunking": null
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/proto_feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
     "title": "eVolv2k VSSI database",
     "description": "eVolv2k includes estimates of the magnitudes and approximate source latitudes of major volcanic stratospheric sulfur injection (VSSI) events from 500BCE to 1900CE.",
     "maintainers": [
@@ -530,5 +490,85 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/large-ensemble-pCO2-testbed-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "CASM",
+    "description": "A long-term Consistent Artificial-intelligence based Soil Moisture dataset based on machine learning and remote sensing\n",
+    "maintainers": [
+      {
+        "name": "Julius Busecke",
+        "github": "jbusecke"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Zenodo",
+          "description": "Zenodo",
+          "roles": ["host"],
+          "url": "https://zenodo.org/record/7072512#.ZFj3h-zMK3J"
+        },
+        {
+          "name": "Skulovich and Gentine",
+          "description": "Authors of CASM: A long-term Consistent Artificial-intelligence based Soil Moisture dataset based on machine learning and remote sensing",
+          "roles": ["producer", "licensor"],
+          "url": null
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["precipitation", "zarr"],
+    "links": null,
+    "stores": [
+      {
+        "id": "casm",
+        "name": "CASM",
+        "url": "gs://leap-persistent-ro/data-library/feedstocks/latest/casm_feedstock/casm.zarr",
+        "ncviewjs:rechunking": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/casm_feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "LEAP Data Library Prototype",
+    "description": "A prototype test for the LEAP Data Library refactor\n",
+    "maintainers": [
+      {
+        "name": "Julius Busecke",
+        "github": "jbusecke"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Julius",
+          "description": "Just a guy testing some recipes. Nothing to see here.",
+          "roles": ["producer", "licensor"],
+          "url": null
+        }
+      ],
+      "license": "Just a Test",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["my-custom-tag", "zarr"],
+    "links": null,
+    "stores": [
+      {
+        "id": "metaflux-daily",
+        "name": "METAFLUX_GPP_RECO_daily",
+        "url": "gs://leap-persistent-ro/data-library/feedstocks/metaflux_feedstock/metaflux_daily.zarr",
+        "ncviewjs:rechunking": null
+      },
+      {
+        "id": "metaflux-monthly",
+        "name": "METAFLUX_GPP_RECO_monthly",
+        "url": "gs://leap-persistent-ro/data-library/feedstocks/metaflux_feedstock/meatflux_monthly.zarr",
+        "ncviewjs:rechunking": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/proto_feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
