@@ -43,13 +43,15 @@
         "id": "GCB-2023_dataprod_LDEO-HPD_1959-2022-updated-flipped-lon",
         "name": "flux",
         "url": "s3://carbonplan-data-viewer/demo/leap-data-stories/GCB-2023_dataprod_LDEO-HPD_1959-2022-updated-flipped-lon.zarr/",
-        "ncviewjs:rechunking": null
+        "ncviewjs:rechunking": null,
+        "public": false
       },
       {
         "id": "annual-sfco2",
         "name": "Annual fgco2",
         "url": "s3://carbonplan-data-viewer/demo/leap-data-stories/annual-sfco2.zarr/",
-        "ncviewjs:rechunking": null
+        "ncviewjs:rechunking": null,
+        "public": false
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/carbonplan/ocean-carbon-sink-data-feedstock/blob/main/feedstock/meta.yaml"
@@ -89,7 +91,8 @@
         "id": "gpcp",
         "name": "gpcp",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/gpcp-feedstock/gpcp.zarr",
-        "ncviewjs:rechunking": null
+        "ncviewjs:rechunking": null,
+        "public": true
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/gpcp-feedstock/blob/main/feedstock/meta.yaml"
@@ -136,7 +139,8 @@
         "id": "hadisst",
         "name": "hadisst",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/HadISST-feedstock/hadisst.zarr",
-        "ncviewjs:rechunking": null
+        "ncviewjs:rechunking": null,
+        "public": true
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/HadISST-feedstock/blob/main/feedstock/meta.yaml"
@@ -177,10 +181,53 @@
         "id": "AGCD",
         "name": "AGCD",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/AGDC-feedstock/AGCD.zarr",
-        "ncviewjs:rechunking": null
+        "ncviewjs:rechunking": null,
+        "public": true
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/AGDC-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "LEAP Data Library Prototype",
+    "description": "A prototype test for the LEAP Data Library refactor\n",
+    "maintainers": [
+      {
+        "name": "Julius Busecke",
+        "github": "jbusecke"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Julius",
+          "description": "Just a guy testing some recipes. Nothing to see here.",
+          "roles": ["producer", "licensor"],
+          "url": null
+        }
+      ],
+      "license": "Just a Test",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["my-custom-tag", "zarr"],
+    "links": null,
+    "stores": [
+      {
+        "id": "metaflux-daily",
+        "name": null,
+        "url": "gs://leap-persistent-ro/data-library/feedstocks/metaflux_feedstock/metaflux_daily.zarr",
+        "ncviewjs:rechunking": null,
+        "public": false
+      },
+      {
+        "id": "metaflux-monthly",
+        "name": null,
+        "url": "gs://leap-persistent-ro/data-library/feedstocks/metaflux_feedstock/meatflux_monthly.zarr",
+        "ncviewjs:rechunking": null,
+        "public": false
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/proto_feedstock/blob/main/feedstock/meta.yaml"
   },
   {
     "title": "eVolv2k VSSI database",
@@ -223,7 +270,8 @@
         "id": "eVolv2k",
         "name": "eVolv2k",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/eVolv2k-feedstock/eVolv2k.zarr",
-        "ncviewjs:rechunking": null
+        "ncviewjs:rechunking": null,
+        "public": true
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/eVolv2k-feedstock/blob/main/feedstock/meta.yaml"
@@ -257,7 +305,8 @@
         "id": "LMRv2.1 Monte Carlo Runs for gridded fields",
         "name": "LMRv2p1_MCruns_ensemble_gridded",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock/LMRv2p1_MCruns_ensemble_gridded.zarr",
-        "ncviewjs:rechunking": null
+        "ncviewjs:rechunking": null,
+        "public": true
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock/blob/main/feedstock/meta.yaml"
@@ -298,7 +347,8 @@
         "id": "NOAA Coastwatch Geo-Polar SST",
         "name": "noaa-coastwatch-geopolar-sst",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/noaa-coastwatch-geopolar-sst-feedstock/noaa-coastwatch-geopolar-sst.zarr",
-        "ncviewjs:rechunking": null
+        "ncviewjs:rechunking": null,
+        "public": true
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/noaa-coastwatch-geopolar-sst-feedstock/blob/main/feedstock/meta.yaml"
@@ -342,19 +392,22 @@
         "id": "eobs-wind-speed",
         "name": null,
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-wind-speed.zarr",
-        "ncviewjs:rechunking": null
+        "ncviewjs:rechunking": null,
+        "public": true
       },
       {
         "id": "eobs-tg-tn-tx-rr-hu-pp",
         "name": null,
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-tg-tn-tx-rr-hu-pp.zarr",
-        "ncviewjs:rechunking": null
+        "ncviewjs:rechunking": null,
+        "public": true
       },
       {
         "id": "eobs-surface-downwelling",
         "name": null,
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-surface-downwelling.zarr",
-        "ncviewjs:rechunking": null
+        "ncviewjs:rechunking": null,
+        "public": true
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/EOBS-feedstock/blob/main/feedstock/meta.yaml"
@@ -406,7 +459,8 @@
         "id": "AVISO (Pangeo Legacy copy)",
         "name": "AVISO",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-cmems-duacs",
-        "ncviewjs:rechunking": null
+        "ncviewjs:rechunking": null,
+        "public": true
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/sea-surface-altimetry-data-from-copernicus-feedstock/blob/main/feedstock/meta.yaml"
@@ -440,7 +494,8 @@
         "id": "woa18-1deg-monthly",
         "name": "woa18-1deg-monthly",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/WOA_1degree_monthly-feedstock/woa18-1deg-monthly.zarr",
-        "ncviewjs:rechunking": null
+        "ncviewjs:rechunking": null,
+        "public": true
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/WOA_1degree_monthly-feedstock/blob/main/feedstock/meta.yaml"
@@ -474,19 +529,22 @@
         "id": "CESM.zarr",
         "name": null,
         "url": "gs://leap-persistent-ro/data-library-manual/CESM.zarr",
-        "ncviewjs:rechunking": null
+        "ncviewjs:rechunking": null,
+        "public": false
       },
       {
         "id": "CanESM2.zarr",
         "name": null,
         "url": "gs://leap-persistent-ro/data-library-manual/CanESM2.zarr",
-        "ncviewjs:rechunking": null
+        "ncviewjs:rechunking": null,
+        "public": false
       },
       {
         "id": "GFDL.zarr",
         "name": null,
         "url": "gs://leap-persistent-ro/data-library-manual/GFDL.zarr",
-        "ncviewjs:rechunking": null
+        "ncviewjs:rechunking": null,
+        "public": false
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/large-ensemble-pCO2-testbed-feedstock/blob/main/feedstock/meta.yaml"
