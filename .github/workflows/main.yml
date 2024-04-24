@@ -4,6 +4,8 @@ on:
   pull_request:
     branches:
   workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
 
 permissions:
   contents: write
@@ -98,6 +100,7 @@ jobs:
           branch: ${{ github.event.pull_request.head.ref }}
 
       - name: Create Pull Request
+        id: cpr
         if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' ) && github.ref == 'refs/heads/main'
         uses: peter-evans/create-pull-request@v6
         with:
