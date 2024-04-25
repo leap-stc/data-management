@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  generate-and-validate:
+  validate-and-generate:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -43,7 +43,7 @@ jobs:
           path: catalog/output/consolidated-web-catalog.json
 
   update:
-    needs: generate-and-validate
+    needs: validate-and-generate
     runs-on: ubuntu-latest
     defaults:
       run:
