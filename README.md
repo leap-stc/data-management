@@ -1,6 +1,7 @@
 # The LEAP-Pangeo Community Bakery
 
 [![pre-commit.ci status][pre-commit.ci-badge]][pre-commit.ci-link]
+[![Catalog](https://github.com/leap-stc/data-management/actions/workflows/catalog.yml/badge.svg)](https://github.com/leap-stc/data-management/actions/workflows/catalog.yml)
 
 This repository serves as the central coordination point for all LEAP Data ingestion via [pangeo-forge](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://pangeo-forge.readthedocs.io/&ved=2ahUKEwi4zqL_jcWFAxVwMVkFHbZ1D4MQFnoECA0QAQ&usg=AOvVaw3LWGBAYD28rkT_iLnLAJUq)
 
