@@ -44,14 +44,14 @@
         "name": "flux",
         "url": "s3://carbonplan-data-viewer/demo/leap-data-stories/GCB-2023_dataprod_LDEO-HPD_1959-2022-updated-flipped-lon.zarr/",
         "ncviewjs:rechunking": null,
-        "public": true
+        "public": false
       },
       {
         "id": "annual-sfco2",
         "name": "Annual fgco2",
         "url": "s3://carbonplan-data-viewer/demo/leap-data-stories/annual-sfco2.zarr/",
         "ncviewjs:rechunking": null,
-        "public": true
+        "public": false
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/carbonplan/ocean-carbon-sink-data-feedstock/blob/main/feedstock/meta.yaml"
