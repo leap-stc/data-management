@@ -4,11 +4,22 @@ channels:
   - nodefaults
 dependencies:
   - python=3.10
+  - aiohttp
+  - apache-beam
   - black
+  - cftime
   - fsspec >= 2023.2
+  - gcsfs
+  - google-cloud-bigquery
+  - pangeo-forge-recipes
   - pre-commit
-  - pydantic
+  - pydantic-core
+  - pydantic>=2
   - pytest
   - pyyaml
   - ruff
+  - s3fs
   - universal_pathlib
+  - zarr
+  - pip:
+      - git+https://github.com/leap-stc/leap-data-management-utils
