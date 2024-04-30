@@ -95,7 +95,7 @@ jobs:
           git commit -m "Auto-update consolidated-web-catalog.json" || true
 
       - name: Push changes
-        if: github.event_name != 'schedule'
+        if: github.event_name == 'pull_request'
         uses: ad-m/github-push-action@master
         with:
           # ssh: true
