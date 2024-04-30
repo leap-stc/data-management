@@ -626,47 +626,5 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/aws-noaa-oisst-feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
-    "title": "TerraClimate",
-    "description": "TerraClimate is a dataset of monthly climate and climatic water balance for global terrestrial surfaces from 1958-2019. These data provide important inputs for ecological and hydrological studies at global scales that require high spatial resolution and time-varying data. All data have monthly temporal resolution and a ~4-km (1/24th degree) spatial resolution. The data cover the period from 1958-2020. We plan to update these data periodically (annually).\n",
-    "maintainers": [
-      {
-        "name": "Ryan Abernathey",
-        "github": "rabernat"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "University of California Merced",
-          "description": "University of California Merced Climatology Lab",
-          "roles": ["producer", "licensor"],
-          "url": "https://www.climatologylab.org/terraclimate.html"
-        }
-      ],
-      "license": "CC-PDDC",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": [
-      "zarr",
-      "pangeo-forge",
-      "open-storage-network",
-      "climate",
-      "water balance",
-      "University of California Merced"
-    ],
-    "links": null,
-    "stores": [
-      {
-        "id": "terraclimate",
-        "name": "terraclimate",
-        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/terraclimate-feedstock/terraclimate.zarr",
-        "ncviewjs:rechunking": null,
-        "public": true
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/terraclimate-feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
