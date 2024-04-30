@@ -628,41 +628,6 @@
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/aws-noaa-oisst-feedstock/blob/main/feedstock/meta.yaml"
   },
   {
-    "title": "SODA 3.4.2 ICE",
-    "description": "SODA: A reanalysis of ocean climate (ICE)",
-    "maintainers": [
-      {
-        "name": "Charles Stern",
-        "github": "cisaacstern"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "UMD Atmos",
-          "description": "Department of Atmospheric and Oceanic Science, University of Maryland",
-          "roles": ["producer", "licensor"],
-          "url": "https://www.soda.umd.edu"
-        }
-      ],
-      "license": "CC-BY-4.0",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": ["zarr", "pangeo-forge", "open-storage-network", "UMD", "ice"],
-    "links": null,
-    "stores": [
-      {
-        "id": "soda-342-ice",
-        "name": "soda-342-ice",
-        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/soda342/5day_ice.zarr/",
-        "ncviewjs:rechunking": null,
-        "public": true
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/soda-342-feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
     "title": "TerraClimate",
     "description": "TerraClimate is a dataset of monthly climate and climatic water balance for global terrestrial surfaces from 1958-2019. These data provide important inputs for ecological and hydrological studies at global scales that require high spatial resolution and time-varying data. All data have monthly temporal resolution and a ~4-km (1/24th degree) spatial resolution. The data cover the period from 1958-2020. We plan to update these data periodically (annually).\n",
     "maintainers": [
