@@ -13,3 +13,4 @@ feedstocks:
   - https://github.com/leap-stc/large-ensemble-pCO2-testbed-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/cesm-atm-025deg-pangeo-forge-osn-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/aws-noaa-oisst-pangeo-forge-feedstock/blob/main/feedstock/catalog.yaml
+  - https://github.com/leap-stc/cmip6-leap-feedstock/blob/main/feedstock/catalog.yaml

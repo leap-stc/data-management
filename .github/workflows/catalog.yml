@@ -23,15 +23,6 @@ jobs:
         shell: bash -l {0}
     steps:
       - uses: actions/checkout@v4
-      - name: set up conda environment
-        uses: mamba-org/setup-micromamba@v1
-        with:
-          environment-file: ci/environment.yaml
-          init-shell: >-
-            bash
-          cache-environment: true
-          cache-downloads: true
-          post-cleanup: "all"
 
       - name: Validate Feedstocks and Generate Catalog
         uses: leap-stc/data-catalog-actions/leap-catalog@main
@@ -67,16 +58,6 @@ jobs:
         run: |
           git pull origin ${{ github.event.pull_request.head.ref }} --rebase --autostash
 
-      - name: set up conda environment
-        uses: mamba-org/setup-micromamba@v1
-        with:
-          environment-file: ci/environment.yaml
-          init-shell: >-
-            bash
-          cache-environment: true
-          cache-downloads: true
-          post-cleanup: "all"
-
       - uses: actions/download-artifact@v4
         with:
           name: consolidated-web-catalog.json
@@ -86,6 +67,7 @@ jobs:
         run: |
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
+          python -m pip install pre-commit
           pre-commit install
           git add catalog/output/consolidated-web-catalog.json
           # run pre-commit and return 0 to avoid failing the job

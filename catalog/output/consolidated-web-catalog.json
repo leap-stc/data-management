@@ -646,5 +646,41 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/aws-noaa-oisst-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "CMIP6",
+    "description": "CMIP6 datasets converted to zarr stores from ESGF files",
+    "maintainers": [
+      {
+        "name": "Julius Busecke",
+        "github": "jbusecke"
+      },
+      {
+        "name": "Charles Stern",
+        "github": "cisaacstern"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "ESGF",
+          "description": "Earth System Grid Federation",
+          "roles": ["producer", "licensor"],
+          "url": "https://esgf-node.llnl.gov/projects/cmip6/"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["cmip6", "gcs", "zarr"],
+    "links": [
+      {
+        "label": "DOI",
+        "url": "https://zenodo.org/badge/latestdoi/618127503"
+      }
+    ],
+    "stores": null,
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/cmip6-leap-feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
