@@ -71,6 +71,8 @@ jobs:
           git add catalog/output/consolidated-web-catalog.json
           # run pre-commit and return 0 to avoid failing the job
           pre-commit run || true
+          git add catalog/output/consolidated-web-catalog.json
+          pre-commit run || true
           git add catalog/output/consolidated-web-catalog.json || true
           git commit -m "Auto-update consolidated-web-catalog.json" || true
 
