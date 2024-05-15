@@ -193,8 +193,8 @@
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/AGDC-feedstock/blob/main/feedstock/meta.yaml"
   },
   {
-    "title": "LEAP Data Library Prototype",
-    "description": "A prototype test for the LEAP Data Library refactor\n",
+    "title": "MetaFlux",
+    "description": "MetaFlux: Meta-learning global carbon fluxes from sparse spatiotemporal observations\n",
     "maintainers": [
       {
         "name": "Julius Busecke",
@@ -204,13 +204,19 @@
     "provenance": {
       "providers": [
         {
-          "name": "Julius",
-          "description": "Just a guy testing some recipes. Nothing to see here.",
+          "name": "Zenodo",
+          "description": "Zenodo",
+          "roles": ["host"],
+          "url": "https://zenodo.org/record/7761881#.ZFv9OS-B30p"
+        },
+        {
+          "name": "Nathaniel et al.",
+          "description": "Authors of MetaFlux: Meta-learning global carbon fluxes from sparse spatiotemporal observations",
           "roles": ["producer", "licensor"],
           "url": null
         }
       ],
-      "license": "Just a Test",
+      "license": "CC-BY-4.0",
       "license_link": null
     },
     "thumbnail": null,
@@ -219,7 +225,7 @@
     "stores": [
       {
         "id": "metaflux-daily",
-        "name": null,
+        "name": "METAFLUX_GPP_RECO_daily",
         "url": "gs://leap-persistent-ro/data-library/feedstocks/metaflux_feedstock/metaflux_daily.zarr",
         "ncviewjs:rechunking": null,
         "public": false,
@@ -227,14 +233,14 @@
       },
       {
         "id": "metaflux-monthly",
-        "name": null,
+        "name": "METAFLUX_GPP_RECO_monthly",
         "url": "gs://leap-persistent-ro/data-library/feedstocks/metaflux_feedstock/meatflux_monthly.zarr",
         "ncviewjs:rechunking": null,
         "public": false,
         "geospatial": null
       }
     ],
-    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/proto_feedstock/blob/main/feedstock/meta.yaml"
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/metaflux_feedstock/blob/main/feedstock/meta.yaml"
   },
   {
     "title": "eVolv2k VSSI database",
