@@ -13,19 +13,13 @@
         {
           "name": "LDEO",
           "description": "Lamont Doherty Earth Observatory at Columbia",
-          "roles": [
-            "producer",
-            "licensor"
-          ],
+          "roles": ["producer", "licensor"],
           "url": null
         },
         {
           "name": "LEAP",
           "description": "STC: Center for Learning the Earth with Artificial Intelligence and Physics",
-          "roles": [
-            "producer",
-            "licensor"
-          ],
+          "roles": ["producer", "licensor"],
           "url": null
         }
       ],
@@ -33,12 +27,7 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": [
-      "ocean",
-      "carbon",
-      "zarr",
-      "machine learning"
-    ],
+    "tags": ["ocean", "carbon", "zarr", "machine learning"],
     "links": [
       {
         "label": "Lamont-Doherty Earth Observatory Hybrid Physics Data pCO2 Product",
@@ -83,18 +72,13 @@
         {
           "name": "NOAA NCEI",
           "description": "National Oceanographic & Atmospheric Administration National Centers for Environmental Information",
-          "roles": [
-            "host",
-            "licensor"
-          ],
+          "roles": ["host", "licensor"],
           "url": "https://www.ncei.noaa.gov/products/global-precipitation-climatology-project"
         },
         {
           "name": "University of Maryland",
           "description": "University of Maryland College Park Earth System Science Interdisciplinary Center (ESSIC) and Cooperative Institute for Climate and Satellites (CICS).\n",
-          "roles": [
-            "producer"
-          ],
+          "roles": ["producer"],
           "url": "http://gpcp.umd.edu/"
         }
       ],
@@ -102,12 +86,7 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": [
-      "zarr",
-      "pangeo-forge",
-      "open-storage-network",
-      "osn"
-    ],
+    "tags": ["zarr", "pangeo-forge", "open-storage-network", "osn"],
     "links": null,
     "stores": [
       {
@@ -135,10 +114,7 @@
         {
           "name": "Met Office Hadley Centre",
           "description": "Met Office Hadley Centre",
-          "roles": [
-            "producer",
-            "licensor"
-          ],
+          "roles": ["producer", "licensor"],
           "url": "https://www.metoffice.gov.uk/hadobs/hadisst/index.html"
         }
       ],
@@ -187,10 +163,7 @@
         {
           "name": "Australian Bureau of Meteorology",
           "description": "The Australian Bureau of Meteorology is a government agency providing weather and climate data. (http://www.bom.gov.au/)",
-          "roles": [
-            "producer",
-            "licensor"
-          ],
+          "roles": ["producer", "licensor"],
           "url": "https://dapds00.nci.org.au/thredds/catalogs/zv2/catalog.html"
         }
       ],
@@ -233,10 +206,7 @@
         {
           "name": "Julius",
           "description": "Just a guy testing some recipes. Nothing to see here.",
-          "roles": [
-            "producer",
-            "licensor"
-          ],
+          "roles": ["producer", "licensor"],
           "url": null
         }
       ],
@@ -244,10 +214,7 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": [
-      "my-custom-tag",
-      "zarr"
-    ],
+    "tags": ["my-custom-tag", "zarr"],
     "links": null,
     "stores": [
       {
@@ -283,18 +250,13 @@
         {
           "name": "Matthew Toohey",
           "description": null,
-          "roles": [
-            "producer"
-          ],
+          "roles": ["producer"],
           "url": "https://artsandscience.usask.ca/profile/MToohey#ResearchAreas"
         },
         {
           "name": "WDCC",
           "description": "World Data Center for Climate",
-          "roles": [
-            "curator",
-            "licensor"
-          ],
+          "roles": ["curator", "licensor"],
           "url": "https://www.wdc-climate.de/ui/entry?acronym=eVolv2k_v3"
         }
       ],
@@ -336,10 +298,7 @@
         {
           "name": "NCEI/NOAAA",
           "description": "National Centers for Environmental Information",
-          "roles": [
-            "licensor",
-            "curator"
-          ],
+          "roles": ["licensor", "curator"],
           "url": "https://www.ncei.noaa.gov/access/paleo-search/study/27850"
         }
       ],
@@ -347,12 +306,7 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": [
-      "zarr",
-      "pangeo-forge",
-      "open-storage-network",
-      "osn"
-    ],
+    "tags": ["zarr", "pangeo-forge", "open-storage-network", "osn"],
     "links": null,
     "stores": [
       {
@@ -380,11 +334,7 @@
         {
           "name": "NOAA Coastwatch/OceanWatch",
           "description": "National Oceanographic & Atmospheric Administration Coastwatch/Oceanwatch",
-          "roles": [
-            "licensor",
-            "producer",
-            "processor"
-          ],
+          "roles": ["licensor", "producer", "processor"],
           "url": "https://coastwatch.noaa.gov/cw/satellite-data-products/sea-surface-temperature/sea-surface-temperature-near-real-time-geopolar-blended.html"
         }
       ],
@@ -427,10 +377,7 @@
         {
           "name": "Copernicus Climate Change Service",
           "description": "We acknowledge the E-OBS dataset from the EU-FP6 project UERRA (https://www.uerra.eu) and the Copernicus Climate Change Service, and the data providers in the ECA&D project (https://www.ecad.eu) Cornes, R., G. van der Schrier, E.J.M. van den Besselaar, and P.D. Jones. 2018: An Ensemble Version of the E-OBS Temperature and Precipitation Datasets, J. Geophys. Res. Atmos., 123. doi:10.1029/2017JD028200",
-          "roles": [
-            "producer",
-            "licensor"
-          ],
+          "roles": ["producer", "licensor"],
           "url": "https://surfobs.climate.copernicus.eu/dataaccess/access_eobs.php#datafiles"
         }
       ],
@@ -492,18 +439,13 @@
         {
           "name": "Copernicus Marine Service",
           "description": "The Copernicus Programme is the European Union's Earth Observation Programme, looking at our planet and its environment for the ultimate benefit of all European and global citizens.\n",
-          "roles": [
-            "producer",
-            "licensor"
-          ],
+          "roles": ["producer", "licensor"],
           "url": "https://marine.copernicus.eu/"
         },
         {
           "name": "LEAP",
           "description": "STC: Center for Learning the Earth with Artificial Intelligence and Physics",
-          "roles": [
-            "curator"
-          ],
+          "roles": ["curator"],
           "url": null
         }
       ],
@@ -514,13 +456,7 @@
       }
     },
     "thumbnail": null,
-    "tags": [
-      "ocean",
-      "satellite",
-      "carbon",
-      "zarr",
-      "osn"
-    ],
+    "tags": ["ocean", "satellite", "carbon", "zarr", "osn"],
     "links": [
       {
         "label": "Data Source (not original source)",
@@ -557,10 +493,7 @@
         {
           "name": "NOAA NCEI",
           "description": "National Oceanographic & Atmospheric Administration National Centers for Environmental Information",
-          "roles": [
-            "producer",
-            "licensor"
-          ],
+          "roles": ["producer", "licensor"],
           "url": "https://www.ncdc.noaa.gov/oisst"
         }
       ],
@@ -568,12 +501,7 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": [
-      "zarr",
-      "pangeo-forge",
-      "open-storage-network",
-      "osn"
-    ],
+    "tags": ["zarr", "pangeo-forge", "open-storage-network", "osn"],
     "links": null,
     "stores": [
       {
@@ -601,9 +529,7 @@
         {
           "name": "LEAP",
           "description": "STC: Center for Learning the Earth with Artificial Intelligence and Physics",
-          "roles": [
-            "curator"
-          ],
+          "roles": ["curator"],
           "url": null
         }
       ],
@@ -611,11 +537,7 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": [
-      "carbon",
-      "zarr",
-      "gcp"
-    ],
+    "tags": ["carbon", "zarr", "gcp"],
     "links": null,
     "stores": [
       {
@@ -659,11 +581,7 @@
         {
           "name": "National Center for Atmospheric Research",
           "description": "Daily atmospheric data from coupled NCAR CESM run hybrid_v5_rel04_BC5_ne120_t12_pop62",
-          "roles": [
-            "producer",
-            "licensor",
-            "processor"
-          ],
+          "roles": ["producer", "licensor", "processor"],
           "url": "https://www.earthsystemgrid.org/dataset/ucar.cgd.asd.cs.hybrid_v5_rel04_BC5_ne120_t12_pop62.atm-regrid.proc.daily_ave.html"
         }
       ],
@@ -671,12 +589,7 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": [
-      "zarr",
-      "pangeo-forge",
-      "open-storage-network",
-      "osn"
-    ],
+    "tags": ["zarr", "pangeo-forge", "open-storage-network", "osn"],
     "links": null,
     "stores": [
       {
@@ -704,10 +617,7 @@
         {
           "name": "AWS NOAA Oceanic CDR",
           "description": "Registry of Open Data on AWS National Oceanographic & Atmospheric Administration National Centers for Environmental Information",
-          "roles": [
-            "producer",
-            "licensor"
-          ],
+          "roles": ["producer", "licensor"],
           "url": "s3://noaa-cdr-sea-surface-temp-optimum-interpolation-pds"
         }
       ],
@@ -755,10 +665,7 @@
         {
           "name": "ESGF",
           "description": "Earth System Grid Federation",
-          "roles": [
-            "producer",
-            "licensor"
-          ],
+          "roles": ["producer", "licensor"],
           "url": "https://esgf-node.llnl.gov/projects/cmip6/"
         }
       ],
@@ -766,11 +673,7 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": [
-      "cmip6",
-      "gcs",
-      "zarr"
-    ],
+    "tags": ["cmip6", "gcs", "zarr"],
     "links": [
       {
         "label": "DOI",
