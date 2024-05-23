@@ -45,7 +45,7 @@ jobs:
 
     environment:
       name: ${{ github.event.pull_request.number }}
-      url: ${{ format('https://staging-leap-data-catalog.vercel.app/?catalog=https://raw.githubusercontent.com/{0}/{1}/catalog/output/consolidated-web-catalog.json', github.event.pull_request.head.repo.full_name, github.head_ref) }}
+      url: ${{ format('https://catalog-staging.leap.carbonplan.org/?catalog=https://raw.githubusercontent.com/{0}/{1}/catalog/output/consolidated-web-catalog.json', github.event.pull_request.head.repo.full_name, github.head_ref) }}
     steps:
       - uses: actions/checkout@v4
         with:
