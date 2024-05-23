@@ -688,5 +688,41 @@
     ],
     "stores": null,
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/cmip6-leap-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "LEAP Data Library Prototype",
+    "description": "A prototype test for the LEAP Data Library refactor\n",
+    "maintainers": [
+      {
+        "name": "Julius Busecke",
+        "github": "jbusecke"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Julius",
+          "description": "Just a guy testing some recipes. Nothing to see here.",
+          "roles": ["producer", "licensor"],
+          "url": null
+        }
+      ],
+      "license": "Just a Test",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["my-custom-tag", "zarr"],
+    "links": null,
+    "stores": [
+      {
+        "id": "CM26_control_surface",
+        "name": "CM2.6 Control Run",
+        "url": "gs://cmip6/GFDL_CM2_6/control/surface",
+        "ncviewjs:rechunking": null,
+        "public": true,
+        "geospatial": true
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/proto_feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
