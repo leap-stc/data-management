@@ -724,5 +724,47 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/proto_feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "ClimSim",
+    "description": "\"Analysis-ready optimized ClimSim data\"\n",
+    "maintainers": [
+      {
+        "name": "Qingyuan Yang",
+        "github": "yiqioyang"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Hugging Face",
+          "description": "Hugging Face",
+          "roles": ["host"],
+          "url": "https://huggingface.co/datasets/LEAP/ClimSim_low-res"
+        },
+        {
+          "name": "Sungduk Yu et al",
+          "description": "ClimSim: An open large-scale dataset for training high-resolution physics emulators in hybrid multi-scale climate simulators",
+          "roles": ["producer", "licensor"],
+          "url": "https://arxiv.org/abs/2306.08754"
+        }
+      ],
+      "license": "Apache-2.0",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["my-custom-tag", "zarr"],
+    "links": null,
+    "stores": [
+      {
+        "id": "climsim-lowres-mli",
+        "name": "ClimSim Lowres mli",
+        "url": "gs://leap-persistent-ro/data-library/feedstocks/climsim_feedstock/climsim_lowres_mli.zarr",
+        "ncviewjs:rechunking": null,
+        "public": false,
+        "geospatial": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/climsim_feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
