@@ -690,8 +690,8 @@
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/cmip6-leap-feedstock/blob/main/feedstock/meta.yaml"
   },
   {
-    "title": "LEAP Data Library Prototype",
-    "description": "A prototype test for the LEAP Data Library refactor\n",
+    "title": "NOAA-GFDL CM2-O Coupled Climate Model Simulations",
+    "description": "",
     "maintainers": [
       {
         "name": "Julius Busecke",
@@ -701,13 +701,13 @@
     "provenance": {
       "providers": [
         {
-          "name": "Julius",
-          "description": "Just a guy testing some recipes. Nothing to see here.",
+          "name": "NOAA-GFDL",
+          "description": "NOAA-GFDL",
           "roles": ["producer", "licensor"],
-          "url": null
+          "url": "https://mom-ocean.github.io/assets/pdfs/CM2_O_suite_1990_tutorial_and_analysis.pdf"
         }
       ],
-      "license": "Just a Test",
+      "license": "Unknown",
       "license_link": null
     },
     "thumbnail": null,
@@ -723,6 +723,6 @@
         "geospatial": true
       }
     ],
-    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/proto_feedstock/blob/main/feedstock/meta.yaml"
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/cm2o_feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
