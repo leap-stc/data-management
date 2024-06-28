@@ -15,3 +15,4 @@ feedstocks:
   - https://github.com/leap-stc/aws-noaa-oisst-pangeo-forge-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/cmip6-leap-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/cm2o_feedstock/blob/main/feedstock/catalog.yaml
+  - https://github.com/leap-stc/arco-era5_feedstock/blob/main/feedstock/catalog.yaml
