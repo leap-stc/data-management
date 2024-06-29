@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
   workflow_dispatch:
+  repository_dispatch:
+    types:
+      - update-catalog
   schedule:
     - cron: "0 0 * * *"
 
@@ -22,6 +25,11 @@ jobs:
       run:
         shell: bash -l {0}
     steps:
+      - name: Echo originating repository
+        if: github.event_name == 'repository_dispatch'
+        run: |
+          echo "Originating repository: ${{ github.event.client_payload.origin_repo }}"
+
       - uses: actions/checkout@v4
 
       - name: Validate Feedstocks and Generate Catalog
@@ -86,7 +94,7 @@ jobs:
 
       - name: Create Pull Request
         id: cpr
-        if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' ) && github.ref == 'refs/heads/main'
+        if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch') && github.ref == 'refs/heads/main'
         uses: peter-evans/create-pull-request@v6
         with:
           commit-message: "build: update catalog"
