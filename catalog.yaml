@@ -1,0 +1,15 @@
+# All the information important to cataloging.
+"ncviewjs:meta_yaml_url": "https://github.com/norlandrhagen/arco-era5_feedstock/blob/patch-1/feedstock/meta.yaml"
+
+tags:
+  - atmosphere
+  - reanalysis
+  - zarr
+stores:
+  - id: "0_25_deg_pressure_surface_levels"
+    name: "This dataset contains most pressure-level fields and all surface-level field regridded to a uniform 0.25° resolution. It is a superset of the data used to train GraphCast and NeuralGCM"
+    url: "gs://gcp-public-data-arco-era5/ar/full_37-1h-0p25deg-chunk-1.zarr-v3"
+
+  - id: "0_25_deg_model_levels"
+    name: "This dataset contains 3D fields at 0.25° resolution with ERA5's native vertical coordinates (hybrid pressure/sigma coordinates)."
+    url: "'gs://gcp-public-data-arco-era5/ar/model-level-1h-0p25deg.zarr-v1'"
