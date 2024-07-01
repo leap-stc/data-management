@@ -8,7 +8,7 @@ on:
     types:
       - update-catalog
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "*/5 * * * *" # every 5 minutes. https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
 
 permissions:
   contents: write
