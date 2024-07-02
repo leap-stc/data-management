@@ -59,355 +59,6 @@
     "ncviewjs:meta_yaml_url": "https://github.com/carbonplan/ocean-carbon-sink-data-feedstock/blob/main/feedstock/meta.yaml"
   },
   {
-    "title": "Australian Gridded Climate Data (AGCD)",
-    "description": "The Australian Gridded Climate Data dataset is a 5KM gridded daily product provided by the Australian Bureau of Meteorology. \nVersion 1 contains precipitation, vapour pressure and minimum and maximum temperature. Australian Bureau of Meteorology (2020), \nAustralian Gridded Climate Data (AGCD); v1.0.0 Snapshot (1900-01-01 to 2020-05-31). Downloaded from NCI on 09-21-2021.\n",
-    "maintainers": [
-      {
-        "name": "Raphael Hagen",
-        "github": "norlandrhagen"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "Australian Bureau of Meteorology",
-          "description": "The Australian Bureau of Meteorology is a government agency providing weather and climate data. (http://www.bom.gov.au/)",
-          "roles": ["producer", "licensor"],
-          "url": "https://dapds00.nci.org.au/thredds/catalogs/zv2/catalog.html"
-        }
-      ],
-      "license": "CC-BY-NC-4.0",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": [
-      "zarr",
-      "pangeo-forge",
-      "open-storage-network",
-      "osn",
-      "meteorology",
-      "precipitation"
-    ],
-    "links": null,
-    "stores": [
-      {
-        "id": "AGCD",
-        "name": "AGCD",
-        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/AGDC-feedstock/AGCD.zarr",
-        "ncviewjs:rechunking": null,
-        "public": true,
-        "geospatial": true
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/AGDC-feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
-    "title": "ARCO ERA5",
-    "description": "Analysis-Ready, Cloud Optimized ERA5 data ingested by Google Research\n",
-    "maintainers": [
-      {
-        "name": "Julius Busecke",
-        "github": "jbusecke"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "Google Research",
-          "description": "Hersbach, H., Bell, B., Berrisford, P., Hirahara, S., Hor\u00e1nyi, A., Mu\u00f1oz\u2010Sabater, J., Nicolas, J., Peubey, C., Radu, R., Schepers, D., Simmons, A., Soci, C., Abdalla, S., Abellan, X., Balsamo, G., Bechtold, P., Biavati, G., Bidlot, J., Bonavita, M., De Chiara, G., Dahlgren, P., Dee, D., Diamantakis, M., Dragani, R., Flemming, J., Forbes, R., Fuentes, M., Geer, A., Haimberger, L., Healy, S., Hogan, R.J., H\u00f3lm, E., Janiskov\u00e1, M., Keeley, S., Laloyaux, P., Lopez, P., Lupu, C., Radnoti, G., de Rosnay, P., Rozum, I., Vamborg, F., Villaume, S., Th\u00e9paut, J-N. (2017): Complete ERA5: Fifth generation of ECMWF atmospheric reanalyses of the global climate. Copernicus Climate Change Service (C3S) Data Store (CDS).\nHersbach et al, (2017) was downloaded from the Copernicus Climate Change Service (C3S) Climate Data Store. We thank C3S for allowing us to redistribute the data.\nThe results contain modified Copernicus Climate Change Service information 2022. Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus information or data it contains.\n",
-          "roles": ["producer", "licensor"],
-          "url": null
-        }
-      ],
-      "license": "Apache Version 2.0",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": ["atmosphere", "reanalysis", "zarr"],
-    "links": null,
-    "stores": [
-      {
-        "id": "0_25_deg_pressure_surface_levels",
-        "name": "0.25\u00b0 ERA5 Surface Level Pressure",
-        "url": "gs://gcp-public-data-arco-era5/ar/full_37-1h-0p25deg-chunk-1.zarr-v3",
-        "ncviewjs:rechunking": null,
-        "public": true,
-        "geospatial": true
-      },
-      {
-        "id": "0_25_deg_model_levels",
-        "name": "0.25\u00b0 ERA5 Model Level Pressure",
-        "url": "gs://gcp-public-data-arco-era5/ar/model-level-1h-0p25deg.zarr-v1",
-        "ncviewjs:rechunking": null,
-        "public": true,
-        "geospatial": true
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/arco-era5_feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
-    "title": "AWS NOAA Optimum Interpolated SST",
-    "description": "Analysis-ready datasets derived from AWS NOAA OISST NetCDF",
-    "maintainers": [
-      {
-        "name": "Ryan Avery",
-        "github": "rbavery"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "AWS NOAA Oceanic CDR",
-          "description": "Registry of Open Data on AWS National Oceanographic & Atmospheric Administration National Centers for Environmental Information",
-          "roles": ["producer", "licensor"],
-          "url": "s3://noaa-cdr-sea-surface-temp-optimum-interpolation-pds"
-        }
-      ],
-      "license": "Open Data",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": [
-      "zarr",
-      "pangeo-forge",
-      "open-storage-network",
-      "osn",
-      "noaa",
-      "sst",
-      "oisst"
-    ],
-    "links": null,
-    "stores": [
-      {
-        "id": "noaa-oisst",
-        "name": "noaa-oisst",
-        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/noaa_oisst/v2.1-avhrr.zarr",
-        "ncviewjs:rechunking": null,
-        "public": true,
-        "geospatial": true
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/aws-noaa-oisst-feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
-    "title": "cesm-atm-025deg",
-    "description": "Daily atmospheric data from coupled NCAR CESM run hybrid_v5_rel04_BC5_ne120_t12_pop62",
-    "maintainers": [
-      {
-        "name": "Paige Martin",
-        "github": "paigem"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "National Center for Atmospheric Research",
-          "description": "Daily atmospheric data from coupled NCAR CESM run hybrid_v5_rel04_BC5_ne120_t12_pop62",
-          "roles": ["producer", "licensor", "processor"],
-          "url": "https://www.earthsystemgrid.org/dataset/ucar.cgd.asd.cs.hybrid_v5_rel04_BC5_ne120_t12_pop62.atm-regrid.proc.daily_ave.html"
-        }
-      ],
-      "license": "CC-BY-4.0",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": ["zarr", "pangeo-forge", "open-storage-network", "osn"],
-    "links": null,
-    "stores": [
-      {
-        "id": "cesm-atm-025deg",
-        "name": "cesm-atm-025deg",
-        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cesm-atm-025deg-feedstock/cesm-atm-025deg.zarr",
-        "ncviewjs:rechunking": null,
-        "public": true,
-        "geospatial": true
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/cesm-atm-025deg-feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
-    "title": "NOAA-GFDL CM2-O Coupled Climate Model Simulations",
-    "description": "",
-    "maintainers": [
-      {
-        "name": "Julius Busecke",
-        "github": "jbusecke"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "NOAA-GFDL",
-          "description": "NOAA-GFDL",
-          "roles": ["producer", "licensor"],
-          "url": "https://mom-ocean.github.io/assets/pdfs/CM2_O_suite_1990_tutorial_and_analysis.pdf"
-        }
-      ],
-      "license": "Unknown",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": ["my-custom-tag", "zarr"],
-    "links": null,
-    "stores": [
-      {
-        "id": "CM26_control_surface",
-        "name": "CM2.6 Control Run",
-        "url": "gs://cmip6/GFDL_CM2_6/control/surface",
-        "ncviewjs:rechunking": null,
-        "public": true,
-        "geospatial": true
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/cm2o_feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
-    "title": "CMIP6",
-    "description": "CMIP6 datasets converted to zarr stores from ESGF files",
-    "maintainers": [
-      {
-        "name": "Julius Busecke",
-        "github": "jbusecke"
-      },
-      {
-        "name": "Charles Stern",
-        "github": "cisaacstern"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "ESGF",
-          "description": "Earth System Grid Federation",
-          "roles": ["producer", "licensor"],
-          "url": "https://esgf-node.llnl.gov/projects/cmip6/"
-        }
-      ],
-      "license": "CC-BY-4.0",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": ["cmip6", "gcs", "zarr"],
-    "links": [
-      {
-        "label": "DOI",
-        "url": "https://zenodo.org/badge/latestdoi/618127503"
-      }
-    ],
-    "stores": null,
-    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/cmip6-leap-feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
-    "title": "E-OBS dataset",
-    "description": "E-OBS is a high resolution gridded climate dataset covering Europe and Northern Africa.\nThis dataset is version 23.1e with a 0.1 degree spatial resolution.\n\nVariables available are: TG: daily mean temperature, TN: daily minimum temperature,\nTX: daily maximum temperature, RR: daily precipitation sum, PP: daily mean sea-level pressure,\nHU: relative humidity, FG: daily mean wind speed and QQ: global radiation.\n\nQQ and FG are have slightly different grids and are not concatenated with other variables.\n",
-    "maintainers": [
-      {
-        "name": "Raphael Hagen",
-        "github": "norlandrhagen"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "Copernicus Climate Change Service",
-          "description": "We acknowledge the E-OBS dataset from the EU-FP6 project UERRA (https://www.uerra.eu) and the Copernicus Climate Change Service, and the data providers in the ECA&D project (https://www.ecad.eu) Cornes, R., G. van der Schrier, E.J.M. van den Besselaar, and P.D. Jones. 2018: An Ensemble Version of the E-OBS Temperature and Precipitation Datasets, J. Geophys. Res. Atmos., 123. doi:10.1029/2017JD028200",
-          "roles": ["producer", "licensor"],
-          "url": "https://surfobs.climate.copernicus.eu/dataaccess/access_eobs.php#datafiles"
-        }
-      ],
-      "license": "proprietary",
-      "license_link": {
-        "title": "ECA&D and E-OBS terms and conditions of use",
-        "url": "https://www.ecad.eu/documents/ECAD_datapolicy.pdf"
-      }
-    },
-    "thumbnail": null,
-    "tags": [
-      "zarr",
-      "climate",
-      "regional",
-      "osn",
-      "open-storage-network",
-      "europe"
-    ],
-    "links": null,
-    "stores": [
-      {
-        "id": "eobs-wind-speed",
-        "name": null,
-        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-wind-speed.zarr",
-        "ncviewjs:rechunking": null,
-        "public": true,
-        "geospatial": true
-      },
-      {
-        "id": "eobs-tg-tn-tx-rr-hu-pp",
-        "name": null,
-        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-tg-tn-tx-rr-hu-pp.zarr",
-        "ncviewjs:rechunking": null,
-        "public": true,
-        "geospatial": true
-      },
-      {
-        "id": "eobs-surface-downwelling",
-        "name": null,
-        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-surface-downwelling.zarr",
-        "ncviewjs:rechunking": null,
-        "public": true,
-        "geospatial": true
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/EOBS-feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
-    "title": "eVolv2k VSSI database",
-    "description": "eVolv2k includes estimates of the magnitudes and approximate source latitudes of major volcanic stratospheric sulfur injection (VSSI) events from 500BCE to 1900CE.",
-    "maintainers": [
-      {
-        "name": "Jordan Landers",
-        "github": "jordanplanders"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "Matthew Toohey",
-          "description": null,
-          "roles": ["producer"],
-          "url": "https://artsandscience.usask.ca/profile/MToohey#ResearchAreas"
-        },
-        {
-          "name": "WDCC",
-          "description": "World Data Center for Climate",
-          "roles": ["curator", "licensor"],
-          "url": "https://www.wdc-climate.de/ui/entry?acronym=eVolv2k_v3"
-        }
-      ],
-      "license": "CC-BY-4.0",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": [
-      "zarr",
-      "pangeo-forge",
-      "open-storage-network",
-      "osn",
-      "volcanology"
-    ],
-    "links": null,
-    "stores": [
-      {
-        "id": "eVolv2k",
-        "name": "eVolv2k",
-        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/eVolv2k-feedstock/eVolv2k.zarr",
-        "ncviewjs:rechunking": null,
-        "public": true,
-        "geospatial": false
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/eVolv2k-feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
     "title": "Global Precipitation Climatology Project",
     "description": "Global Precipitation Climatology Project (GPCP) Daily Version 1.3 gridded, merged ty satellite/gauge precipitation Climate data Record (CDR) from 1996 to present.\n",
     "maintainers": [
@@ -499,92 +150,47 @@
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/HadISST-feedstock/blob/main/feedstock/meta.yaml"
   },
   {
-    "title": "Large ensemble pCO2 testbed",
-    "description": "Large ensemble pCO2 testbed (manually ingested)\n",
+    "title": "Australian Gridded Climate Data (AGCD)",
+    "description": "The Australian Gridded Climate Data dataset is a 5KM gridded daily product provided by the Australian Bureau of Meteorology. \nVersion 1 contains precipitation, vapour pressure and minimum and maximum temperature. Australian Bureau of Meteorology (2020), \nAustralian Gridded Climate Data (AGCD); v1.0.0 Snapshot (1900-01-01 to 2020-05-31). Downloaded from NCI on 09-21-2021.\n",
     "maintainers": [
       {
-        "name": "Julius Busecke",
-        "github": "jbusecke"
+        "name": "Raphael Hagen",
+        "github": "norlandrhagen"
       }
     ],
     "provenance": {
       "providers": [
         {
-          "name": "LEAP",
-          "description": "STC: Center for Learning the Earth with Artificial Intelligence and Physics",
-          "roles": ["curator"],
-          "url": null
+          "name": "Australian Bureau of Meteorology",
+          "description": "The Australian Bureau of Meteorology is a government agency providing weather and climate data. (http://www.bom.gov.au/)",
+          "roles": ["producer", "licensor"],
+          "url": "https://dapds00.nci.org.au/thredds/catalogs/zv2/catalog.html"
         }
       ],
-      "license": "CC-BY",
+      "license": "CC-BY-NC-4.0",
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["carbon", "zarr", "gcp"],
+    "tags": [
+      "zarr",
+      "pangeo-forge",
+      "open-storage-network",
+      "osn",
+      "meteorology",
+      "precipitation"
+    ],
     "links": null,
     "stores": [
       {
-        "id": "CESM.zarr",
-        "name": null,
-        "url": "gs://leap-persistent-ro/data-library-manual/CESM.zarr",
-        "ncviewjs:rechunking": null,
-        "public": false,
-        "geospatial": null
-      },
-      {
-        "id": "CanESM2.zarr",
-        "name": null,
-        "url": "gs://leap-persistent-ro/data-library-manual/CanESM2.zarr",
-        "ncviewjs:rechunking": null,
-        "public": false,
-        "geospatial": null
-      },
-      {
-        "id": "GFDL.zarr",
-        "name": null,
-        "url": "gs://leap-persistent-ro/data-library-manual/GFDL.zarr",
-        "ncviewjs:rechunking": null,
-        "public": false,
-        "geospatial": null
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/large-ensemble-pCO2-testbed-feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
-    "title": "LMRv2.1 Monte Carlo Runs for gridded fields",
-    "description": "Gridded variables from ensemble runs executed as part of the Last Millennium Reanalysis (LMR) project (v2.1) which utilizes an ensemble methodology to assimilate paleoclimate data for the production of annually resolved climate field reconstructions of the Common Era.",
-    "maintainers": [
-      {
-        "name": "Jordan Landers",
-        "github": "jordanplanders"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "NCEI/NOAAA",
-          "description": "National Centers for Environmental Information",
-          "roles": ["licensor", "curator"],
-          "url": "https://www.ncei.noaa.gov/access/paleo-search/study/27850"
-        }
-      ],
-      "license": "CC-BY-4.0",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": ["zarr", "pangeo-forge", "open-storage-network", "osn"],
-    "links": null,
-    "stores": [
-      {
-        "id": "LMRv2.1 Monte Carlo Runs for gridded fields",
-        "name": "LMRv2p1_MCruns_ensemble_gridded",
-        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock/LMRv2p1_MCruns_ensemble_gridded.zarr",
+        "id": "AGCD",
+        "name": "AGCD",
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/AGDC-feedstock/AGCD.zarr",
         "ncviewjs:rechunking": null,
         "public": true,
         "geospatial": true
       }
     ],
-    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock/blob/main/feedstock/meta.yaml"
+    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/AGDC-feedstock/blob/main/feedstock/meta.yaml"
   },
   {
     "title": "MetaFlux",
@@ -637,6 +243,90 @@
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/metaflux_feedstock/blob/main/feedstock/meta.yaml"
   },
   {
+    "title": "eVolv2k VSSI database",
+    "description": "eVolv2k includes estimates of the magnitudes and approximate source latitudes of major volcanic stratospheric sulfur injection (VSSI) events from 500BCE to 1900CE.",
+    "maintainers": [
+      {
+        "name": "Jordan Landers",
+        "github": "jordanplanders"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Matthew Toohey",
+          "description": null,
+          "roles": ["producer"],
+          "url": "https://artsandscience.usask.ca/profile/MToohey#ResearchAreas"
+        },
+        {
+          "name": "WDCC",
+          "description": "World Data Center for Climate",
+          "roles": ["curator", "licensor"],
+          "url": "https://www.wdc-climate.de/ui/entry?acronym=eVolv2k_v3"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": [
+      "zarr",
+      "pangeo-forge",
+      "open-storage-network",
+      "osn",
+      "volcanology"
+    ],
+    "links": null,
+    "stores": [
+      {
+        "id": "eVolv2k",
+        "name": "eVolv2k",
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/eVolv2k-feedstock/eVolv2k.zarr",
+        "ncviewjs:rechunking": null,
+        "public": true,
+        "geospatial": false
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/eVolv2k-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "LMRv2.1 Monte Carlo Runs for gridded fields",
+    "description": "Gridded variables from ensemble runs executed as part of the Last Millennium Reanalysis (LMR) project (v2.1) which utilizes an ensemble methodology to assimilate paleoclimate data for the production of annually resolved climate field reconstructions of the Common Era.",
+    "maintainers": [
+      {
+        "name": "Jordan Landers",
+        "github": "jordanplanders"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "NCEI/NOAAA",
+          "description": "National Centers for Environmental Information",
+          "roles": ["licensor", "curator"],
+          "url": "https://www.ncei.noaa.gov/access/paleo-search/study/27850"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["zarr", "pangeo-forge", "open-storage-network", "osn"],
+    "links": null,
+    "stores": [
+      {
+        "id": "LMRv2.1 Monte Carlo Runs for gridded fields",
+        "name": "LMRv2p1_MCruns_ensemble_gridded",
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock/LMRv2p1_MCruns_ensemble_gridded.zarr",
+        "ncviewjs:rechunking": null,
+        "public": true,
+        "geospatial": true
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
     "title": "NOAA Coastwatch Geo-Polar SST",
     "description": "NOAA Geo-Polar Blended Global Sea Surface Temperature Analysis (Level 4)",
     "maintainers": [
@@ -678,6 +368,68 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/noaa-coastwatch-geopolar-sst-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "E-OBS dataset",
+    "description": "E-OBS is a high resolution gridded climate dataset covering Europe and Northern Africa.\nThis dataset is version 23.1e with a 0.1 degree spatial resolution.\n\nVariables available are: TG: daily mean temperature, TN: daily minimum temperature,\nTX: daily maximum temperature, RR: daily precipitation sum, PP: daily mean sea-level pressure,\nHU: relative humidity, FG: daily mean wind speed and QQ: global radiation.\n\nQQ and FG are have slightly different grids and are not concatenated with other variables.\n",
+    "maintainers": [
+      {
+        "name": "Raphael Hagen",
+        "github": "norlandrhagen"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Copernicus Climate Change Service",
+          "description": "We acknowledge the E-OBS dataset from the EU-FP6 project UERRA (https://www.uerra.eu) and the Copernicus Climate Change Service, and the data providers in the ECA&D project (https://www.ecad.eu) Cornes, R., G. van der Schrier, E.J.M. van den Besselaar, and P.D. Jones. 2018: An Ensemble Version of the E-OBS Temperature and Precipitation Datasets, J. Geophys. Res. Atmos., 123. doi:10.1029/2017JD028200",
+          "roles": ["producer", "licensor"],
+          "url": "https://surfobs.climate.copernicus.eu/dataaccess/access_eobs.php#datafiles"
+        }
+      ],
+      "license": "proprietary",
+      "license_link": {
+        "title": "ECA&D and E-OBS terms and conditions of use",
+        "url": "https://www.ecad.eu/documents/ECAD_datapolicy.pdf"
+      }
+    },
+    "thumbnail": null,
+    "tags": [
+      "zarr",
+      "climate",
+      "regional",
+      "osn",
+      "open-storage-network",
+      "europe"
+    ],
+    "links": null,
+    "stores": [
+      {
+        "id": "eobs-wind-speed",
+        "name": null,
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-wind-speed.zarr",
+        "ncviewjs:rechunking": null,
+        "public": true,
+        "geospatial": true
+      },
+      {
+        "id": "eobs-tg-tn-tx-rr-hu-pp",
+        "name": null,
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-tg-tn-tx-rr-hu-pp.zarr",
+        "ncviewjs:rechunking": null,
+        "public": true,
+        "geospatial": true
+      },
+      {
+        "id": "eobs-surface-downwelling",
+        "name": null,
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-surface-downwelling.zarr",
+        "ncviewjs:rechunking": null,
+        "public": true,
+        "geospatial": true
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/EOBS-feedstock/blob/main/feedstock/meta.yaml"
   },
   {
     "title": "Sea-surface altimetry data from The Copernicus Marine Environment",
@@ -768,5 +520,209 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/WOA_1degree_monthly-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "Large ensemble pCO2 testbed",
+    "description": "Large ensemble pCO2 testbed (manually ingested)\n",
+    "maintainers": [
+      {
+        "name": "Julius Busecke",
+        "github": "jbusecke"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "LEAP",
+          "description": "STC: Center for Learning the Earth with Artificial Intelligence and Physics",
+          "roles": ["curator"],
+          "url": null
+        }
+      ],
+      "license": "CC-BY",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["carbon", "zarr", "gcp"],
+    "links": null,
+    "stores": [
+      {
+        "id": "CESM.zarr",
+        "name": null,
+        "url": "gs://leap-persistent-ro/data-library-manual/CESM.zarr",
+        "ncviewjs:rechunking": null,
+        "public": false,
+        "geospatial": null
+      },
+      {
+        "id": "CanESM2.zarr",
+        "name": null,
+        "url": "gs://leap-persistent-ro/data-library-manual/CanESM2.zarr",
+        "ncviewjs:rechunking": null,
+        "public": false,
+        "geospatial": null
+      },
+      {
+        "id": "GFDL.zarr",
+        "name": null,
+        "url": "gs://leap-persistent-ro/data-library-manual/GFDL.zarr",
+        "ncviewjs:rechunking": null,
+        "public": false,
+        "geospatial": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/large-ensemble-pCO2-testbed-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "cesm-atm-025deg",
+    "description": "Daily atmospheric data from coupled NCAR CESM run hybrid_v5_rel04_BC5_ne120_t12_pop62",
+    "maintainers": [
+      {
+        "name": "Paige Martin",
+        "github": "paigem"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "National Center for Atmospheric Research",
+          "description": "Daily atmospheric data from coupled NCAR CESM run hybrid_v5_rel04_BC5_ne120_t12_pop62",
+          "roles": ["producer", "licensor", "processor"],
+          "url": "https://www.earthsystemgrid.org/dataset/ucar.cgd.asd.cs.hybrid_v5_rel04_BC5_ne120_t12_pop62.atm-regrid.proc.daily_ave.html"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["zarr", "pangeo-forge", "open-storage-network", "osn"],
+    "links": null,
+    "stores": [
+      {
+        "id": "cesm-atm-025deg",
+        "name": "cesm-atm-025deg",
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cesm-atm-025deg-feedstock/cesm-atm-025deg.zarr",
+        "ncviewjs:rechunking": null,
+        "public": true,
+        "geospatial": true
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/cesm-atm-025deg-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "AWS NOAA Optimum Interpolated SST",
+    "description": "Analysis-ready datasets derived from AWS NOAA OISST NetCDF",
+    "maintainers": [
+      {
+        "name": "Ryan Avery",
+        "github": "rbavery"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "AWS NOAA Oceanic CDR",
+          "description": "Registry of Open Data on AWS National Oceanographic & Atmospheric Administration National Centers for Environmental Information",
+          "roles": ["producer", "licensor"],
+          "url": "s3://noaa-cdr-sea-surface-temp-optimum-interpolation-pds"
+        }
+      ],
+      "license": "Open Data",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": [
+      "zarr",
+      "pangeo-forge",
+      "open-storage-network",
+      "osn",
+      "noaa",
+      "sst",
+      "oisst"
+    ],
+    "links": null,
+    "stores": [
+      {
+        "id": "noaa-oisst",
+        "name": "noaa-oisst",
+        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/noaa_oisst/v2.1-avhrr.zarr",
+        "ncviewjs:rechunking": null,
+        "public": true,
+        "geospatial": true
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/aws-noaa-oisst-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "CMIP6",
+    "description": "CMIP6 datasets converted to zarr stores from ESGF files",
+    "maintainers": [
+      {
+        "name": "Julius Busecke",
+        "github": "jbusecke"
+      },
+      {
+        "name": "Charles Stern",
+        "github": "cisaacstern"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "ESGF",
+          "description": "Earth System Grid Federation",
+          "roles": ["producer", "licensor"],
+          "url": "https://esgf-node.llnl.gov/projects/cmip6/"
+        }
+      ],
+      "license": "CC-BY-4.0",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["cmip6", "gcs", "zarr"],
+    "links": [
+      {
+        "label": "DOI",
+        "url": "https://zenodo.org/badge/latestdoi/618127503"
+      }
+    ],
+    "stores": null,
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/cmip6-leap-feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "NOAA-GFDL CM2-O Coupled Climate Model Simulations",
+    "description": "",
+    "maintainers": [
+      {
+        "name": "Julius Busecke",
+        "github": "jbusecke"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "NOAA-GFDL",
+          "description": "NOAA-GFDL",
+          "roles": ["producer", "licensor"],
+          "url": "https://mom-ocean.github.io/assets/pdfs/CM2_O_suite_1990_tutorial_and_analysis.pdf"
+        }
+      ],
+      "license": "Unknown",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["my-custom-tag", "zarr"],
+    "links": null,
+    "stores": [
+      {
+        "id": "CM26_control_surface",
+        "name": "CM2.6 Control Run",
+        "url": "gs://cmip6/GFDL_CM2_6/control/surface",
+        "ncviewjs:rechunking": null,
+        "public": true,
+        "geospatial": true
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/cm2o_feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
