@@ -257,6 +257,14 @@
         "ncviewjs:rechunking": null,
         "public": true,
         "geospatial": true
+      },
+      {
+        "id": "CM26_control_atm",
+        "name": "CM2.6 Control Run Atmosphere",
+        "url": "gs://cmip6/GFDL_CM2_6/control/atmos_daily.zarr",
+        "ncviewjs:rechunking": null,
+        "public": true,
+        "geospatial": true
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/cm2o_feedstock/blob/main/feedstock/meta.yaml"
