@@ -807,7 +807,7 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["zarr", "ocean"],
+    "tags": ["zarr", "ocean", "m2lines", "model"],
     "links": null,
     "stores": [
       {
