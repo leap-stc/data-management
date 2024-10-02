@@ -1,0 +1,51 @@
+name: Move Data from LEAP-Pangeo Inbox to Manual Bucket
+
+env:
+    RUN_ID: ${{ github.run_id }}
+    # Type needs to be included as env variable! See https://rclone.org/docs/#config-file
+    RCLONE_CONFIG_SOURCE_TYPE: s3
+    RCLONE_CONFIG_SOURCE_ACCESS_KEY_ID: ${{ secrets.RCLONE_CONFIG_SOURCE_ACCESS_KEY_ID }}
+    RCLONE_CONFIG_SOURCE_SECRET_ACCESS_KEY: ${{ secrets.RCLONE_CONFIG_SOURCE_SECRET_ACCESS_KEY}}
+    RCLONE_CONFIG_TARGET_TYPE: s3
+    RCLONE_CONFIG_TARGET_ACCESS_KEY_ID: ${{ secrets.RCLONE_CONFIG_TARGET_ACCESS_KEY_ID }}
+    RCLONE_CONFIG_TARGET_SECRET_ACCESS_KEY: ${{ secrets.RCLONE_CONFIG_TARGET_SECRET_ACCESS_KEY}}
+on:
+  workflow_dispatch:
+    inputs:
+      folder:
+        description: 'the folder to move (without bucket name and slashes)'
+        required: true      
+
+jobs:
+  list-bucket-and-copy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Rclone
+        uses: AnimMouse/setup-rclone@v1
+        with:
+          rclone_config: |
+            [source]
+            type = s3
+            provider = Ceph
+            endpoint = https://nyu1.osn.mghpcc.org
+
+            [target]
+            type = s3
+            provider = Ceph
+            endpoint = https://nyu1.osn.mghpcc.org
+            
+          disable_base64: true
+      - run: "rclone -vv lsd source:m2lines-test"
+      - run: "rclone -vv ls target:leap-pangeo-inbox"
+      - run: "echo from remote:bucket/${{ github.event.inputs.folder }}/ to other_remote:other_bucket/${{ github.event.inputs.folder }}/"
+      # - run: > 
+      #     rclone copy 
+      #     --fast-list 
+      #     --max-backlog 200000
+      #     --s3-chunk-size 50M 
+      #     --s3-upload-concurrency 8 
+      #     --transfers 8 
+      #     --checkers 8  
+      #     -P 
+      #     source:m2lines-test/llc_temp_upload/ 
+      #     target:leap-pangeo-inbox/llc_temp_upload/
