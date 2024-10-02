@@ -53,9 +53,9 @@ jobs:
       - run: > 
           rclone check 
           --checkers 8  
-          -P 
           source:leap-pangeo-inbox/${{ github.event.inputs.folder }}/ 
           target:leap-pangeo-manual/${{ github.event.inputs.folder }}/
+     #TODO: should this just be move?
       - run: >
           rclone delete
           --rmdirs
