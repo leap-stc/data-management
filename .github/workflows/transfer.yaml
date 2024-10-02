@@ -35,9 +35,11 @@ jobs:
             endpoint = https://nyu1.osn.mghpcc.org
             
           disable_base64: true
-      - run: "rclone -vv lsd source:m2lines-test"
-      - run: "rclone -vv ls target:leap-pangeo-inbox"
+      - run: "rclone -vv lsd source:leap-pangeo-inbox"
+      - run: "rclone -vv ls target:leap-pangeo-manual"
       - run: "echo from remote:bucket/${{ github.event.inputs.folder }}/ to other_remote:other_bucket/${{ github.event.inputs.folder }}/"
+      # how to deal with new versions? Arraylake?
+      # At least check for existing and implement overwrite for now?
       # - run: > 
       #     rclone copy 
       #     --fast-list 
@@ -47,5 +49,5 @@ jobs:
       #     --transfers 8 
       #     --checkers 8  
       #     -P 
-      #     source:m2lines-test/llc_temp_upload/ 
-      #     target:leap-pangeo-inbox/llc_temp_upload/
+      #     source:leap-pangeo-inbox/${{ github.event.inputs.folder }}/ 
+      #     target:leap-pangeo-manual/${{ github.event.inputs.folder }}/
