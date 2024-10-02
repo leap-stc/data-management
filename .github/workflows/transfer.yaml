@@ -37,17 +37,31 @@ jobs:
           disable_base64: true
       - run: "rclone -vv lsd source:leap-pangeo-inbox"
       - run: "rclone -vv ls target:leap-pangeo-manual"
-      - run: "echo from remote:bucket/${{ github.event.inputs.folder }}/ to other_remote:other_bucket/${{ github.event.inputs.folder }}/"
       # how to deal with new versions? Arraylake?
       # At least check for existing and implement overwrite for now?
-      # - run: > 
-      #     rclone copy 
-      #     --fast-list 
-      #     --max-backlog 200000
-      #     --s3-chunk-size 50M 
-      #     --s3-upload-concurrency 8 
-      #     --transfers 8 
-      #     --checkers 8  
-      #     -P 
-      #     source:leap-pangeo-inbox/${{ github.event.inputs.folder }}/ 
-      #     target:leap-pangeo-manual/${{ github.event.inputs.folder }}/
+      - run: > 
+          rclone copy 
+          --fast-list 
+          --max-backlog 200000
+          --s3-chunk-size 50M 
+          --s3-upload-concurrency 8 
+          --transfers 8 
+          --checkers 8  
+          -P 
+          source:leap-pangeo-inbox/${{ github.event.inputs.folder }}/ 
+          target:leap-pangeo-manual/${{ github.event.inputs.folder }}/
+      - run: > 
+          rclone check 
+          --checkers 8  
+          -P 
+          source:leap-pangeo-inbox/${{ github.event.inputs.folder }}/ 
+          target:leap-pangeo-manual/${{ github.event.inputs.folder }}/
+      - run: >
+          rclone delete
+          --rmdirs
+          source:leap-pangeo-inbox/${{ github.event.inputs.folder }}/ 
+          
+          
+
+          
+            
