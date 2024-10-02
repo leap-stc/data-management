@@ -35,8 +35,8 @@ jobs:
             endpoint = https://nyu1.osn.mghpcc.org
             
           disable_base64: true
-      - run: "rclone -vv lsd source:leap-pangeo-inbox"
-      - run: "rclone -vv ls target:leap-pangeo-manual"
+      - run: "rclone lsd source:leap-pangeo-inbox"
+      - run: "rclone ls target:leap-pangeo-manual"
       # how to deal with new versions? Arraylake?
       # At least check for existing and implement overwrite for now?
       - run: > 
