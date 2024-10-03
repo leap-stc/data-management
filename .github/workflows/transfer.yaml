@@ -42,11 +42,11 @@ jobs:
       - run: > 
           rclone copy 
           --fast-list 
-          --max-backlog 500000
-          --s3-chunk-size 256M 
-          --s3-upload-concurrency 16 
-          --transfers 16 
-          --checkers 32  
+          --max-backlog 200000
+          --s3-chunk-size 128M 
+          --s3-upload-concurrency 20 
+          --transfers 20 
+          --checkers 40  
           -P 
           source:leap-pangeo-inbox/${{ github.event.inputs.folder }}/ 
           target:leap-pangeo-manual/${{ github.event.inputs.folder }}/
