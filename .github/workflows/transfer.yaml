@@ -42,8 +42,8 @@ jobs:
       - run: > 
           rclone copy 
           --fast-list 
-          --max-backlog 200000
-          --s3-chunk-size 128M 
+          --max-backlog 500000
+          --s3-chunk-size 256M 
           --s3-upload-concurrency 16 
           --transfers 16 
           --checkers 32  
