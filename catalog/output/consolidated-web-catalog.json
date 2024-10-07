@@ -849,10 +849,10 @@
       {
         "id": "agulhas",
         "name": "The Agulhas region subset",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/LLC4320_12h_3D-regions/agulhas.zarr'",
+        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/LLC4320_12h_3D-regions/agulhas.zarr",
         "ncviewjs:rechunking": null,
-        "public": false,
-        "geospatial": null
+        "public": true,
+        "geospatial": true
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/LLC4320_12h_3D-regions_feedstock/blob/main/feedstock/meta.yaml"
