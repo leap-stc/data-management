@@ -19,10 +19,10 @@ repos:
     rev: "v0.5.0"
     hooks:
       - id: ruff
-        exclude: "*.ipynb"
+        exclude: ["*.ipynb"]
         args: ["--fix"]
       - id: ruff-format
-        exclude: "*.ipynb"
+        exclude: ["*.ipynb"]
 
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v4.0.0-alpha.8
