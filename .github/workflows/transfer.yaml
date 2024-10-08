@@ -1,20 +1,20 @@
 name: Move Data from LEAP-Pangeo Inbox to Manual Bucket
 
 env:
-    RUN_ID: ${{ github.run_id }}
-    # Type needs to be included as env variable! See https://rclone.org/docs/#config-file
-    RCLONE_CONFIG_SOURCE_TYPE: s3
-    RCLONE_CONFIG_SOURCE_ACCESS_KEY_ID: ${{ secrets.RCLONE_CONFIG_SOURCE_ACCESS_KEY_ID }}
-    RCLONE_CONFIG_SOURCE_SECRET_ACCESS_KEY: ${{ secrets.RCLONE_CONFIG_SOURCE_SECRET_ACCESS_KEY}}
-    RCLONE_CONFIG_TARGET_TYPE: s3
-    RCLONE_CONFIG_TARGET_ACCESS_KEY_ID: ${{ secrets.RCLONE_CONFIG_TARGET_ACCESS_KEY_ID }}
-    RCLONE_CONFIG_TARGET_SECRET_ACCESS_KEY: ${{ secrets.RCLONE_CONFIG_TARGET_SECRET_ACCESS_KEY}}
+  RUN_ID: ${{ github.run_id }}
+  # Type needs to be included as env variable! See https://rclone.org/docs/#config-file
+  RCLONE_CONFIG_SOURCE_TYPE: s3
+  RCLONE_CONFIG_SOURCE_ACCESS_KEY_ID: ${{ secrets.RCLONE_CONFIG_SOURCE_ACCESS_KEY_ID }}
+  RCLONE_CONFIG_SOURCE_SECRET_ACCESS_KEY: ${{ secrets.RCLONE_CONFIG_SOURCE_SECRET_ACCESS_KEY}}
+  RCLONE_CONFIG_TARGET_TYPE: s3
+  RCLONE_CONFIG_TARGET_ACCESS_KEY_ID: ${{ secrets.RCLONE_CONFIG_TARGET_ACCESS_KEY_ID }}
+  RCLONE_CONFIG_TARGET_SECRET_ACCESS_KEY: ${{ secrets.RCLONE_CONFIG_TARGET_SECRET_ACCESS_KEY}}
 on:
   workflow_dispatch:
     inputs:
       folder:
-        description: 'the folder to move (without bucket name and slashes)'
-        required: true      
+        description: "the folder to move (without bucket name and slashes)"
+        required: true
 
 jobs:
   list-bucket-and-copy:
@@ -33,35 +33,30 @@ jobs:
             type = s3
             provider = Ceph
             endpoint = https://nyu1.osn.mghpcc.org
-            
+
           disable_base64: true
       - run: "rclone lsd source:leap-pangeo-inbox"
       - run: "rclone ls target:leap-pangeo-manual"
       # how to deal with new versions? Arraylake?
       # At least check for existing and implement overwrite for now?
-      - run: > 
-          rclone copy 
-          --fast-list 
+      - run: >
+          rclone copy
+          --fast-list
           --max-backlog 200000
-          --s3-chunk-size 128M 
-          --s3-upload-concurrency 20 
-          --transfers 20 
-          --checkers 40  
-          -P 
-          source:leap-pangeo-inbox/${{ github.event.inputs.folder }}/ 
+          --s3-chunk-size 128M
+          --s3-upload-concurrency 20
+          --transfers 20
+          --checkers 40
+          -P
+          source:leap-pangeo-inbox/${{ github.event.inputs.folder }}/
           target:leap-pangeo-manual/${{ github.event.inputs.folder }}/
-      - run: > 
-          rclone check 
-          --checkers 8  
-          source:leap-pangeo-inbox/${{ github.event.inputs.folder }}/ 
+      - run: >
+          rclone check
+          --checkers 8
+          source:leap-pangeo-inbox/${{ github.event.inputs.folder }}/
           target:leap-pangeo-manual/${{ github.event.inputs.folder }}/
-     #TODO: should this just be move?
+      #TODO: should this just be move?
       - run: >
           rclone delete
           --rmdirs
-          source:leap-pangeo-inbox/${{ github.event.inputs.folder }}/ 
-          
-          
-
-          
-            
+          source:leap-pangeo-inbox/${{ github.event.inputs.folder }}/
