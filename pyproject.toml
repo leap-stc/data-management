@@ -26,6 +26,7 @@ exclude = [
     "venv",
 ]
 [tool.ruff.lint]
+exclude = ["*.ipynb"]
 per-file-ignores = {}
 # E402: module level import not at top of file
 # E501: line too long - let black worry about that
@@ -52,6 +53,7 @@ known-first-party = []
 combine-as-imports = true
 
 [tool.ruff.format]
+exclude = ["*.ipynb"]
 quote-style = "single"
 docstring-code-format = true
 
