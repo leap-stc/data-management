@@ -1,4 +1,4 @@
-name: [PROOF OF CONCEPT - COPYURL HTTPS TO CLOUD STORAGE]
+name: [rclone-https]
 
 env:
   RUN_ID: ${{ github.run_id }}
@@ -35,4 +35,3 @@ jobs:
           rclone copyurl url "${{ github.event.inputs.url }}"
           source:leap-pangeo-inbox/rclone-testing/
           --checksum --auto-filename
-  
