@@ -9,11 +9,12 @@ env:
   RCLONE_CONFIG_TARGET_SECRET_ACCESS_KEY: ${{ secrets.RCLONE_CONFIG_SOURCE_SECRET_ACCESS_KEY}}
 
 on:
-  workflow_dispatch:
-    inputs:
-      url:
-        description: "url of the file to transfer"
-        required: true
+  pull_request:
+    workflow_dispatch:
+      inputs:
+        url:
+          description: "url of the file to transfer"
+          required: true
 
 jobs:
   list-bucket-and-copy:
