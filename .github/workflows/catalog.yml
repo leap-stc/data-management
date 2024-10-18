@@ -8,7 +8,7 @@ on:
     types:
       - update-catalog
   schedule:
-    - cron: "*/5 * * * *" # every 5 minutes. https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+    - cron: "*/30 * * * *" # every 30 minutes. https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
 
 permissions:
   contents: write
@@ -20,6 +20,7 @@ concurrency:
 
 jobs:
   validate-and-generate:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -31,6 +32,10 @@ jobs:
           echo "Originating repository: ${{ github.event.client_payload.origin_repo }}"
 
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
       - name: Validate Feedstocks and Generate Catalog
         uses: leap-stc/data-catalog-actions/leap-catalog@main
