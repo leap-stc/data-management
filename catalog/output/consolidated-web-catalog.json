@@ -45,7 +45,11 @@
         "url": "s3://carbonplan-data-viewer/demo/leap-data-stories/GCB-2023_dataprod_LDEO-HPD_1959-2022-updated-flipped-lon.zarr/",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       },
       {
         "id": "annual-sfco2",
@@ -53,7 +57,11 @@
         "url": "s3://carbonplan-data-viewer/demo/leap-data-stories/annual-sfco2.zarr/",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/carbonplan/ocean-carbon-sink-data-feedstock/blob/main/feedstock/meta.yaml"
@@ -96,7 +104,11 @@
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/AGDC-feedstock/AGCD.zarr",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/AGDC-feedstock/blob/main/feedstock/meta.yaml"
@@ -132,7 +144,11 @@
         "url": "gs://gcp-public-data-arco-era5/ar/full_37-1h-0p25deg-chunk-1.zarr-v3",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       },
       {
         "id": "0_25_deg_model_levels",
@@ -140,7 +156,11 @@
         "url": "gs://gcp-public-data-arco-era5/ar/model-level-1h-0p25deg.zarr-v1",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/arco-era5_feedstock/blob/main/feedstock/meta.yaml"
@@ -184,7 +204,11 @@
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/noaa_oisst/v2.1-avhrr.zarr",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/aws-noaa-oisst-feedstock/blob/main/feedstock/meta.yaml"
@@ -220,7 +244,11 @@
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cesm-atm-025deg-feedstock/cesm-atm-025deg.zarr",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/cesm-atm-025deg-feedstock/blob/main/feedstock/meta.yaml"
@@ -256,7 +284,11 @@
         "url": "gs://cmip6/GFDL_CM2_6/control/surface",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       },
       {
         "id": "CM26_control_atm",
@@ -264,7 +296,11 @@
         "url": "gs://cmip6/GFDL_CM2_6/control/atmos_daily.zarr",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/cm2o_feedstock/blob/main/feedstock/meta.yaml"
@@ -346,7 +382,11 @@
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-wind-speed.zarr",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       },
       {
         "id": "eobs-tg-tn-tx-rr-hu-pp",
@@ -354,7 +394,11 @@
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-tg-tn-tx-rr-hu-pp.zarr",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       },
       {
         "id": "eobs-surface-downwelling",
@@ -362,7 +406,11 @@
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-surface-downwelling.zarr",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/EOBS-feedstock/blob/main/feedstock/meta.yaml"
@@ -410,7 +458,11 @@
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/eVolv2k-feedstock/eVolv2k.zarr",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": false
+        "geospatial": false,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/eVolv2k-feedstock/blob/main/feedstock/meta.yaml"
@@ -452,7 +504,11 @@
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/gpcp-feedstock/gpcp.zarr",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/gpcp-feedstock/blob/main/feedstock/meta.yaml"
@@ -501,7 +557,11 @@
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/HadISST-feedstock/hadisst.zarr",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/HadISST-feedstock/blob/main/feedstock/meta.yaml"
@@ -537,7 +597,11 @@
         "url": "gs://leap-persistent-ro/data-library-manual/CESM.zarr",
         "ncviewjs:rechunking": null,
         "public": false,
-        "geospatial": null
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       },
       {
         "id": "CanESM2.zarr",
@@ -545,7 +609,11 @@
         "url": "gs://leap-persistent-ro/data-library-manual/CanESM2.zarr",
         "ncviewjs:rechunking": null,
         "public": false,
-        "geospatial": null
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       },
       {
         "id": "GFDL.zarr",
@@ -553,7 +621,11 @@
         "url": "gs://leap-persistent-ro/data-library-manual/GFDL.zarr",
         "ncviewjs:rechunking": null,
         "public": false,
-        "geospatial": null
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/large-ensemble-pCO2-testbed-feedstock/blob/main/feedstock/meta.yaml"
@@ -589,7 +661,11 @@
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock/LMRv2p1_MCruns_ensemble_gridded.zarr",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock/blob/main/feedstock/meta.yaml"
@@ -631,7 +707,11 @@
         "url": "gs://leap-persistent-ro/data-library/feedstocks/metaflux_feedstock/metaflux_daily.zarr",
         "ncviewjs:rechunking": null,
         "public": false,
-        "geospatial": null
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       },
       {
         "id": "metaflux-monthly",
@@ -639,7 +719,11 @@
         "url": "gs://leap-persistent-ro/data-library/feedstocks/metaflux_feedstock/meatflux_monthly.zarr",
         "ncviewjs:rechunking": null,
         "public": false,
-        "geospatial": null
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/metaflux_feedstock/blob/main/feedstock/meta.yaml"
@@ -682,7 +766,11 @@
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/noaa-coastwatch-geopolar-sst-feedstock/noaa-coastwatch-geopolar-sst.zarr",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/noaa-coastwatch-geopolar-sst-feedstock/blob/main/feedstock/meta.yaml"
@@ -736,7 +824,11 @@
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-cmems-duacs",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/sea-surface-altimetry-data-from-copernicus-feedstock/blob/main/feedstock/meta.yaml"
@@ -772,14 +864,18 @@
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/WOA_1degree_monthly-feedstock/woa18-1deg-monthly.zarr",
         "ncviewjs:rechunking": null,
         "public": true,
-        "geospatial": true
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/WOA_1degree_monthly-feedstock/blob/main/feedstock/meta.yaml"
   },
   {
-    "title": "eNATL 60m",
-    "description": "eNATL60-TSW-60m is an extraction of a very high resolution oceanic simulation of the North Atlantic performed at MEOM, IGE (FRANCE)\n",
+    "title": "eNATL",
+    "description": "eNATL60-TSW-60m & 600m are extractions of a very high resolution oceanic simulation of the North Atlantic performed at MEOM, IGE (FRANCE).\n",
     "maintainers": [
       {
         "name": "Julius Busecke",
@@ -816,7 +912,23 @@
         "url": "gs://leap-persistent/data-library/feedstocks/eNATL_feedstock/eNATL60-BLBT02.zarr",
         "ncviewjs:rechunking": null,
         "public": false,
-        "geospatial": null
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
+      },
+      {
+        "id": "enatl600m-blbt02",
+        "name": "eNATL 600M",
+        "url": "gs://leap-persistent/data-library/feedstocks/eNATL_feedstock/eNATL600m-BLBT02.zarr",
+        "ncviewjs:rechunking": null,
+        "public": false,
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/eNATL_feedstock/blob/main/feedstock/meta.yaml"
