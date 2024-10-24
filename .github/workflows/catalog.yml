@@ -1,115 +1,115 @@
-name: Catalog
+# name: Catalog
 
-on:
-  pull_request:
-    branches:
-  workflow_dispatch:
-  repository_dispatch:
-    types:
-      - update-catalog
-  schedule:
-    - cron: "*/30 * * * *" # every 30 minutes. https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+# on:
+#   pull_request:
+#     branches:
+#   workflow_dispatch:
+#   repository_dispatch:
+#     types:
+#       - update-catalog
+#   schedule:
+#     - cron: "*/30 * * * *" # every 30 minutes. https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
 
-permissions:
-  contents: write
-  pull-requests: write
+# permissions:
+#   contents: write
+#   pull-requests: write
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+# concurrency:
+#   group: ${{ github.workflow }}-${{ github.ref }}
+#   cancel-in-progress: true
 
-jobs:
-  validate-and-generate:
-    timeout-minutes: 30
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash -l {0}
-    steps:
-      - name: Echo originating repository
-        if: github.event_name == 'repository_dispatch'
-        run: |
-          echo "Originating repository: ${{ github.event.client_payload.origin_repo }}"
+# jobs:
+#   validate-and-generate:
+#     timeout-minutes: 30
+#     runs-on: ubuntu-latest
+#     defaults:
+#       run:
+#         shell: bash -l {0}
+#     steps:
+#       - name: Echo originating repository
+#         if: github.event_name == 'repository_dispatch'
+#         run: |
+#           echo "Originating repository: ${{ github.event.client_payload.origin_repo }}"
 
-      - uses: actions/checkout@v4
+#       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
+#       - uses: actions/setup-python@v5
+#         with:
+#           python-version: "3.12"
 
-      - name: Validate Feedstocks and Generate Catalog
-        uses: leap-stc/data-catalog-actions/leap-catalog@main
-        with:
-          generation-path: "catalog/input.yaml"
-          output-directory: "catalog/"
+#       - name: Validate Feedstocks and Generate Catalog
+#         uses: leap-stc/data-catalog-actions/leap-catalog@main
+#         with:
+#           generation-path: "catalog/input.yaml"
+#           output-directory: "catalog/"
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: consolidated-web-catalog.json
-          path: catalog/output/consolidated-web-catalog.json
+#       - name: Upload artifacts
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: consolidated-web-catalog.json
+#           path: catalog/output/consolidated-web-catalog.json
 
-  update:
-    needs: validate-and-generate
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash -l {0}
+#   update:
+#     needs: validate-and-generate
+#     runs-on: ubuntu-latest
+#     defaults:
+#       run:
+#         shell: bash -l {0}
 
-    environment:
-      name: ${{ github.event.pull_request.number }}
-      url: ${{ format('https://catalog-staging.leap.carbonplan.org/?catalog=https://raw.githubusercontent.com/{0}/{1}/catalog/output/consolidated-web-catalog.json', github.event.pull_request.head.repo.full_name, github.head_ref) }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+#     environment:
+#       name: ${{ github.event.pull_request.number }}
+#       url: ${{ format('https://catalog-staging.leap.carbonplan.org/?catalog=https://raw.githubusercontent.com/{0}/{1}/catalog/output/consolidated-web-catalog.json', github.event.pull_request.head.repo.full_name, github.head_ref) }}
+#     steps:
+#       - uses: actions/checkout@v4
+#         with:
+#           repository: ${{ github.event.pull_request.head.repo.full_name }}
+#           ref: ${{ github.event.pull_request.head.ref }}
+#           fetch-depth: 0
+#           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Pull Remote Changes
-        run: |
-          git pull origin ${{ github.event.pull_request.head.ref }} --rebase --autostash
+#       - name: Pull Remote Changes
+#         run: |
+#           git pull origin ${{ github.event.pull_request.head.ref }} --rebase --autostash
 
-      - uses: actions/download-artifact@v4
-        with:
-          name: consolidated-web-catalog.json
-          path: catalog/output
+#       - uses: actions/download-artifact@v4
+#         with:
+#           name: consolidated-web-catalog.json
+#           path: catalog/output
 
-      - name: Commit and Push
-        run: |
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          python -m pip install pre-commit
-          pre-commit install
-          git add catalog/output/consolidated-web-catalog.json
-          # run pre-commit and return 0 to avoid failing the job
-          pre-commit run || true
-          git add catalog/output/consolidated-web-catalog.json || true
-          git commit -m "Auto-update consolidated-web-catalog.json" || true
+#       - name: Commit and Push
+#         run: |
+#           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+#           git config --global user.name "github-actions[bot]"
+#           python -m pip install pre-commit
+#           pre-commit install
+#           git add catalog/output/consolidated-web-catalog.json
+#           # run pre-commit and return 0 to avoid failing the job
+#           pre-commit run || true
+#           git add catalog/output/consolidated-web-catalog.json || true
+#           git commit -m "Auto-update consolidated-web-catalog.json" || true
 
-      - name: Push changes
-        if: github.event_name == 'pull_request'
-        uses: ad-m/github-push-action@master
-        with:
-          # ssh: true
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          branch: ${{ github.event.pull_request.head.ref }}
+#       - name: Push changes
+#         if: github.event_name == 'pull_request'
+#         uses: ad-m/github-push-action@master
+#         with:
+#           # ssh: true
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           repository: ${{ github.event.pull_request.head.repo.full_name }}
+#           branch: ${{ github.event.pull_request.head.ref }}
 
-      - name: Create Pull Request
-        id: cpr
-        if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch') && github.ref == 'refs/heads/main'
-        uses: peter-evans/create-pull-request@v7
-        with:
-          commit-message: "build: update catalog"
-          committer: GitHub <noreply@github.com>
-          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-          title: Update catalog
-          body: |
-            - Updates the consolidated web catalog for changes on `main`
-            - Auto-generated by [create-pull-request][1]
+#       - name: Create Pull Request
+#         id: cpr
+#         if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch') && github.ref == 'refs/heads/main'
+#         uses: peter-evans/create-pull-request@v7
+#         with:
+#           commit-message: "build: update catalog"
+#           committer: GitHub <noreply@github.com>
+#           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+#           title: Update catalog
+#           body: |
+#             - Updates the consolidated web catalog for changes on `main`
+#             - Auto-generated by [create-pull-request][1]
 
-            [1]: https://github.com/peter-evans/create-pull-request
-          branch: update-consolidated-web-catalog
-          delete-branch: true
+#             [1]: https://github.com/peter-evans/create-pull-request
+#           branch: update-consolidated-web-catalog
+#           delete-branch: true

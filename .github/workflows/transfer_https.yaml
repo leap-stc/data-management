@@ -1,0 +1,37 @@
+name: rclone-https
+
+env:
+  RUN_ID: ${{ github.run_id }}
+  # Type needs to be included as env variable! See https://rclone.org/docs/#config-file
+  RCLONE_CONFIG_SOURCE_TYPE: https
+  RCLONE_CONFIG_TARGET_TYPE: s3
+  RCLONE_CONFIG_TARGET_ACCESS_KEY_ID: ${{ secrets.RCLONE_CONFIG_SOURCE_ACCESS_KEY_ID }}
+  RCLONE_CONFIG_TARGET_SECRET_ACCESS_KEY: ${{ secrets.RCLONE_CONFIG_SOURCE_SECRET_ACCESS_KEY}}
+
+on:
+  workflow_dispatch:
+    inputs:
+      inurl:
+        description: "input url"
+        required: true
+
+jobs:
+  transfer-http-to-osn:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Rclone
+        uses: AnimMouse/setup-rclone@v1
+        with:
+          rclone_config: |
+
+            [target]
+            type = s3
+            provider = Ceph
+            endpoint = https://nyu1.osn.mghpcc.org
+
+          disable_base64: true
+
+      - run: >
+          rclone copyurl url "${{ github.event.inputs.inurl }}"
+          source:leap-pangeo-inbox/rclone-testing/
+          --checksum --auto-filename
