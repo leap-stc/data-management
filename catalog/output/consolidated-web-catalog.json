@@ -972,5 +972,32 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/eNATL_feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "CHIRPS-2.0 global daily",
+    "description": "Climate Hazards Group InfraRed Precipitation with Station data (CHIRPS)\n",
+    "maintainers": [
+      {
+        "name": "Julius Busecke",
+        "github": "jbusecke"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Julius",
+          "description": "Just a guy testing some recipes. Nothing to see here.",
+          "roles": ["producer", "licensor"],
+          "url": null
+        }
+      ],
+      "license": "Just a Test",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": null,
+    "links": null,
+    "stores": null,
+    "ncviewjs:meta_yaml_url": null
   }
 ]
