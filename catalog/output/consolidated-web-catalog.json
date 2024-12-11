@@ -995,9 +995,22 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": null,
+    "tags": ["precipitation", "zarr"],
     "links": null,
-    "stores": null,
-    "ncviewjs:meta_yaml_url": null
+    "stores": [
+      {
+        "id": "chirps-global-daily",
+        "name": "CHIRPS-2.0",
+        "url": "gs://leap-scratch/data-library/feedstocks/chirps_feedstock/chirps-global-dailyzarr",
+        "ncviewjs:rechunking": null,
+        "public": false,
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/chirps_feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
