@@ -4,9 +4,6 @@ on:
   pull_request:
     branches:
   workflow_dispatch:
-  repository_dispatch:
-    types:
-      - update-catalog
   schedule:
     - cron: "*/30 * * * *" # every 30 minutes. https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
 
@@ -26,11 +23,6 @@ jobs:
       run:
         shell: bash -l {0}
     steps:
-      - name: Echo originating repository
-        if: github.event_name == 'repository_dispatch'
-        run: |
-          echo "Originating repository: ${{ github.event.client_payload.origin_repo }}"
-
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
