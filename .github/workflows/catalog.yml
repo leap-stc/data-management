@@ -5,7 +5,7 @@ on:
     branches:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "*/30 * * * *" # every 30 minutes. https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
 
 permissions:
   contents: write
@@ -17,12 +17,17 @@ concurrency:
 
 jobs:
   validate-and-generate:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash -l {0}
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
       - name: Validate Feedstocks and Generate Catalog
         uses: leap-stc/data-catalog-actions/leap-catalog@main
@@ -47,12 +52,18 @@ jobs:
       name: ${{ github.event.pull_request.number }}
       url: ${{ format('https://catalog-staging.leap.carbonplan.org/?catalog=https://raw.githubusercontent.com/{0}/{1}/catalog/output/consolidated-web-catalog.json', github.event.pull_request.head.repo.full_name, github.head_ref) }}
     steps:
+      - uses: actions/create-github-app-token@v1
+        id: generate-token
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - uses: actions/checkout@v4
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          token: ${{ steps.generate-token.outputs.token }}
 
       - name: Pull Remote Changes
         run: |
@@ -79,16 +90,16 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: ad-m/github-push-action@master
         with:
-          # ssh: true
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ steps.generate-token.outputs.token }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           branch: ${{ github.event.pull_request.head.ref }}
 
       - name: Create Pull Request
         id: cpr
-        if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' ) && github.ref == 'refs/heads/main'
-        uses: peter-evans/create-pull-request@v6
+        if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch') && github.ref == 'refs/heads/main'
+        uses: peter-evans/create-pull-request@v7
         with:
+          token: ${{ steps.generate-token.outputs.token }}
           commit-message: "build: update catalog"
           committer: GitHub <noreply@github.com>
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>

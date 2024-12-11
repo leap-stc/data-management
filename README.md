@@ -12,5 +12,6 @@ Do you want to use a dataset for your research and at the same time make it avai
 ## Add your dataset to the LEAP-Pangeo Catalog
 
 To add your dataset to the LEAP-Pangeo catalog, please check the documentation residing [here](https://github.com/leap-stc/leap-data-management-utils/blob/main/docs/catalog.md)
+
 [pre-commit.ci-badge]: https://results.pre-commit.ci/badge/github/leap-stc/data-management/main.svg
 [pre-commit.ci-link]: https://results.pre-commit.ci/latest/github/leap-stc/data-management/main
