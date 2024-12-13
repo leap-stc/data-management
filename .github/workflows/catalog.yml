@@ -49,25 +49,29 @@ jobs:
         shell: bash -l {0}
 
     environment:
-      name: ${{ github.event.pull_request.number }}
-      url: ${{ format('https://catalog-staging.leap.carbonplan.org/?catalog=https://raw.githubusercontent.com/{0}/{1}/catalog/output/consolidated-web-catalog.json', github.event.pull_request.head.repo.full_name, github.head_ref) }}
+      name: ${{ github.head_ref }}
+      url: https://catalog.leap.columbia.edu/?catalog=https://raw.githubusercontent.com/${{ github.repository }}/${{ github.head_ref }}/catalog/output/consolidated-web-catalog.json
     steps:
       - uses: actions/create-github-app-token@v1
-        id: generate-token
+        id: app-token
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
 
+      - name: Get GitHub App User ID
+        id: get-user-id
+        run: echo "user-id=$(gh api "/users/${{ steps.app-token.outputs.app-slug }}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+
+      - run: |
+          git config --global user.name '${{ steps.app-token.outputs.app-slug }}[bot]'
+          git config --global user.email '<${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com>'
+
       - uses: actions/checkout@v4
         with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
-          token: ${{ steps.generate-token.outputs.token }}
-
-      - name: Pull Remote Changes
-        run: |
-          git pull origin ${{ github.event.pull_request.head.ref }} --rebase --autostash
+          ref: ${{ github.head_ref || github.ref_name }}
+          token: ${{ steps.app-token.outputs.token }}
 
       - uses: actions/download-artifact@v4
         with:
@@ -76,8 +80,6 @@ jobs:
 
       - name: Commit and Push
         run: |
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
           python -m pip install pre-commit
           pre-commit install
           git add catalog/output/consolidated-web-catalog.json
@@ -90,7 +92,7 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ steps.generate-token.outputs.token }}
+          github_token: ${{ steps.app-token.outputs.token }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           branch: ${{ github.event.pull_request.head.ref }}
 
@@ -99,10 +101,10 @@ jobs:
         if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch') && github.ref == 'refs/heads/main'
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ steps.generate-token.outputs.token }}
+          token: ${{ steps.app-token.outputs.token }}
           commit-message: "build: update catalog"
-          committer: GitHub <noreply@github.com>
-          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          committer: ${{ steps.app-token.outputs.app-slug }}[bot] <${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com>
+          author: ${{ steps.app-token.outputs.app-slug }}[bot] <${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com>
           title: Update catalog
           body: |
             - Updates the consolidated web catalog for changes on `main`
