@@ -914,6 +914,46 @@
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/LLC4320_12h_3D-regions_feedstock/blob/main/feedstock/meta.yaml"
   },
   {
+    "title": "CHIRPS-2.0 global daily",
+    "description": "Climate Hazards Group InfraRed Precipitation with Station data (CHIRPS)\n",
+    "maintainers": [
+      {
+        "name": "Julius Busecke",
+        "github": "jbusecke"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Julius",
+          "description": "Just a guy testing some recipes. Nothing to see here.",
+          "roles": ["producer", "licensor"],
+          "url": null
+        }
+      ],
+      "license": "Just a Test",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["precipitation", "zarr"],
+    "links": null,
+    "stores": [
+      {
+        "id": "chirps-global-daily",
+        "name": "CHIRPS-2.0",
+        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/chirps_feedstock/chirps-global-daily.zarr",
+        "ncviewjs:rechunking": null,
+        "public": true,
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": "2024-11-19T21:19:44.192735+00:00"
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/chirps_feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
     "title": "eNATL",
     "description": "eNATL60-TSW-60m & 600m are extractions of a very high resolution oceanic simulation of the North Atlantic performed at MEOM, IGE (FRANCE).\n",
     "maintainers": [
@@ -972,45 +1012,5 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/eNATL_feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
-    "title": "CHIRPS-2.0 global daily",
-    "description": "Climate Hazards Group InfraRed Precipitation with Station data (CHIRPS)\n",
-    "maintainers": [
-      {
-        "name": "Julius Busecke",
-        "github": "jbusecke"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "Julius",
-          "description": "Just a guy testing some recipes. Nothing to see here.",
-          "roles": ["producer", "licensor"],
-          "url": null
-        }
-      ],
-      "license": "Just a Test",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": ["precipitation", "zarr"],
-    "links": null,
-    "stores": [
-      {
-        "id": "chirps-global-daily",
-        "name": "CHIRPS-2.0",
-        "url": "gs://leap-scratch/data-library/feedstocks/chirps_feedstock/chirps-global-dailyzarr",
-        "ncviewjs:rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/chirps_feedstock/blob/main/feedstock/meta.yaml"
   }
 ]
