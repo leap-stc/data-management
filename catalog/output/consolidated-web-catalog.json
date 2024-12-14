@@ -908,7 +908,7 @@
         "id": "climsim-lowres-mli",
         "name": "ClimSim Lowres mli",
         "url": "gs://leap-persistent-ro/data-library/feedstocks/climsim_feedstock/climsim_lowres_mli.zarr",
-        "ncviewjs:rechunking": null,
+        "rechunking": null,
         "public": false,
         "geospatial": null,
         "xarray_open_kwargs": {
