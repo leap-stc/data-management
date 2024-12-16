@@ -874,6 +874,52 @@
     "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/WOA_1degree_monthly-feedstock/blob/main/feedstock/meta.yaml"
   },
   {
+    "title": "ClimSim",
+    "description": "\"Analysis-ready optimized ClimSim data\"\n",
+    "maintainers": [
+      {
+        "name": "Qingyuan Yang",
+        "github": "yiqioyang"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Hugging Face",
+          "description": "Hugging Face",
+          "roles": ["host"],
+          "url": "https://huggingface.co/datasets/LEAP/ClimSim_low-res"
+        },
+        {
+          "name": "Sungduk Yu et al",
+          "description": "ClimSim: An open large-scale dataset for training high-resolution physics emulators in hybrid multi-scale climate simulators",
+          "roles": ["producer", "licensor"],
+          "url": "https://arxiv.org/abs/2306.08754"
+        }
+      ],
+      "license": "Apache-2.0",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["my-custom-tag", "zarr"],
+    "links": null,
+    "stores": [
+      {
+        "id": "climsim-lowres-mli",
+        "name": "ClimSim Lowres mli",
+        "url": "gs://leap-persistent-ro/data-library/feedstocks/climsim_feedstock/climsim_lowres_mli.zarr",
+        "rechunking": null,
+        "public": false,
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/climsim_feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
     "title": "High-resolution ocean simulation (LLC4320) 12-hourly averaged 3D regions",
     "description": "The LLC4320 is an ocean only simulation forced by 6 hourly atmospheric fields, \nwhich was run at NASA JPL by Dimitris Menemenlis. These are 12 hourly averaged \nfields for from 12 different regions in the ocean, each roughly 10degrees by \n10degrees in size, for the top 700m of the water column. There five 3D variables: \nTemperature, Salinity, and 3 components of velocity, and four 2D surface fields:\nBoundary layer depth, surface heat flux, and 2 components of wind stress.\nNote that this is a small part of the original dataset which has been processed and \nsub-sampled to make the size more manageable.\n",
     "maintainers": [
