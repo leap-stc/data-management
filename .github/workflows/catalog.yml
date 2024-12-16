@@ -1,4 +1,4 @@
-name: Catalog
+name: leap-catalog
 
 on:
   pull_request:
@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  full-catalog:
+  all-feedstocks:
     uses: leap-stc/data-catalog-actions/.github/workflows/reusable-catalog-full.yml@main
     with:
       python-version: "3.12"
