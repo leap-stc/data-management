@@ -1058,5 +1058,57 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/eNATL_feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "GOTM NN Training Data",
+    "description": "Data for NN training from Sane et al. 2023. (Parameterizing Vertical Mixing Coefficients in the Ocean Surface Boundary Layer using Neural Networks)\n",
+    "maintainers": [
+      {
+        "name": "Raphael Hagen",
+        "github": "norlandrhagen"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Zenodo",
+          "description": "https://zenodo.org/records/8293998",
+          "roles": ["archive", "doi"],
+          "url": null
+        }
+      ],
+      "license": "Just a Test",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["neural network", "ocean surface boundary", "zarr"],
+    "links": null,
+    "stores": [
+      {
+        "id": "raw_training",
+        "name": "GOTM: Raw training data",
+        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/GOTM/raw_training_data.zarr",
+        "rechunking": null,
+        "public": false,
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
+      },
+      {
+        "id": "sf_training",
+        "name": "GOTM: SF training data",
+        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/GOTM/sf_training_data.zarr",
+        "rechunking": null,
+        "public": true,
+        "geospatial": false,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/GOTM/blob/main/feedstock/meta.yaml"
   }
 ]
