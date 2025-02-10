@@ -203,8 +203,8 @@
         "name": "noaa-oisst",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/noaa_oisst/v2.1-avhrr.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -243,8 +243,8 @@
         "name": "cesm-atm-025deg",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cesm-atm-025deg-feedstock/cesm-atm-025deg.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -381,8 +381,8 @@
         "name": null,
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-wind-speed.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -393,8 +393,8 @@
         "name": null,
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-tg-tn-tx-rr-hu-pp.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -405,8 +405,8 @@
         "name": null,
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-surface-downwelling.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -457,8 +457,8 @@
         "name": "eVolv2k",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/eVolv2k-feedstock/eVolv2k.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": false,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -503,8 +503,8 @@
         "name": "gpcp",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/gpcp-feedstock/gpcp.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -556,8 +556,8 @@
         "name": "hadisst",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/HadISST-feedstock/hadisst.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -660,8 +660,8 @@
         "name": "LMRv2p1_MCruns_ensemble_gridded",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock/LMRv2p1_MCruns_ensemble_gridded.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -765,8 +765,8 @@
         "name": "noaa-coastwatch-geopolar-sst",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/noaa-coastwatch-geopolar-sst-feedstock/noaa-coastwatch-geopolar-sst.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -823,8 +823,8 @@
         "name": "AVISO",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-cmems-duacs",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -863,8 +863,8 @@
         "name": "woa18-1deg-monthly",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/WOA_1degree_monthly-feedstock/woa18-1deg-monthly.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
