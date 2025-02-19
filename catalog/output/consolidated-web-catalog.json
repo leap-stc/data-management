@@ -1052,6 +1052,56 @@
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/GOTM/blob/main/feedstock/meta.yaml"
   },
   {
+    "title": "CASM",
+    "description": "CASM: A long-term Consistent Artificial-intelligence based Soil Moisture dataset based on machine learning and remote sensing\n",
+    "maintainers": [
+      {
+        "name": "Raphael Hagen",
+        "github": "norlandrhagen"
+      },
+      {
+        "name": "Mitra Cattry",
+        "github": "mitraA90"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Zenodo",
+          "description": "Zenodo",
+          "roles": ["host"],
+          "url": "https://zenodo.org/records/7072512#.Y01cQi-B2-u"
+        }
+      ],
+      "license": "unknown",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": [
+      "soil moisture",
+      "global",
+      "remote sensing",
+      "machine learning",
+      "SMAP"
+    ],
+    "links": null,
+    "stores": [
+      {
+        "id": "casm",
+        "name": "CASM: Consistent Artificial-intelligence Soil Moisture",
+        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/CASM/casm.zarr",
+        "rechunking": null,
+        "public": true,
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/CASM/blob/main/feedstock/meta.yaml"
+  },
+  {
     "title": "eNATL",
     "description": "eNATL60-TSW-60m & 600m are extractions of a very high resolution oceanic simulation of the North Atlantic performed at MEOM, IGE (FRANCE).\n",
     "maintainers": [
