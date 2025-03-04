@@ -1163,7 +1163,7 @@
   },
   {
     "title": "MODIS LAI",
-    "description": "Reprocessed MODIS Version 6.1 Leaf Area Index (LAI) datasets for land surface and climate modeling applications.",
+    "description": "Reprocessed MODIS Version 6.1 Leaf Area Index (LAI) datasets for land surface and climate modeling applications. MOD15A2GFS -- high-resolution GFS Collection 6 (Provided by BNU GLOBMAP)",
     "maintainers": [
       {
         "name": "Mitra Cattry",
@@ -1206,8 +1206,8 @@
     "stores": [
       {
         "id": "modis-lai",
-        "name": "MOD15A2GFS - MODIS LAI high-resolution GFS Collection 6 (Provided by BNU GLOBMAP)",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/MODIS-LAI/modis-lai.zarr",
+        "name": "MODIS Leaf Area Index",
+        "url": "leap-pangeo-pipeline/MODIS_LAI/MODIS_LAI.zarr",
         "rechunking": null,
         "public": false,
         "geospatial": null,
