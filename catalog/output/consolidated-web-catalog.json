@@ -1149,8 +1149,8 @@
         "name": "MODIS Leaf Area Index",
         "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/MODIS_LAI/MODIS_LAI.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
