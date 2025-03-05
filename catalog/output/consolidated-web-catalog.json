@@ -1102,64 +1102,6 @@
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/CASM/blob/main/feedstock/meta.yaml"
   },
   {
-    "title": "MODIS LAI",
-    "description": "Reprocessed MODIS Version 6.1 Leaf Area Index (LAI) datasets for land surface and climate modeling applications. MOD15A2GFS -- high-resolution GFS Collection 6 (Provided by BNU GLOBMAP)",
-    "maintainers": [
-      {
-        "name": "Mitra Cattry",
-        "github": "mitraA90"
-      },
-      {
-        "name": "Raphael Hagen",
-        "github": "norlandrhagen"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "NASA MODIS",
-          "description": "NASA Earth Observing System Data and Information System (EOSDIS)",
-          "roles": ["host", "licensor"],
-          "url": "https://ladsweb.modaps.eosdis.nasa.gov/archive/allData/6/MOD15A2GFS/"
-        },
-        {
-          "name": "Beijing Normal University (BNU) - Global Change Research Group",
-          "description": "Provider of the reprocessed GLOBMAP Leaf Area Index dataset",
-          "roles": ["data provider", "research institution"],
-          "url": "http://globalchange.bnu.edu.cn/research/laiv061#usage"
-        }
-      ],
-      "license": "NASA Open Data - Creative Commons Zero (CC0)",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": [
-      "leaf area index",
-      "global",
-      "remote sensing",
-      "MODIS",
-      "LAI",
-      "GLOBMAP",
-      "Beijing Normal University"
-    ],
-    "links": null,
-    "stores": [
-      {
-        "id": "modis-lai",
-        "name": "MODIS Leaf Area Index",
-        "url": "leap-pangeo-pipeline/MODIS_LAI/MODIS_LAI.zarr",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/MODIS-LAI/blob/main/feedstock/meta.yaml"
-  },
-  {
     "title": "eNATL",
     "description": "eNATL60-TSW-60m & 600m are extractions of a very high resolution oceanic simulation of the North Atlantic performed at MEOM, IGE (FRANCE).\n",
     "maintainers": [
@@ -1218,5 +1160,63 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/eNATL_feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "MODIS LAI",
+    "description": "Reprocessed MODIS Version 6.1 Leaf Area Index (LAI) datasets for land surface and climate modeling applications. MOD15A2GFS -- high-resolution GFS Collection 6 (Provided by BNU GLOBMAP)",
+    "maintainers": [
+      {
+        "name": "Mitra Cattry",
+        "github": "mitraA90"
+      },
+      {
+        "name": "Raphael Hagen",
+        "github": "norlandrhagen"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "NASA MODIS",
+          "description": "NASA Earth Observing System Data and Information System (EOSDIS)",
+          "roles": ["host", "licensor"],
+          "url": "https://ladsweb.modaps.eosdis.nasa.gov/archive/allData/6/MOD15A2GFS/"
+        },
+        {
+          "name": "Beijing Normal University (BNU) - Global Change Research Group",
+          "description": "Provider of the reprocessed GLOBMAP Leaf Area Index dataset",
+          "roles": ["data provider", "research institution"],
+          "url": "http://globalchange.bnu.edu.cn/research/laiv061#usage"
+        }
+      ],
+      "license": "NASA Open Data - Creative Commons Zero (CC0)",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": [
+      "leaf area index",
+      "global",
+      "remote sensing",
+      "MODIS",
+      "LAI",
+      "GLOBMAP",
+      "Beijing Normal University"
+    ],
+    "links": null,
+    "stores": [
+      {
+        "id": "modis-lai",
+        "name": "MODIS Leaf Area Index",
+        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/MODIS_LAI/MODIS_LAI.zarr",
+        "rechunking": null,
+        "public": false,
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/MODIS-LAI/blob/main/feedstock/meta.yaml"
   }
 ]
