@@ -13,13 +13,19 @@
         {
           "name": "LDEO",
           "description": "Lamont Doherty Earth Observatory at Columbia",
-          "roles": ["producer", "licensor"],
+          "roles": [
+            "producer",
+            "licensor"
+          ],
           "url": null
         },
         {
           "name": "LEAP",
           "description": "STC: Center for Learning the Earth with Artificial Intelligence and Physics",
-          "roles": ["producer", "licensor"],
+          "roles": [
+            "producer",
+            "licensor"
+          ],
           "url": null
         }
       ],
@@ -27,7 +33,12 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["ocean", "carbon", "zarr", "machine learning"],
+    "tags": [
+      "ocean",
+      "carbon",
+      "zarr",
+      "machine learning"
+    ],
     "links": [
       {
         "label": "Lamont-Doherty Earth Observatory Hybrid Physics Data pCO2 Product",
@@ -80,7 +91,10 @@
         {
           "name": "Australian Bureau of Meteorology",
           "description": "The Australian Bureau of Meteorology is a government agency providing weather and climate data. (http://www.bom.gov.au/)",
-          "roles": ["producer", "licensor"],
+          "roles": [
+            "producer",
+            "licensor"
+          ],
           "url": "https://dapds00.nci.org.au/thredds/catalogs/zv2/catalog.html"
         }
       ],
@@ -127,7 +141,10 @@
         {
           "name": "Google Research",
           "description": "Hersbach, H., Bell, B., Berrisford, P., Hirahara, S., Hor\u00e1nyi, A., Mu\u00f1oz\u2010Sabater, J., Nicolas, J., Peubey, C., Radu, R., Schepers, D., Simmons, A., Soci, C., Abdalla, S., Abellan, X., Balsamo, G., Bechtold, P., Biavati, G., Bidlot, J., Bonavita, M., De Chiara, G., Dahlgren, P., Dee, D., Diamantakis, M., Dragani, R., Flemming, J., Forbes, R., Fuentes, M., Geer, A., Haimberger, L., Healy, S., Hogan, R.J., H\u00f3lm, E., Janiskov\u00e1, M., Keeley, S., Laloyaux, P., Lopez, P., Lupu, C., Radnoti, G., de Rosnay, P., Rozum, I., Vamborg, F., Villaume, S., Th\u00e9paut, J-N. (2017): Complete ERA5: Fifth generation of ECMWF atmospheric reanalyses of the global climate. Copernicus Climate Change Service (C3S) Data Store (CDS).\nHersbach et al, (2017) was downloaded from the Copernicus Climate Change Service (C3S) Climate Data Store. We thank C3S for allowing us to redistribute the data.\nThe results contain modified Copernicus Climate Change Service information 2022. Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus information or data it contains.\n",
-          "roles": ["producer", "licensor"],
+          "roles": [
+            "producer",
+            "licensor"
+          ],
           "url": null
         }
       ],
@@ -135,7 +152,11 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["atmosphere", "reanalysis", "zarr"],
+    "tags": [
+      "atmosphere",
+      "reanalysis",
+      "zarr"
+    ],
     "links": null,
     "stores": [
       {
@@ -179,7 +200,10 @@
         {
           "name": "AWS NOAA Oceanic CDR",
           "description": "Registry of Open Data on AWS National Oceanographic & Atmospheric Administration National Centers for Environmental Information",
-          "roles": ["producer", "licensor"],
+          "roles": [
+            "producer",
+            "licensor"
+          ],
           "url": "s3://noaa-cdr-sea-surface-temp-optimum-interpolation-pds"
         }
       ],
@@ -227,7 +251,11 @@
         {
           "name": "National Center for Atmospheric Research",
           "description": "Daily atmospheric data from coupled NCAR CESM run hybrid_v5_rel04_BC5_ne120_t12_pop62",
-          "roles": ["producer", "licensor", "processor"],
+          "roles": [
+            "producer",
+            "licensor",
+            "processor"
+          ],
           "url": "https://www.earthsystemgrid.org/dataset/ucar.cgd.asd.cs.hybrid_v5_rel04_BC5_ne120_t12_pop62.atm-regrid.proc.daily_ave.html"
         }
       ],
@@ -235,7 +263,12 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["zarr", "pangeo-forge", "open-storage-network", "osn"],
+    "tags": [
+      "zarr",
+      "pangeo-forge",
+      "open-storage-network",
+      "osn"
+    ],
     "links": null,
     "stores": [
       {
@@ -267,7 +300,10 @@
         {
           "name": "NOAA-GFDL",
           "description": "NOAA-GFDL",
-          "roles": ["producer", "licensor"],
+          "roles": [
+            "producer",
+            "licensor"
+          ],
           "url": "https://mom-ocean.github.io/assets/pdfs/CM2_O_suite_1990_tutorial_and_analysis.pdf"
         }
       ],
@@ -275,7 +311,10 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["my-custom-tag", "zarr"],
+    "tags": [
+      "my-custom-tag",
+      "zarr"
+    ],
     "links": null,
     "stores": [
       {
@@ -323,7 +362,10 @@
         {
           "name": "ESGF",
           "description": "Earth System Grid Federation",
-          "roles": ["producer", "licensor"],
+          "roles": [
+            "producer",
+            "licensor"
+          ],
           "url": "https://esgf-node.llnl.gov/projects/cmip6/"
         }
       ],
@@ -331,7 +373,11 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["cmip6", "gcs", "zarr"],
+    "tags": [
+      "cmip6",
+      "gcs",
+      "zarr"
+    ],
     "links": [
       {
         "label": "DOI",
@@ -355,7 +401,10 @@
         {
           "name": "Copernicus Climate Change Service",
           "description": "We acknowledge the E-OBS dataset from the EU-FP6 project UERRA (https://www.uerra.eu) and the Copernicus Climate Change Service, and the data providers in the ECA&D project (https://www.ecad.eu) Cornes, R., G. van der Schrier, E.J.M. van den Besselaar, and P.D. Jones. 2018: An Ensemble Version of the E-OBS Temperature and Precipitation Datasets, J. Geophys. Res. Atmos., 123. doi:10.1029/2017JD028200",
-          "roles": ["producer", "licensor"],
+          "roles": [
+            "producer",
+            "licensor"
+          ],
           "url": "https://surfobs.climate.copernicus.eu/dataaccess/access_eobs.php#datafiles"
         }
       ],
@@ -429,13 +478,18 @@
         {
           "name": "Matthew Toohey",
           "description": null,
-          "roles": ["producer"],
+          "roles": [
+            "producer"
+          ],
           "url": "https://artsandscience.usask.ca/profile/MToohey#ResearchAreas"
         },
         {
           "name": "WDCC",
           "description": "World Data Center for Climate",
-          "roles": ["curator", "licensor"],
+          "roles": [
+            "curator",
+            "licensor"
+          ],
           "url": "https://www.wdc-climate.de/ui/entry?acronym=eVolv2k_v3"
         }
       ],
@@ -481,13 +535,18 @@
         {
           "name": "NOAA NCEI",
           "description": "National Oceanographic & Atmospheric Administration National Centers for Environmental Information",
-          "roles": ["host", "licensor"],
+          "roles": [
+            "host",
+            "licensor"
+          ],
           "url": "https://www.ncei.noaa.gov/products/global-precipitation-climatology-project"
         },
         {
           "name": "University of Maryland",
           "description": "University of Maryland College Park Earth System Science Interdisciplinary Center (ESSIC) and Cooperative Institute for Climate and Satellites (CICS).\n",
-          "roles": ["producer"],
+          "roles": [
+            "producer"
+          ],
           "url": "http://gpcp.umd.edu/"
         }
       ],
@@ -495,7 +554,12 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["zarr", "pangeo-forge", "open-storage-network", "osn"],
+    "tags": [
+      "zarr",
+      "pangeo-forge",
+      "open-storage-network",
+      "osn"
+    ],
     "links": null,
     "stores": [
       {
@@ -527,7 +591,10 @@
         {
           "name": "Met Office Hadley Centre",
           "description": "Met Office Hadley Centre",
-          "roles": ["producer", "licensor"],
+          "roles": [
+            "producer",
+            "licensor"
+          ],
           "url": "https://www.metoffice.gov.uk/hadobs/hadisst/index.html"
         }
       ],
@@ -580,7 +647,9 @@
         {
           "name": "LEAP",
           "description": "STC: Center for Learning the Earth with Artificial Intelligence and Physics",
-          "roles": ["curator"],
+          "roles": [
+            "curator"
+          ],
           "url": null
         }
       ],
@@ -588,7 +657,11 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["carbon", "zarr", "gcp"],
+    "tags": [
+      "carbon",
+      "zarr",
+      "gcp"
+    ],
     "links": null,
     "stores": [
       {
@@ -644,7 +717,10 @@
         {
           "name": "NCEI/NOAAA",
           "description": "National Centers for Environmental Information",
-          "roles": ["licensor", "curator"],
+          "roles": [
+            "licensor",
+            "curator"
+          ],
           "url": "https://www.ncei.noaa.gov/access/paleo-search/study/27850"
         }
       ],
@@ -652,7 +728,12 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["zarr", "pangeo-forge", "open-storage-network", "osn"],
+    "tags": [
+      "zarr",
+      "pangeo-forge",
+      "open-storage-network",
+      "osn"
+    ],
     "links": null,
     "stores": [
       {
@@ -684,13 +765,18 @@
         {
           "name": "Zenodo",
           "description": "Zenodo",
-          "roles": ["host"],
+          "roles": [
+            "host"
+          ],
           "url": "https://zenodo.org/record/7761881#.ZFv9OS-B30p"
         },
         {
           "name": "Nathaniel et al.",
           "description": "Authors of MetaFlux: Meta-learning global carbon fluxes from sparse spatiotemporal observations",
-          "roles": ["producer", "licensor"],
+          "roles": [
+            "producer",
+            "licensor"
+          ],
           "url": null
         }
       ],
@@ -698,7 +784,10 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["my-custom-tag", "zarr"],
+    "tags": [
+      "my-custom-tag",
+      "zarr"
+    ],
     "links": null,
     "stores": [
       {
@@ -742,7 +831,11 @@
         {
           "name": "NOAA Coastwatch/OceanWatch",
           "description": "National Oceanographic & Atmospheric Administration Coastwatch/Oceanwatch",
-          "roles": ["licensor", "producer", "processor"],
+          "roles": [
+            "licensor",
+            "producer",
+            "processor"
+          ],
           "url": "https://coastwatch.noaa.gov/cw/satellite-data-products/sea-surface-temperature/sea-surface-temperature-near-real-time-geopolar-blended.html"
         }
       ],
@@ -789,13 +882,18 @@
         {
           "name": "Copernicus Marine Service",
           "description": "The Copernicus Programme is the European Union's Earth Observation Programme, looking at our planet and its environment for the ultimate benefit of all European and global citizens.\n",
-          "roles": ["producer", "licensor"],
+          "roles": [
+            "producer",
+            "licensor"
+          ],
           "url": "https://marine.copernicus.eu/"
         },
         {
           "name": "LEAP",
           "description": "STC: Center for Learning the Earth with Artificial Intelligence and Physics",
-          "roles": ["curator"],
+          "roles": [
+            "curator"
+          ],
           "url": null
         }
       ],
@@ -806,7 +904,13 @@
       }
     },
     "thumbnail": null,
-    "tags": ["ocean", "satellite", "carbon", "zarr", "osn"],
+    "tags": [
+      "ocean",
+      "satellite",
+      "carbon",
+      "zarr",
+      "osn"
+    ],
     "links": [
       {
         "label": "Data Source (not original source)",
@@ -847,7 +951,10 @@
         {
           "name": "NOAA NCEI",
           "description": "National Oceanographic & Atmospheric Administration National Centers for Environmental Information",
-          "roles": ["producer", "licensor"],
+          "roles": [
+            "producer",
+            "licensor"
+          ],
           "url": "https://www.ncdc.noaa.gov/oisst"
         }
       ],
@@ -855,7 +962,12 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["zarr", "pangeo-forge", "open-storage-network", "osn"],
+    "tags": [
+      "zarr",
+      "pangeo-forge",
+      "open-storage-network",
+      "osn"
+    ],
     "links": null,
     "stores": [
       {
@@ -887,13 +999,18 @@
         {
           "name": "Hugging Face",
           "description": "Hugging Face",
-          "roles": ["host"],
+          "roles": [
+            "host"
+          ],
           "url": "https://huggingface.co/datasets/LEAP/ClimSim_low-res"
         },
         {
           "name": "Sungduk Yu et al",
           "description": "ClimSim: An open large-scale dataset for training high-resolution physics emulators in hybrid multi-scale climate simulators",
-          "roles": ["producer", "licensor"],
+          "roles": [
+            "producer",
+            "licensor"
+          ],
           "url": "https://arxiv.org/abs/2306.08754"
         }
       ],
@@ -901,7 +1018,10 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["my-custom-tag", "zarr"],
+    "tags": [
+      "my-custom-tag",
+      "zarr"
+    ],
     "links": null,
     "stores": [
       {
@@ -933,7 +1053,10 @@
         {
           "name": "NASA, Abigail Bodner, Dhruv Balwada",
           "description": "The data was originally generated by Dimitris Menemenlis at NASA JPL. The sub-sampling and transfer of data was done by Abigail Bodner with some help from Dhruv Balwada",
-          "roles": ["producer", "licensor"],
+          "roles": [
+            "producer",
+            "licensor"
+          ],
           "url": null
         }
       ],
@@ -941,7 +1064,12 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["llc4320", "m2lines", "ocean", "zarr"],
+    "tags": [
+      "llc4320",
+      "m2lines",
+      "ocean",
+      "zarr"
+    ],
     "links": null,
     "stores": [
       {
@@ -973,7 +1101,10 @@
         {
           "name": "Julius",
           "description": "Just a guy testing some recipes. Nothing to see here.",
-          "roles": ["producer", "licensor"],
+          "roles": [
+            "producer",
+            "licensor"
+          ],
           "url": null
         }
       ],
@@ -981,7 +1112,10 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["precipitation", "zarr"],
+    "tags": [
+      "precipitation",
+      "zarr"
+    ],
     "links": null,
     "stores": [
       {
@@ -1013,7 +1147,10 @@
         {
           "name": "Zenodo",
           "description": "https://zenodo.org/records/8293998",
-          "roles": ["archive", "doi"],
+          "roles": [
+            "archive",
+            "doi"
+          ],
           "url": null
         }
       ],
@@ -1021,7 +1158,11 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["neural network", "ocean surface boundary", "zarr"],
+    "tags": [
+      "neural network",
+      "ocean surface boundary",
+      "zarr"
+    ],
     "links": null,
     "stores": [
       {
@@ -1069,7 +1210,9 @@
         {
           "name": "Zenodo",
           "description": "Zenodo",
-          "roles": ["host"],
+          "roles": [
+            "host"
+          ],
           "url": "https://zenodo.org/records/7072512#.Y01cQi-B2-u"
         }
       ],
@@ -1119,13 +1262,19 @@
         {
           "name": "NASA MODIS",
           "description": "NASA Earth Observing System Data and Information System (EOSDIS)",
-          "roles": ["host", "licensor"],
+          "roles": [
+            "host",
+            "licensor"
+          ],
           "url": "https://ladsweb.modaps.eosdis.nasa.gov/archive/allData/6/MOD15A2GFS/"
         },
         {
           "name": "Beijing Normal University (BNU) - Global Change Research Group",
           "description": "Provider of the reprocessed GLOBMAP Leaf Area Index dataset",
-          "roles": ["data provider", "research institution"],
+          "roles": [
+            "data provider",
+            "research institution"
+          ],
           "url": "http://globalchange.bnu.edu.cn/research/laiv061#usage"
         }
       ],
@@ -1181,7 +1330,9 @@
         {
           "name": "Zenodo",
           "description": "Zenodo",
-          "roles": ["host"],
+          "roles": [
+            "host"
+          ],
           "url": "https://zenodo.org/records/10261274"
         }
       ],
@@ -1189,7 +1340,12 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["zarr", "ocean", "m2lines", "model"],
+    "tags": [
+      "zarr",
+      "ocean",
+      "m2lines",
+      "model"
+    ],
     "links": null,
     "stores": [
       {
