@@ -1218,5 +1218,66 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/eNATL_feedstock/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "GRACE-GRACE-FO-TWS",
+    "description": "Global Total Water Storage (TWS) data derived from GRACE and GRACE-FO satellite missions. This dataset is used for hydrological and climate monitoring, assessing water resources on a global scale.",
+    "maintainers": [
+      {
+        "name": "Mitra Cattry",
+        "github": "mitraA90"
+      },
+      {
+        "name": "Raphael Hagen",
+        "github": "norlandrhagen"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "NASA GRACE & GRACE-FO Mission",
+          "description": "NASA's GRACE and GRACE-FO missions measure changes in Earth's water storage, using satellite gravimetry data to monitor total water storage variations worldwide.",
+          "roles": ["data provider", "research institution"],
+          "url": "https://www.nasa.gov/mission_pages/grace/index.html"
+        },
+        {
+          "name": "Jet Propulsion Laboratory (JPL)",
+          "description": "The Jet Propulsion Laboratory (JPL) processes GRACE and GRACE-FO satellite data for Earth science research and water storage monitoring.",
+          "roles": ["data provider", "research institution"],
+          "url": "https://www.jpl.nasa.gov/"
+        }
+      ],
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": [
+      "GRACE",
+      "GRACE-FO",
+      "Total Water Storage (TWS)",
+      "Earth Observation",
+      "Satellite Data",
+      "Global",
+      "Remote Sensing",
+      "Hydrology",
+      "Climate Monitoring",
+      "Water Resources"
+    ],
+    "links": null,
+    "stores": [
+      {
+        "id": "GRACE-GRACE-FO-TWS",
+        "name": "GRACE & GRACE-FO Total Water Storage (TWS)",
+        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/GRACE-GRACE-FO-TWS/GRACE-GRACE-FO-TWS.zarr",
+        "rechunking": null,
+        "public": true,
+        "geospatial": true,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/GRACE-GRACE-FO-TWS/blob/main/feedstock/meta.yaml"
   }
 ]
