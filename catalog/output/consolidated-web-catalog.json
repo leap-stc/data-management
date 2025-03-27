@@ -244,7 +244,7 @@
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cesm-atm-025deg-feedstock/cesm-atm-025deg.zarr",
         "rechunking": null,
         "public": true,
-        "geospatial": false,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
