@@ -24,3 +24,4 @@ feedstocks:
   - https://github.com/leap-stc/MODIS-LAI/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/eNATL_feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/GRACE-GRACE-FO-TWS/blob/main/feedstock/catalog.yaml
+  - https://github.com/leap-stc/VOD-GLAB/blob/main/feedstock/catalog.yaml
