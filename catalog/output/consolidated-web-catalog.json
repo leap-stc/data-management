@@ -1279,5 +1279,66 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/GRACE-GRACE-FO-TWS/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "GLAB-VOD",
+    "description": "The Global L-band equivalent AI-Based Vegetation Optical Depth (GLAB-VOD) dataset provides a long-term, temporally consistent record of vegetation optical depth from 2002 to 2020 at 25 km resolution and 18-day intervals. Using machine learning, this dataset extends the SMAP-IB VOD record by fusing brightness temperatures from SMOS, AMSR-E, and AMSR-2 with ancillary soil moisture data from CASM. A companion product, GLAB-TB, offers harmonized brightness temperatures used as intermediate inputs. GLAB-VOD is designed for applications in vegetation monitoring, biomass estimation, and climate studies.\n",
+    "maintainers": [
+      {
+        "name": "Mitra Cattry",
+        "github": "mitraA90"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Columbia University",
+          "description": "Primary institution hosting the research and dataset generation",
+          "roles": ["host"],
+          "url": "https://climate.columbia.edu/"
+        },
+        {
+          "name": "INRAE - ISPA, University of Bordeaux",
+          "description": "Contributing institution providing SMAP-IB VOD, SMOS TB, and related data",
+          "roles": ["data provider"],
+          "url": "https://www.inrae.fr/"
+        },
+        {
+          "name": "Zenodo",
+          "description": "Permanent archive for GLAB-VOD and GLAB-TB datasets",
+          "roles": ["data provider"],
+          "url": "https://zenodo.org/doi/10.5281/zenodo.10306095"
+        }
+      ],
+      "license": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": [
+      "vegetation optical depth",
+      "VOD",
+      "L-band",
+      "remote sensing",
+      "global",
+      "climate",
+      "vegetation water content",
+      "GLAB"
+    ],
+    "links": null,
+    "stores": [
+      {
+        "id": "vod-glab",
+        "name": "VOD-GLAB Global L-band Vegetation Optical Depth",
+        "url": "gs://leap-persistent/mitraa90/GLAB-VOD/GLAB-VOD.zarr",
+        "rechunking": null,
+        "public": false,
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/VOD-GLAB/blob/main/feedstock/meta.yaml"
   }
 ]
