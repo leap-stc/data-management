@@ -1,4 +1,5 @@
 feedstocks:
+  - https://github.com/leap-stc/OSTIA_REP/blob/main/feedstock/catalog.yaml
   - https://github.com/carbonplan/ocean-carbon-sink-data-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/AGDC-pangeo-forge-osn-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/arco-era5_feedstock/blob/main/feedstock/catalog.yaml
