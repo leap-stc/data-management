@@ -1,5 +1,57 @@
 [
   {
+    "title": "OSTIA Reprocessed",
+    "description": "GHRSST Level 4 OSTIA Global Historical Reprocessed Foundation Sea Surface Temperature Analysis produced by the UK Meteorological Office.\n",
+    "maintainers": [
+      {
+        "name": "Raphael Hagen",
+        "github": "norlandrhagen"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "NASA PODAAC",
+          "description": "NASA Physical Oceanography Distributed Active Archive Center",
+          "roles": ["producer", "distributor"],
+          "url": null
+        }
+      ],
+      "license": "https://doi.org/10.48670/moi-00168",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": [
+      "global",
+      "zarr",
+      "GHRSST",
+      "L4",
+      "Level 4",
+      "SST",
+      "REP",
+      "reprocessed",
+      "sea surface temperature",
+      "NASA",
+      "UK Met Office"
+    ],
+    "links": null,
+    "stores": [
+      {
+        "id": "OSTIA-REP",
+        "name": "OSTIA-UKMO-L4-GLOB-REP-v2.0",
+        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/OSTIA/OSTIA.zarr",
+        "rechunking": null,
+        "public": false,
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/OSTIA_REP/blob/main/feedstock/meta.yaml"
+  },
+  {
     "title": "LDEO-pCO2 HPD Back in Time",
     "description": "The ocean reduces human impact on the climate by absorbing and sequestering CO2 . From 1950s to the 1980s, observations of pCO2 and related ocean carbon variables were sparse and uncertain. Thus, global ocean biogeochemical models (GOBMs) have been the basis for quantifying the ocean carbon sink. The LDEO-Hybrid Physics Data product (LDEO-HPD) interpolates sparse surface ocean pCO2 data to global coverage by using GOBMs as priors, and applying machine learning to estimate full-coverage corrections.\n",
     "maintainers": [
@@ -1329,7 +1381,7 @@
       {
         "id": "vod-glab",
         "name": "VOD-GLAB Global L-band Vegetation Optical Depth",
-        "url": "gs://leap-persistent/mitraa90/GLAB-VOD/GLAB-VOD.zarr",
+        "url": "gs://leap-persistent/data-library/GLAB-VOD/GLAB-VOD.zarr",
         "rechunking": null,
         "public": false,
         "geospatial": null,
