@@ -521,11 +521,15 @@
   },
   {
     "title": "Global Precipitation Climatology Project",
-    "description": "Global Precipitation Climatology Project (GPCP) Daily Version 1.3 gridded, merged ty satellite/gauge precipitation Climate data Record (CDR) from 1996 to present.\n",
+    "description": "Global Precipitation Climatology Project (GPCP) Daily Version 1.3 gridded, merged ty satellite/gauge precipitation Climate data Record (CDR) from 1996 to 2025-05-19.\n",
     "maintainers": [
       {
         "name": "Ryan Abernathey",
         "github": "rabernat"
+      },
+      {
+        "name": "Raphael Hagen",
+        "github": "norlandrhagen"
       }
     ],
     "provenance": {
@@ -547,23 +551,28 @@
       "license_link": null
     },
     "thumbnail": null,
-    "tags": ["zarr", "pangeo-forge", "open-storage-network", "osn"],
+    "tags": [
+      "EARTH SCIENCE",
+      "ATMOSPHERE",
+      "PRECIPITATION",
+      "PRECIPITATION AMOUNT"
+    ],
     "links": null,
     "stores": [
       {
         "id": "gpcp",
         "name": "gpcp",
-        "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/gpcp-feedstock/gpcp.zarr",
+        "url": "gs://leap-persistent/data-library/GPCP-daily/GPCP-daily.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
         "last_updated": null
       }
     ],
-    "ncviewjs:meta_yaml_url": "https://github.com/pangeo-forge/gpcp-feedstock/blob/main/feedstock/meta.yaml"
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/gpcp-feedstock/blob/main/feedstock/meta.yaml"
   },
   {
     "title": "Hadley Centre Sea Ice and Sea Surface Temperature (HadISST)",
