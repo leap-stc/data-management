@@ -9,7 +9,7 @@ feedstocks:
   - https://github.com/leap-stc/cmip6-leap-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/EOBS-pangeo-forge-osn-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/evolv2k-vssi-database-pangeo-forge-osn-feedstock/blob/main/feedstock/catalog.yaml
-  - https://github.com/leap-stc/gpcp-pangeo-forge-osn-feedstock/blob/main/feedstock/catalog.yaml
+  - https://github.com/leap-stc/gpcp-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/HadISST-pangeo-forge-osn-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/large-ensemble-pCO2-testbed-feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/LMRv2.1-Monte-Carlo-Gridded-pangeo-forge-osn-feedstock/blob/main/feedstock/catalog.yaml
