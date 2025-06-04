@@ -1401,5 +1401,62 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/VOD-GLAB/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "SRTMGL1-DEM",
+    "description": "Global 1-Arc Second Digital Elevation Model (DEM) derived from NASA's Shuttle Radar Topography Mission (SRTM). This dataset provides high-resolution topographic data for applications in hydrology, climate modeling, and terrain analysis.",
+    "maintainers": [
+      {
+        "name": "Mitra Cattry",
+        "github": "mitraA90"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "NASA Shuttle Radar Topography Mission (SRTM)",
+          "description": "NASA's SRTM mission collected high-resolution elevation data for nearly the entire Earth's land surface using radar interferometry.",
+          "roles": ["data provider", "research institution"],
+          "url": "https://www2.jpl.nasa.gov/srtm/"
+        },
+        {
+          "name": "Jet Propulsion Laboratory (JPL)",
+          "description": "JPL processes SRTM data for global digital elevation modeling, supporting geospatial analysis and environmental research.",
+          "roles": ["data provider", "research institution"],
+          "url": "https://www.jpl.nasa.gov/"
+        }
+      ],
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": [
+      "SRTM",
+      "DEM",
+      "Digital Elevation Model",
+      "Earth Observation",
+      "Remote Sensing",
+      "NASA",
+      "Topography",
+      "Global",
+      "Terrain Mapping",
+      "Geospatial Data"
+    ],
+    "links": null,
+    "stores": [
+      {
+        "id": "SRTMGL1-DEM",
+        "name": "SRTMGL1 Digital Elevation Model (DEM)",
+        "url": "gs://leap-persistent/data-library/SRTMGL1_DEM/SRTMGL1_DEM.zarr",
+        "rechunking": null,
+        "public": false,
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/SRTMGL1_DEM/blob/main/feedstock/meta.yaml"
   }
 ]
