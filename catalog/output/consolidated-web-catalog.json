@@ -255,8 +255,8 @@
         "name": "noaa-oisst",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/noaa_oisst/v2.1-avhrr.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -295,8 +295,8 @@
         "name": "cesm-atm-025deg",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cesm-atm-025deg-feedstock/cesm-atm-025deg.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -826,8 +826,8 @@
         "name": "noaa-coastwatch-geopolar-sst",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/noaa-coastwatch-geopolar-sst-feedstock/noaa-coastwatch-geopolar-sst.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -884,8 +884,8 @@
         "name": "AVISO",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-cmems-duacs",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
