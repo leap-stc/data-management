@@ -195,8 +195,8 @@
         "name": "0.25\u00b0 ERA5 Surface Level Pressure",
         "url": "gs://gcp-public-data-arco-era5/ar/full_37-1h-0p25deg-chunk-1.zarr-v3",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -207,8 +207,8 @@
         "name": "0.25\u00b0 ERA5 Model Level Pressure",
         "url": "gs://gcp-public-data-arco-era5/ar/model-level-1h-0p25deg.zarr-v1",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
