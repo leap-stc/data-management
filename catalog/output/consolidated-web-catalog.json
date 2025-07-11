@@ -155,8 +155,8 @@
         "name": "AGCD",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/AGDC-feedstock/AGCD.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
