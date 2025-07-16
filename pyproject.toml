@@ -1,3 +1,18 @@
+
+[project]
+
+
+
+dynamic         = ["version"]
+name            = "feedstock"
+requires-python = ">= 3.12"
+dependencies = [
+    "pre-commit",
+]
+
+[tool.setuptools.packages.find]
+    include = ["feedstock*"]
+
 [tool.ruff]
 line-length = 100
 target-version = "py310"
