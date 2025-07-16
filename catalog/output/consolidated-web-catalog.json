@@ -1403,58 +1403,6 @@
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/VOD-GLAB/blob/main/feedstock/meta.yaml"
   },
   {
-    "title": "LCSPP-AVHRR Photosynthesis Proxy",
-    "description": "The Long-term Continuous SIF-informed Photosynthesis Proxy from AVHRR surface reflectance (LCSPP-AVHRR) provides a globally consistent, biweekly dataset of photosynthetic activity spanning 1982 to 2000 at 0.05\u00b0 spatial resolution. Version 3.2 of the dataset is constructed by calibrating AVHRR surface reflectance bands against MODIS during their overlapping period (2001\u20132023), followed by training a neural network to emulate satellite-derived SIF from OCO-2. The LCSPP-AVHRR dataset captures vegetation dynamics with higher fidelity than traditional vegetation indices (e.g., NDVI, kNDVI, NIRv) and is suitable for long-term GPP proxy estimation. All data are provided in zarr format in one file to represent biweekly intervals.",
-    "maintainers": [
-      {
-        "name": "Mitra Cattry",
-        "github": "mitraA90"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "Columbia University",
-          "description": "Primary research institution",
-          "roles": ["producer", "research institution"],
-          "url": null
-        },
-        {
-          "name": "Seoul National University",
-          "description": "Partner institution contributing AVHRR processing and MODIS calibration",
-          "roles": ["data provider", "research institution"],
-          "url": null
-        },
-        {
-          "name": "Zenodo",
-          "description": "Permanent archive hosting the LCSPP-AVHRR dataset and associated resources",
-          "roles": ["host"],
-          "url": null
-        }
-      ],
-      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": null,
-    "links": null,
-    "stores": [
-      {
-        "id": "lcspp-avhrr-1982-2000",
-        "name": "LCSPP-AVHRR Long-term Continuous SIF-informed Photosynthesis Proxy v3.2 (1982\u20132000)",
-        "url": "gs://leap-persistent/data-library/GLAB-CSIF/GLAB-CSIF.zarr",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/GLAB-CSIF/blob/main/feedstock/meta.yaml"
-  },
-  {
     "title": "SRTMGL1-DEM",
     "description": "Global 1-Arc Second Digital Elevation Model (DEM) derived from NASA's Shuttle Radar Topography Mission (SRTM). This dataset provides high-resolution topographic data for applications in hydrology, climate modeling, and terrain analysis.",
     "maintainers": [
@@ -1510,5 +1458,57 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/SRTMGL1_DEM/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "LCSPP-AVHRR Photosynthesis Proxy",
+    "description": "The Long-term Continuous SIF-informed Photosynthesis Proxy from AVHRR surface reflectance (LCSPP-AVHRR) provides a globally consistent, biweekly dataset of photosynthetic activity spanning 1982 to 2000 at 0.05\u00b0 spatial resolution. Version 3.2 of the dataset is constructed by calibrating AVHRR surface reflectance bands against MODIS during their overlapping period (2001\u20132023), followed by training a neural network to emulate satellite-derived SIF from OCO-2. The LCSPP-AVHRR dataset captures vegetation dynamics with higher fidelity than traditional vegetation indices (e.g., NDVI, kNDVI, NIRv) and is suitable for long-term GPP proxy estimation. All data are provided in zarr format in one file to represent biweekly intervals.",
+    "maintainers": [
+      {
+        "name": "Mitra Cattry",
+        "github": "mitraA90"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Columbia University",
+          "description": "Primary research institution",
+          "roles": ["producer", "research institution"],
+          "url": null
+        },
+        {
+          "name": "Seoul National University",
+          "description": "Partner institution contributing AVHRR processing and MODIS calibration",
+          "roles": ["data provider", "research institution"],
+          "url": null
+        },
+        {
+          "name": "Zenodo",
+          "description": "Permanent archive hosting the LCSPP-AVHRR dataset and associated resources",
+          "roles": ["host"],
+          "url": null
+        }
+      ],
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": null,
+    "links": null,
+    "stores": [
+      {
+        "id": "lcspp-avhrr-1982-2000",
+        "name": "LCSPP-AVHRR Long-term Continuous SIF-informed Photosynthesis Proxy v3.2 (1982\u20132000)",
+        "url": "gs://leap-persistent/data-library/GLAB-CSIF/GLAB-CSIF.zarr",
+        "rechunking": null,
+        "public": false,
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/GLAB-CSIF/blob/main/feedstock/meta.yaml"
   }
 ]
