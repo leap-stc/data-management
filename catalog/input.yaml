@@ -26,5 +26,5 @@ feedstocks:
   - https://github.com/leap-stc/eNATL_feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/GRACE-GRACE-FO-TWS/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/VOD-GLAB/blob/main/feedstock/catalog.yaml
-  - https://github.com/leap-stc/SRTMGL1_DEM/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/GLAB-CSIF/blob/main/feedstock/catalog.yaml
+  - https://github.com/leap-stc/SRTMGL1_DEM/blob/main/feedstock/catalog.yaml
