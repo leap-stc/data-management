@@ -1,6 +1,5 @@
 # LEAP Data Management
 
-[![pre-commit.ci status][pre-commit.ci-badge]][pre-commit.ci-link]
 [![Catalog](https://github.com/leap-stc/data-management/actions/workflows/catalog.yml/badge.svg)](https://github.com/leap-stc/data-management/actions/workflows/catalog.yml)
 
 This repository serves as coordination repository for sugesting and tracking data ingestion into the LEAP catalog.
