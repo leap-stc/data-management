@@ -1010,8 +1010,8 @@
         "name": "The Agulhas region subset",
         "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/LLC4320_12h_3D-regions/agulhas.zarr",
         "rechunking": null,
-        "public": false,
-        "geospatial": null,
+        "public": true,
+        "geospatial": true,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
