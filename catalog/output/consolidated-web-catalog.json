@@ -1061,6 +1061,54 @@
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/chirps_feedstock/blob/main/feedstock/meta.yaml"
   },
   {
+    "title": "Caravan (Catchment Attributes and Meteorology for Large-sample Studies) - A global community dataset for large-sample hydrology",
+    "description": "Caravan is an open community dataset of meteorological forcing data, catchment attributes, and discharge data for catchments around the world. Additionally, Caravan provides code to derive meteorological forcing data and catchment attributes from the same data sources in the cloud, making it easy for anyone to extend Caravan to new catchments. The vision of Caravan is to provide the foundation for a truly global open source community resource that will grow over time. https://www.nature.com/articles/s41597-023-01975-w\n",
+    "maintainers": [
+      {
+        "name": "Raphael Hagen",
+        "github": "norlandrhagen"
+      },
+      {
+        "name": "Kara D. Lamb",
+        "github": "kdlamb"
+      },
+      {
+        "name": "Samarth Agrawal",
+        "github": "SammyAgrawal"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Zendodo",
+          "description": "https://zenodo.org/records/15529786",
+          "roles": ["distributor", "licensor"],
+          "url": null
+        }
+      ],
+      "license": "CC 4.0",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["hydrology", "rainfall-runoff modeling", "streamflow", "zarr"],
+    "links": null,
+    "stores": [
+      {
+        "id": "Caravan - Version 1.6",
+        "name": "Caravan - A global community dataset for large-sample hydrology",
+        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/Caravan/Caravan.zarr",
+        "rechunking": null,
+        "public": false,
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/Caravan/blob/main/feedstock/meta.yaml"
+  },
+  {
     "title": "GOTM NN Training Data",
     "description": "Data for NN training from Sane et al. 2023. (Parameterizing Vertical Mixing Coefficients in the Ocean Surface Boundary Layer using Neural Networks). An additional text data file is available at: https://nyu1.osn.mghpcc.org/leap-pangeo-manual/GOTM/data_testing_4_paper.txt\n",
     "maintainers": [
@@ -1510,125 +1558,5 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/SRTMGL1_DEM/blob/main/feedstock/meta.yaml"
-  },
-  {
-    "title": "Caravan (Catchment Attributes and Meteorology for Large-sample Studies) - A global community dataset for large-sample hydrology",
-    "description": "Caravan is an open community dataset of meteorological forcing data, catchment attributes, and discharge data for catchments around the world. Additionally, Caravan provides code to derive meteorological forcing data and catchment attributes from the same data sources in the cloud, making it easy for anyone to extend Caravan to new catchments. The vision of Caravan is to provide the foundation for a truly global open source community resource that will grow over time. https://www.nature.com/articles/s41597-023-01975-w\n",
-    "maintainers": [
-      {
-        "name": "Raphael Hagen",
-        "github": "norlandrhagen"
-      },
-      {
-        "name": "Kara D. Lamb",
-        "github": "<ADD>"
-      },
-      {
-        "name": "Samarth Agrawal",
-        "github": "SammyAgrawal"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "Zendodo",
-          "description": "https://zenodo.org/records/15529786",
-          "roles": ["distributor", "licensor"],
-          "url": null
-        }
-      ],
-      "license": "CC 4.0",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": ["hydrology", "meteorology", "zarr"],
-    "links": null,
-    "stores": [
-      {
-        "id": "CPC",
-        "name": "Caravan: CPC Global Unified Gauge-Based Analysis of Daily Precipitation data provided by the NOAA PSL.",
-        "url": "gs://caravan-multimet/v1.1/CPC/timeseries.zarr",
-        "rechunking": null,
-        "public": true,
-        "geospatial": false,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "IMERG",
-        "name": "Caravan: GPM IMERG Early Precipitation L3 Half Hourly 0.1",
-        "url": "gs://caravan-multimet/v1.1/IMERG/timeseries.zarr",
-        "rechunking": null,
-        "public": true,
-        "geospatial": false,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "CHIRPS",
-        "name": "Caravan: CHIRPS: Rainfall Estimates from Rain Gauge and Satellite Observations",
-        "url": "gs://caravan-multimet/v1.1/CHIRPS/timeseries.zarr",
-        "rechunking": null,
-        "public": true,
-        "geospatial": false,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "ERA5_LAND",
-        "name": "Caravan: ERA5-Land hourly data",
-        "url": "gs://caravan-multimet/v1.1/ERA5_LAND/timeseries.zarr",
-        "rechunking": null,
-        "public": true,
-        "geospatial": false,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "CHIRPS_GEFS",
-        "name": "Caravan: HRES forecast from IFS by ECMWF",
-        "url": "gs://caravan-multimet/v1.1/CHIRPS_GEFS/timeseries.zarr",
-        "rechunking": null,
-        "public": true,
-        "geospatial": false,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "HRES",
-        "name": "Caravan: HRES forecast from IFS by ECMWF",
-        "url": "gs://caravan-multimet/v1.1/HRES/timeseries.zarr",
-        "rechunking": null,
-        "public": true,
-        "geospatial": false,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "GRAPHCAST",
-        "name": "Caravan: GraphCast",
-        "url": "gs://caravan-multimet/v1.1/GRAPHCAST/timeseries.zarr",
-        "rechunking": null,
-        "public": true,
-        "geospatial": false,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/Caravan/blob/main/feedstock/meta.yaml"
   }
 ]
