@@ -1510,5 +1510,53 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/SRTMGL1_DEM/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "Caravan - A global community dataset for large-sample hydrology",
+    "description": "Caravan is an open community dataset of meteorological forcing data, catchment attributes, and discharge data for catchments around the world. Additionally, Caravan provides code to derive meteorological forcing data and catchment attributes from the same data sources in the cloud, making it easy for anyone to extend Caravan to new catchments. The vision of Caravan is to provide the foundation for a truly global open source community resource that will grow over time. paper: https://www.nature.com/articles/s41597-023-01975-w DOI: https://zenodo.org/records/15529786\n",
+    "maintainers": [
+      {
+        "name": "Raphael Hagen",
+        "github": "norlandrhagen"
+      },
+      {
+        "name": "Kara D. Lamb",
+        "github": "kdlamb"
+      },
+      {
+        "name": "Samarth Agrawal",
+        "github": "SammyAgrawal"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Zendodo",
+          "description": "https://zenodo.org/records/15529786",
+          "roles": ["distributor", "licensor"],
+          "url": null
+        }
+      ],
+      "license": "CC 4.0",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": ["hydrology", "rainfall-runoff modeling", "streamflow", "zarr"],
+    "links": null,
+    "stores": [
+      {
+        "id": "Caravan - Version 1.6",
+        "name": "Caravan - A global community dataset for large-sample hydrology",
+        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/Caravan/Caravan.zarr",
+        "rechunking": null,
+        "public": false,
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/Caravan/blob/main/feedstock/meta.yaml"
   }
 ]
