@@ -20,7 +20,6 @@ feedstocks:
   - https://github.com/leap-stc/climsim_feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/LLC4320_12h_3D-regions_feedstock/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/chirps_feedstock/blob/main/feedstock/catalog.yaml
-  - https://github.com/leap-stc/Caravan/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/GOTM/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/CASM/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/MODIS-LAI/blob/main/feedstock/catalog.yaml
@@ -29,3 +28,4 @@ feedstocks:
   - https://github.com/leap-stc/VOD-GLAB/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/GLAB-CSIF/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/SRTMGL1_DEM/blob/main/feedstock/catalog.yaml
+  - https://github.com/leap-stc/Caravan/blob/main/feedstock/catalog.yaml
