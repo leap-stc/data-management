@@ -1010,8 +1010,8 @@
         "name": "The Agulhas region subset",
         "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/LLC4320_12h_3D-regions/agulhas.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1050,12 +1050,12 @@
         "name": "CHIRPS-2.0",
         "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/chirps_feedstock/chirps-global-daily.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
-        "last_updated": "2024-11-19T21:19:44.192735+00:00"
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/chirps_feedstock/blob/main/feedstock/meta.yaml"
@@ -1090,8 +1090,8 @@
         "name": "GOTM: Raw training data",
         "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/GOTM/raw_training_data.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": false,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1102,8 +1102,8 @@
         "name": "GOTM: SF training data",
         "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/GOTM/sf_training_data.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": false,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1152,8 +1152,8 @@
         "name": "CASM: Consistent Artificial-intelligence Soil Moisture",
         "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/CASM/casm.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1210,8 +1210,8 @@
         "name": "MODIS Leaf Area Index",
         "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/MODIS_LAI/MODIS_LAI.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1331,8 +1331,8 @@
         "name": "GRACE & GRACE-FO Total Water Storage (TWS)",
         "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/GRACE-GRACE-FO-TWS/GRACE-GRACE-FO-TWS.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
