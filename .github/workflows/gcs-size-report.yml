@@ -28,4 +28,9 @@ jobs:
       - name: Generate size report
         id: report
         run: |
-          echo "$BUCKET_PREFIXES"
+            
+            IFS=',' read -ra BUCKET_ARRAY <<< "$BUCKET_PREFIXES"
+            
+            for bucket_prefix in "${BUCKET_ARRAY[@]}"; do
+              bucket_prefix=$(echo "$bucket_prefix" | xargs)
+              
