@@ -58,16 +58,17 @@ jobs:
             REPORT+="\n$prefix:\n"
 
             dirs=$(rclone lsd "gcs:$prefix" --max-depth 1 | awk '{print $NF}' || true)
-
+            
             for dir in $dirs; do
 
               if [[ -z "$dir" || "$dir" == "." ]]; then
                 continue
+              fi
+
               echo "gcs:$prefix/$dir"
               size_json=$(rclone size "gcs:$prefix/$dir" --fast-list --json)
               REPORT+="$prefix/$dir: $size_json\n"
-            done
-          done
+            done  
 
           echo "report<<EOF" >> $GITHUB_OUTPUT
           echo -e "$REPORT" >> $GITHUB_OUTPUT
