@@ -66,11 +66,13 @@ jobs:
               fi
 
               echo "gcs:$prefix/$dir"
+
               size_json=$(rclone size "gcs:$prefix/$dir" --fast-list --json)
               bytes=$(echo "$size_json" | jq '.bytes')
-              gb=$(echo "scale=2; $bytes / 1024 / 1024 / 1024" | bc)
+              human_size=$(numfmt --to=iec --suffix=B "$bytes")
 
-              REPORT+="\n| $prefix/$dir | $gb |"
+              REPORT+="\n| $prefix/$dir | $human_size |"
+
             done
           done
 
