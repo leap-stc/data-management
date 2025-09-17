@@ -8,66 +8,66 @@ on:
         required: false
 
   schedule:
-    - cron: "0 2 * * 0" 
-  env:
-    RCLONE_CONFIG_GCS_TYPE: google cloud storage
+    - cron: "0 2 * * 0"
+env:
+  RCLONE_CONFIG_GCS_TYPE: google cloud storage
 
-  jobs:
-    size-report:
-      runs-on: ubuntu-latest
+jobs:
+  size-report:
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: Checkout repo
-          uses: actions/checkout@v5
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v5
 
-        - name: Authenticate to Google Cloud
-          uses: google-github-actions/auth@v2
-          with:
-            credentials_json: "${{ secrets.LEAP_BAKERY_SERVICE_ACCOUNT }}"
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: "${{ secrets.LEAP_BAKERY_SERVICE_ACCOUNT }}"
 
-        - name: Setup Rclone
-          uses: AnimMouse/setup-rclone@v1
-          with:
-            rclone_config: |
-              [gcs]
-              type = google cloud storage
-            disable_base64: true
+      - name: Setup Rclone
+        uses: AnimMouse/setup-rclone@v1
+        with:
+          rclone_config: |
+            [gcs]
+            type = google cloud storage
+          disable_base64: true
 
-        - name: Generate bucket size report
-          id: report
-          run: |
-            #!/bin/bash
-            set -euo pipefail
+      - name: Generate bucket size report
+        id: report
+        run: |
+          #!/bin/bash
+          set -euo pipefail
 
-            input_prefix="${{ github.event.inputs.bucket_prefix || '' }}"
+          input_prefix="${{ github.event.inputs.bucket_prefix || '' }}"
 
-            if [[ -n "$input_prefix" ]]; then
-              bucket_prefixes=("$input_prefix")
-            else
-              bucket_prefixes=(
-                leap-persistent
-                leap-persistent-ro
-                leap-persistent/data-library
-              )
-            fi
+          if [[ -n "$input_prefix" ]]; then
+            bucket_prefixes=("$input_prefix")
+          else
+            bucket_prefixes=(
+              leap-persistent
+              leap-persistent-ro
+              leap-persistent/data-library
+            )
+          fi
 
-            echo "${bucket_prefixes[@]}"
-            REPORT=""
+          echo "${bucket_prefixes[@]}"
+          REPORT=""
 
-            for prefix in "${bucket_prefixes[@]}"; do
-              echo "gcs:$prefix"
-              REPORT+="\n$prefix:\n"
+          for prefix in "${bucket_prefixes[@]}"; do
+            echo "gcs:$prefix"
+            REPORT+="\n$prefix:\n"
 
-              dirs=$(rclone lsd "gcs:$prefix" --max-depth 1 | awk '{print $NF}' || true)
+            dirs=$(rclone lsd "gcs:$prefix" --max-depth 1 | awk '{print $NF}' || true)
 
-              for dir in $dirs; do
-                [[ -z "$dir" ]] && continue
-                echo "gcs:$prefix/$dir"
-                size_json=$(rclone size "gcs:$prefix/$dir" --fast-list --json)
-                REPORT+="$prefix/$dir: $size_json\n"
-              done
+            for dir in $dirs; do
+              [[ -z "$dir" ]] && continue
+              echo "gcs:$prefix/$dir"
+              size_json=$(rclone size "gcs:$prefix/$dir" --fast-list --json)
+              REPORT+="$prefix/$dir: $size_json\n"
             done
+          done
 
-            echo "report<<EOF" >> $GITHUB_OUTPUT
-            echo -e "$REPORT" >> $GITHUB_OUTPUT
-            echo "EOF" >> $GITHUB_OUTPUT
+          echo "report<<EOF" >> $GITHUB_OUTPUT
+          echo -e "$REPORT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
