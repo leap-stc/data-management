@@ -1,4 +1,4 @@
-name: GCS bucket sizes
+name: Create a report on bucket sizes in gcs
 
 on:
   workflow_dispatch:
@@ -6,9 +6,6 @@ on:
       bucket_prefix:
         description: "optional single bucket to check. ex: leap-persistent/data-library"
         required: false
-
-  schedule:
-    - cron: "0 2 * * 0"
 env:
   RCLONE_CONFIG_GCS_TYPE: google cloud storage
 
