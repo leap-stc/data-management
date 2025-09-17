@@ -41,7 +41,6 @@ jobs:
 
           if [[ -n "$input_prefix" ]]; then
             bucket_prefixes=("$input_prefix")
-            echo "$bucket_prefixes"
           else
             bucket_prefixes=(
               leap-persistent
@@ -50,27 +49,23 @@ jobs:
             )
           fi
 
-          echo "${bucket_prefixes[@]}"
           REPORT_HEADER="*Bucket Size Report*"
-          REPORT_TABLE=$(cat <<EOF
-| Bucket/Prefix | Size |
-|---|---|
-EOF
+
+          # Use `<<-` to strip leading tabs.
+          # The content and EOF must be indented with tabs, not spaces.
+          REPORT_TABLE=$(cat <<-EOF
+          | Bucket/Prefix | Size |
+          |---|---|
+          EOF
           )
 
           for prefix in "${bucket_prefixes[@]}"; do
-            echo "gcs:$prefix"
-            
-            # The lsd command might not find any dirs, leading to an empty dirs variable.
-            # Adding || true handles this gracefully.
             dirs=$(rclone lsd "gcs:$prefix" --max-depth 1 | awk '{print $NF}' || true)
-            
-            for dir in $dirs; do
 
+            for dir in $dirs; do
               if [[ -z "$dir" || "$dir" == "." ]]; then
                 continue
               fi
-
 
               size_json=$(rclone size "gcs:$prefix/$dir" --fast-list --json)
               bytes=$(echo "$size_json" | jq '.bytes')
@@ -79,17 +74,11 @@ EOF
               REPORT_TABLE+="\n| $prefix/$dir | $human_size |"
             done
           done
-          
-          # The table needs to be a single, properly escaped JSON string for the payload.
-          # Concatenate the header and table with newlines.
-          # Using printf with %q for shell-safe string creation to pass to jq.
-          REPORT_MESSAGE="${REPORT_HEADER}\n\`\`\`\n${REPORT_TABLE}\n\`\`\`"
-          
-          # Using `jq -rRs` will handle the multi-line string as a raw string
-          # with escaping, but since we are using `<<EOF`, we can pass it
-          # directly to `jq -R` to avoid double escaping.
+
+          REPORT_MESSAGE=$(printf '%s\n\`\`\`\n%s\n\`\`\`' "$REPORT_HEADER" "$REPORT_TABLE")
+
           json_safe_report=$(echo "$REPORT_MESSAGE" | jq -R)
-          
+
           echo "report=$json_safe_report" >> $GITHUB_OUTPUT
 
       - name: Post bucket report to Slack
