@@ -34,12 +34,14 @@ jobs:
         id: report
         run: |
           #!/bin/bash
+          set -x
           set -euo pipefail
 
           input_prefix="${{ github.event.inputs.bucket_prefix || '' }}"
 
           if [[ -n "$input_prefix" ]]; then
             bucket_prefixes=("$input_prefix")
+            echo "custom input:$prefix"
           else
             bucket_prefixes=(
               leap-persistent
