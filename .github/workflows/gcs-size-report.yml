@@ -1,31 +1,61 @@
-name: Create a report on bucket sizes in gcs
+name: GCS Bucket Size report
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 2 * * 0"
+    inputs:
+      bucket:
+        description: "input bucket url. ex: gs://leap-scratch"
+        required: true
+        type: string
+      min_size_gb:
+        description: "Minimum size in GB to report"
+        required: false
+        default: "10"
+        type: string
 
-env:
-  RCLONE_CONFIG_GCS_TYPE: google cloud storage
-  RCLONE_CONFIG_GCS_PROJECT_NUMBER: ${{ secrets.GCP_PROJECT_NUMBER }}
-  RCLONE_CONFIG_GCS_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
-  # List your bucket prefixes here
-  BUCKET_PREFIXES: "leap-persistent,leap-persistent-ro,leap-persistent/data-library"
+  schedule:
+    - cron: "0 0 * * 0"
 
 jobs:
-  size-report:
+  analyze:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Setup Rclone
-        uses: AnimMouse/setup-rclone@v1
-        with:
-          rclone_config: |
-            [gcs]
-            type = google cloud storage
-          disable_base64: true
+      - name: checkout
+        uses: actions/checkout@v4
 
-      - name: Generate size report
-        id: report
+      - name: install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: install cloud-dir-size
         run: |
-          echo "$BUCKET_PREFIXES"
+          uv add "git+https://${{ secrets.PAT }}@github.com/norlandrhagen/cloud-dir-size.git"
+
+      - name: run
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            cloud-dir-size \
+              --bucket-url "${{ inputs.bucket }}" \
+              --min-size-gb "${{ inputs.min_size_gb }}" \
+              --send-slack \
+              --slack-webhook-url "${{ secrets.SLACK_WEBHOOK }}"
+          else
+
+            buckets=(
+              "gs://leap-scratch"
+              "gs://leap-persistent"
+              "gs://leap-persistent-ro"
+            )
+
+            for bucket in "${buckets[@]}"; do
+              echo "Getting size of dirs in: $bucket"
+              cloud-dir-size \
+                --bucket-url "$bucket" \
+                --min-size-gb 10 \
+                --send-slack \
+                --slack-webhook-url "${{ secrets.SLACK_WEBHOOK }}"
+            done
+          fi
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+
