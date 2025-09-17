@@ -1,53 +1,73 @@
-name: Create a report on bucket sizes in gcs
+name: GCS bucket sizes
 
 on:
   workflow_dispatch:
+    inputs:
+      bucket_prefix:
+        description: "optional single bucket to check. ex: leap-persistent/data-library"
+        required: false
+
   schedule:
-    - cron: "0 2 * * 0"
+    - cron: "0 2 * * 0" 
+  env:
+    RCLONE_CONFIG_GCS_TYPE: google cloud storage
 
-env:
-  RCLONE_CONFIG_GCS_TYPE: google cloud storage
-  BUCKET_PREFIXES: "leap-persistent,leap-persistent-ro,leap-persistent/data-library"
+  jobs:
+    size-report:
+      runs-on: ubuntu-latest
 
-jobs:
-  size-report:
-    runs-on: ubuntu-latest
+      steps:
+        - name: Checkout repo
+          uses: actions/checkout@v5
 
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v5
-      - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v2
-        with:
-          credentials_json: "${{ secrets.LEAP_BAKERY_SERVICE_ACCOUNT }}"
+        - name: Authenticate to Google Cloud
+          uses: google-github-actions/auth@v2
+          with:
+            credentials_json: "${{ secrets.LEAP_BAKERY_SERVICE_ACCOUNT }}"
 
-      - name: Setup Rclone
-        uses: AnimMouse/setup-rclone@v1
-        with:
-          rclone_config: |
-            [gcs]
-            type = google cloud storage
-          disable_base64: true
+        - name: Setup Rclone
+          uses: AnimMouse/setup-rclone@v1
+          with:
+            rclone_config: |
+              [gcs]
+              type = google cloud storage
+            disable_base64: true
 
-      - name: Generate size report
-        id: report
-        run: |
+        - name: Generate bucket size report
+          id: report
+          run: |
+            #!/bin/bash
+            set -euo pipefail
 
-          IFS=',' read -ra BUCKET_ARRAY <<< "$BUCKET_PREFIXES"
+            input_prefix="${{ github.event.inputs.bucket_prefix || '' }}"
 
-          for bucket_prefix in "${BUCKET_ARRAY[@]}"; do
-            bucket_prefix=$(echo "$bucket_prefix" | xargs)
+            if [[ -n "$input_prefix" ]]; then
+              bucket_prefixes=("$input_prefix")
+            else
+              bucket_prefixes=(
+                leap-persistent
+                leap-persistent-ro
+                leap-persistent/data-library
+              )
+            fi
 
-            REPORT+="\n$bucket_prefix:\n"
+            echo "${bucket_prefixes[@]}"
+            REPORT=""
 
-            # rclone size list
-            for dir in $(rclone lsd gcs:$bucket_prefix --max-depth 1 | awk '{print $NF}'); do
-              size_json=$(rclone size gcs:$bucket_prefix/$dir --fast-list --json)
-              REPORT+="$bucket_prefix/$dir: $size_json\n"
+            for prefix in "${bucket_prefixes[@]}"; do
+              echo "gcs:$prefix"
+              REPORT+="\n$prefix:\n"
+
+              dirs=$(rclone lsd "gcs:$prefix" --max-depth 1 | awk '{print $NF}' || true)
+
+              for dir in $dirs; do
+                [[ -z "$dir" ]] && continue
+                echo "gcs:$prefix/$dir"
+                size_json=$(rclone size "gcs:$prefix/$dir" --fast-list --json)
+                REPORT+="$prefix/$dir: $size_json\n"
+              done
             done
-          done
 
-
-          echo "report<<EOF" >> $GITHUB_OUTPUT
-          echo -e "$REPORT" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+            echo "report<<EOF" >> $GITHUB_OUTPUT
+            echo -e "$REPORT" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
