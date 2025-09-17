@@ -51,7 +51,7 @@ jobs:
           fi
 
           echo "${bucket_prefixes[@]}"
-          REPORT=""
+          REPORT="*Bucket Size Report:*\n\n| Bucket/Prefix | Size (GB) |\n|--------------|-----------|"
 
           for prefix in "${bucket_prefixes[@]}"; do
             echo "gcs:$prefix"
@@ -70,7 +70,7 @@ jobs:
               bytes=$(echo "$size_json" | jq '.bytes')
               gb=$(echo "scale=2; $bytes / 1024 / 1024 / 1024" | bc)
 
-              REPORT+="| $prefix/$dir | $gb |\n"
+              REPORT+="\n| $prefix/$dir | $gb |"
             done
           done
 
