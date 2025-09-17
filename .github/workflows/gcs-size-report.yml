@@ -69,6 +69,7 @@ jobs:
               size_json=$(rclone size "gcs:$prefix/$dir" --fast-list --json)
               REPORT+="$prefix/$dir: $size_json\n"
             done
+          done
 
           echo "report<<EOF" >> $GITHUB_OUTPUT
           echo -e "$REPORT" >> $GITHUB_OUTPUT
