@@ -65,11 +65,9 @@ jobs:
                 continue
               fi
 
-              echo "gcs:$prefix/$dir"
 
               size_json=$(rclone size "gcs:$prefix/$dir" --fast-list --json)
               bytes=$(echo "$size_json" | jq '.bytes')
-              echo "Raw bytes: $bytes"
               human_size=$(numfmt --to=iec --suffix=B "$bytes")
 
               REPORT+="\n| $prefix/$dir | $human_size |"
@@ -85,13 +83,13 @@ jobs:
       - name: print report output
         run: echo "${{ steps.report.outputs.report }}"
 
-      # - name: post report to slack
-      #   uses: slackapi/slack-github-action@v2.1.1
-      #   with:
-      #     webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
-      #     webhook-type: incoming-webhook
-      #     payload: |
-      #       text: |
-      #         *Bucket Size Report:*
+      - name: post report to slack
+        uses: slackapi/slack-github-action@v2.1.1
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
+          payload: |
+            text: |
+              *Bucket Size Report:*
 
-      #         ${{ steps.report.outputs.report }}
+              ${{ steps.report.outputs.report }}
