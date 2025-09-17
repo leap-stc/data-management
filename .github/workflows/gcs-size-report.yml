@@ -1,99 +1,60 @@
-name: Create a report on bucket sizes in gcs
+name: GCS Bucket Size report
 
 on:
   workflow_dispatch:
     inputs:
-      bucket_prefix:
-        description: "optional single bucket to check. ex: leap-persistent/data-library"
+      bucket:
+        description: "input bucket url. ex: gs://leap-scratch"
+        required: true
+        type: string
+      min_size_gb:
+        description: "Minimum size in GB to report"
         required: false
-env:
-  RCLONE_CONFIG_GCS_TYPE: google cloud storage
+        default: "10"
+        type: string
+
+  schedule:
+    - cron: "0 0 * * 0"
 
 jobs:
-  size-report:
+  analyze:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v5
+      - name: checkout
+        uses: actions/checkout@v4
 
-      - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v2
-        with:
-          credentials_json: "${{ secrets.LEAP_BAKERY_SERVICE_ACCOUNT }}"
+      - name: install uv
+        uses: astral-sh/setup-uv@v6
 
-      - name: Setup Rclone
-        uses: AnimMouse/setup-rclone@v1
-        with:
-          rclone_config: |
-            [gcs]
-            type = google cloud storage
-          disable_base64: true
-
-      - name: Generate bucket size report
-        id: report
+      - name: install cloud-dir-size
         run: |
-          #!/bin/bash
-          set -x
-          set -euo pipefail
+          uv add "git+https://${{ secrets.GH_PAT }}@github.com/norlandrhagen/cloud-dir-size.git"
 
-          input_prefix="${{ github.event.inputs.bucket_prefix || '' }}"
-
-          if [[ -n "$input_prefix" ]]; then
-            bucket_prefixes=("$input_prefix")
-            echo "$bucket_prefixes"
+      - name: run
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            cloud-dir-size \
+              --bucket-url "${{ inputs.bucket }}" \
+              --min-size-gb "${{ inputs.min_size_gb }}" \
+              --send-slack \
+              --slack-webhook-url "${{ secrets.SLACK_WEBHOOK }}"
           else
-            bucket_prefixes=(
-              leap-persistent
 
+            buckets=(
+              "gs://leap-scratch"
+              "gs://leap-persistent"
+              "gs://leap-persistent-ro"
             )
-          fi
 
-          echo "${bucket_prefixes[@]}"
-          REPORT="*Bucket Size Report:*\n\`\`\`"
-
-          for prefix in "${bucket_prefixes[@]}"; do
-            dirs=$(rclone lsd "gcs:$prefix" --max-depth 1 | awk '{print $NF}' || true)
-            for dir in $dirs; do
-              if [[ -z "$dir" || "$dir" == "." ]]; then
-                continue
-              fi
-
-              size_json=$(rclone size "gcs:$prefix/$dir" --fast-list --json)
-              bytes=$(echo "$size_json" | jq '.bytes')
-              human_size=$(numfmt --to=iec --suffix=B "$bytes")
-
-              # Append rows with fixed-width spacing (feel free to tweak spacing)
-              REPORT+="\n| $(printf '%-30s' "$prefix/$dir") | $(printf '%7s' "$human_size") |"
+            for bucket in "${buckets[@]}"; do
+              echo "Getting size of dirs in: $bucket"
+              cloud-dir-size \
+                --bucket-url "$bucket" \
+                --min-size-gb 10 \
+                --send-slack \
+                --slack-webhook-url "${{ secrets.SLACK_WEBHOOK }}"
             done
-          done
-
-          # Close code block with escaped backticks
-          REPORT+="\n\`\`\`"
-
-
-          # Write output with backticks wrapped around report
-          echo "report<<EOF" >> $GITHUB_OUTPUT
-          echo -e "$REPORT" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-
-      - name: print report output
-        run: echo "${{ steps.report.outputs.report }}"
-
-      - name: Post bucket report to Slack
-        uses: slackapi/slack-github-action@v2.1.1
-        with:
-          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
-          webhook-type: incoming-webhook
-          payload: >-
-            {
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": ${{ toJson(steps.report.outputs.report) }}
-                  }
-                }
-              ]
-            }
+          fi
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
