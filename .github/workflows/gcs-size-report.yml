@@ -7,8 +7,6 @@ on:
 
 env:
   RCLONE_CONFIG_GCS_TYPE: google cloud storage
-  RCLONE_CONFIG_GCS_PROJECT_NUMBER: ${{ secrets.GCP_PROJECT_NUMBER }}
-  RCLONE_CONFIG_GCS_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
   # List your bucket prefixes here
   BUCKET_PREFIXES: "leap-persistent,leap-persistent-ro,leap-persistent/data-library"
 
@@ -17,6 +15,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: "${{ secrets.LEAP_BAKERY_SERVICE_ACCOUNT }}"
+
       - name: Setup Rclone
         uses: AnimMouse/setup-rclone@v1
         with:
