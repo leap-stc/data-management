@@ -84,8 +84,7 @@ jobs:
           EOF
           )
 
-          echo $json_safe_report >> $GITHUB_OUTPUT
-
+          echo "report=$json_safe_report" >> "$GITHUB_OUTPUT"
 
       - name: print report output
         run: echo "${{ steps.report.outputs.report }}"
