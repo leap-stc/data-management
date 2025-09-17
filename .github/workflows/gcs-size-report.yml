@@ -53,6 +53,7 @@ jobs:
           echo "${bucket_prefixes[@]}"
           REPORT="*Bucket Size Report:*
 
+          \`\`\`
           | Bucket/Prefix | Size |
           |---------------|------|"
 
@@ -77,6 +78,9 @@ jobs:
               | $prefix/$dir | $human_size |"
             done
           done
+          
+          REPORT+="
+          \`\`\`"
 
           echo "report<<EOF" >> $GITHUB_OUTPUT
           echo "$REPORT" >> $GITHUB_OUTPUT
