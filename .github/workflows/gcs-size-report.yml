@@ -78,10 +78,12 @@ jobs:
               | $prefix/$dir | $human_size |"
             done
           done
-          
+
           REPORT+="
           \`\`\`"
 
+          json_safe_report=$(jq -Rs <<< "$REPORT")
+          echo "report=$json_safe_report" >> $GITHUB_OUTPUT
           echo "report<<EOF" >> $GITHUB_OUTPUT
           echo "$REPORT" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
@@ -94,14 +96,14 @@ jobs:
         with:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           webhook-type: incoming-webhook
-          payload: >-
+          payload: |
             {
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "${{ steps.report.outputs.report }}"
+                    "text": ${{ steps.report.outputs.report }}
                   }
                 }
               ]
