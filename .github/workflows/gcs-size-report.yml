@@ -28,9 +28,21 @@ jobs:
       - name: Generate size report
         id: report
         run: |
-            
-            IFS=',' read -ra BUCKET_ARRAY <<< "$BUCKET_PREFIXES"
-            
-            for bucket_prefix in "${BUCKET_ARRAY[@]}"; do
-              bucket_prefix=$(echo "$bucket_prefix" | xargs)
-              
+
+          IFS=',' read -ra BUCKET_ARRAY <<< "$BUCKET_PREFIXES"
+
+          for bucket_prefix in "${BUCKET_ARRAY[@]}"; do
+            bucket_prefix=$(echo "$bucket_prefix" | xargs)
+
+            REPORT+="\n$bucket_prefix:\n"
+
+            # rclone size list
+            for dir in $(rclone lsd gcs:$bucket_prefix --max-depth 1 | awk '{print $NF}'); do
+              size_json=$(rclone size gcs:$bucket_prefix/$dir --fast-list --json)
+              REPORT+="$bucket_prefix/$dir: $size_json\n"
+            done
+          done
+
+          echo "report<<EOF" >> $GITHUB_OUTPUT
+          echo -e "$REPORT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
