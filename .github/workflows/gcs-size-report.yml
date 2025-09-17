@@ -89,7 +89,5 @@ jobs:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           webhook-type: incoming-webhook
           payload: |
-            text: |
-              *Bucket Size Report:*
-
+            text: >
               ${{ steps.report.outputs.report }}
