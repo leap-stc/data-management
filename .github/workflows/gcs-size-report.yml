@@ -41,7 +41,7 @@ jobs:
 
           if [[ -n "$input_prefix" ]]; then
             bucket_prefixes=("$input_prefix")
-            echo "custom input:$prefix"
+            echo "$bucket_prefixes"
           else
             bucket_prefixes=(
               leap-persistent
