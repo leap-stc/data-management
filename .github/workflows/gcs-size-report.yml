@@ -45,8 +45,7 @@ jobs:
           else
             bucket_prefixes=(
               leap-persistent
-              leap-persistent-ro
-              leap-persistent/data-library
+
             )
           fi
 
