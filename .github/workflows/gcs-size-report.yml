@@ -75,6 +75,9 @@ jobs:
             done
           done
 
+          json_safe_report=$(jq -Rs <<< "$REPORT")
+          echo "report=$json_safe_report" >> $GITHUB_OUTPUT
+
           echo "report<<EOF" >> $GITHUB_OUTPUT
           echo -e "$REPORT" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
@@ -89,5 +92,4 @@ jobs:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           webhook-type: incoming-webhook
           payload: |
-            text: >
-              ${{ steps.report.outputs.report }}
+            { "text": ${{ steps.report.outputs.report }} }
