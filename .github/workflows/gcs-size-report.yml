@@ -52,13 +52,19 @@ jobs:
 
           echo "${bucket_prefixes[@]}"
           REPORT_HEADER="*Bucket Size Report*"
-          REPORT_TABLE="| Bucket/Prefix | Size |\n|---|---|"
+          REPORT_TABLE=$(cat <<EOF
+| Bucket/Prefix | Size |
+|---|---|
+EOF
+          )
 
           for prefix in "${bucket_prefixes[@]}"; do
             echo "gcs:$prefix"
-
+            
+            # The lsd command might not find any dirs, leading to an empty dirs variable.
+            # Adding || true handles this gracefully.
             dirs=$(rclone lsd "gcs:$prefix" --max-depth 1 | awk '{print $NF}' || true)
-
+            
             for dir in $dirs; do
 
               if [[ -z "$dir" || "$dir" == "." ]]; then
@@ -73,12 +79,17 @@ jobs:
               REPORT_TABLE+="\n| $prefix/$dir | $human_size |"
             done
           done
-
-          # The table needs to be escaped so Slack's `mrkdwn` can handle it.
-          SLACK_REPORT="${REPORT_HEADER}\n\`\`\`\n${REPORT_TABLE}\n\`\`\`"
-
-          # The payload now uses a single, properly escaped variable.
-          json_safe_report=$(jq -Rs <<< "$SLACK_REPORT")
+          
+          # The table needs to be a single, properly escaped JSON string for the payload.
+          # Concatenate the header and table with newlines.
+          # Using printf with %q for shell-safe string creation to pass to jq.
+          REPORT_MESSAGE="${REPORT_HEADER}\n\`\`\`\n${REPORT_TABLE}\n\`\`\`"
+          
+          # Using `jq -rRs` will handle the multi-line string as a raw string
+          # with escaping, but since we are using `<<EOF`, we can pass it
+          # directly to `jq -R` to avoid double escaping.
+          json_safe_report=$(echo "$REPORT_MESSAGE" | jq -R)
+          
           echo "report=$json_safe_report" >> $GITHUB_OUTPUT
 
       - name: Post bucket report to Slack
