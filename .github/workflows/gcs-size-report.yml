@@ -51,7 +51,7 @@ jobs:
           fi
 
           echo "${bucket_prefixes[@]}"
-          REPORT="*Bucket Size Report:*\n| Bucket/Prefix | Size |\n|---------------|------|"
+          REPORT="*Bucket Size Report:*\n\`\`\`\n| Bucket/Prefix | Size |\n|---------------|------|"
 
           for prefix in "${bucket_prefixes[@]}"; do
             dirs=$(rclone lsd "gcs:$prefix" --max-depth 1 | awk '{print $NF}' || true)
@@ -68,7 +68,9 @@ jobs:
             done
           done
 
-          # Write output without backticks
+          REPORT+="\n\`\`\`"
+
+          # Write output with backticks wrapped around report
           echo "report<<EOF" >> $GITHUB_OUTPUT
           echo -e "$REPORT" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
@@ -88,7 +90,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ${{ toJson("```" + steps.report.outputs.report + "```") }}
+                    "text": ${{ toJson(steps.report.outputs.report) }}
                   }
                 }
               ]
