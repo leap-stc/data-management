@@ -51,10 +51,7 @@ jobs:
           fi
 
           echo "${bucket_prefixes[@]}"
-          REPORT="*Bucket Size Report:*\n"
-          REPORT+="| $(printf '%-30s' 'Bucket/Prefix') | $(printf '%7s' 'Size') |\n"
-          REPORT+="|$(printf '%-30s' '------------------------------')|$(printf '%7s' '-------')|\n"
-
+          REPORT="*Bucket Size Report:*\n\`\`\`"
 
           for prefix in "${bucket_prefixes[@]}"; do
             dirs=$(rclone lsd "gcs:$prefix" --max-depth 1 | awk '{print $NF}' || true)
@@ -68,7 +65,7 @@ jobs:
               human_size=$(numfmt --to=iec --suffix=B "$bytes")
 
               # Append rows with fixed-width spacing (feel free to tweak spacing)
-              REPORT+="| $(printf '%-30s' "$prefix/$dir") | $(printf '%7s' "$human_size") |\n"
+              REPORT+="\n| $(printf '%-30s' "$prefix/$dir") | $(printf '%7s' "$human_size") |"
             done
           done
 
