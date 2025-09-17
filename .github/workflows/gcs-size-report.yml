@@ -51,12 +51,8 @@ jobs:
           fi
 
           echo "${bucket_prefixes[@]}"
-          REPORT="*Bucket Size Report:*
-
-          \`\`\`
-          | Bucket/Prefix | Size |
-          |---------------|------|"
-
+          REPORT_HEADER="*Bucket Size Report*"
+          REPORT_TABLE="| Bucket/Prefix | Size |\n|---|---|"
 
           for prefix in "${bucket_prefixes[@]}"; do
             echo "gcs:$prefix"
@@ -74,22 +70,16 @@ jobs:
               bytes=$(echo "$size_json" | jq '.bytes')
               human_size=$(numfmt --to=iec --suffix=B "$bytes")
 
-              REPORT+="
-              | $prefix/$dir | $human_size |"
+              REPORT_TABLE+="\n| $prefix/$dir | $human_size |"
             done
           done
 
-          REPORT+="
-          \`\`\`"
+          # The table needs to be escaped so Slack's `mrkdwn` can handle it.
+          SLACK_REPORT="${REPORT_HEADER}\n\`\`\`\n${REPORT_TABLE}\n\`\`\`"
 
-          json_safe_report=$(jq -Rs <<< "$REPORT")
+          # The payload now uses a single, properly escaped variable.
+          json_safe_report=$(jq -Rs <<< "$SLACK_REPORT")
           echo "report=$json_safe_report" >> $GITHUB_OUTPUT
-          echo "report<<EOF" >> $GITHUB_OUTPUT
-          echo "$REPORT" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-
-      - name: print report output
-        run: echo "${{ steps.report.outputs.report }}"
 
       - name: Post bucket report to Slack
         uses: slackapi/slack-github-action@v2.1.1
