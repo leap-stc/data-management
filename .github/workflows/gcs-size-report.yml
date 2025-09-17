@@ -41,6 +41,7 @@ jobs:
 
           if [[ -n "$input_prefix" ]]; then
             bucket_prefixes=("$input_prefix")
+            echo "$bucket_prefixes"
           else
             bucket_prefixes=(
               leap-persistent
@@ -49,40 +50,52 @@ jobs:
             )
           fi
 
-          REPORT_HEADER="*Bucket Size Report*"
-          REPORT_TABLE=$(cat <<-EOF
+          echo "${bucket_prefixes[@]}"
+          REPORT="*Bucket Size Report:*
           | Bucket/Prefix | Size |
-          |---|---|
-          EOF
-                  )
+          |---------------|------|"
+
 
           for prefix in "${bucket_prefixes[@]}"; do
+            echo "gcs:$prefix"
+
             dirs=$(rclone lsd "gcs:$prefix" --max-depth 1 | awk '{print $NF}' || true)
-            
+
             for dir in $dirs; do
+
               if [[ -z "$dir" || "$dir" == "." ]]; then
                 continue
               fi
+
 
               size_json=$(rclone size "gcs:$prefix/$dir" --fast-list --json)
               bytes=$(echo "$size_json" | jq '.bytes')
               human_size=$(numfmt --to=iec --suffix=B "$bytes")
 
-              REPORT_TABLE+="\n| $prefix/$dir | $human_size |"
+              REPORT+="
+              | $prefix/$dir | $human_size |"
+              
             done
           done
+
           
-          # Use a single printf command to construct the entire message
-          # and pipe its output directly to jq.
-          REPORT_MESSAGE=$(printf '%s\n\`\`\`\n%s\n\`\`\`' "$REPORT_HEADER" "$REPORT_TABLE" | jq -R)
-          
-          echo "report=$REPORT_MESSAGE" >> $GITHUB_OUTPUT
+          json_safe_report=$(jq -Rs <<EOF
+          $REPORT
+          EOF
+          )
+
+          echo $json_safe_report >> $GITHUB_OUTPUT
+
+
+      - name: print report output
+        run: echo "${{ steps.report.outputs.report }}"
+
       - name: Post bucket report to Slack
         uses: slackapi/slack-github-action@v2.1.1
         with:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           webhook-type: incoming-webhook
-          payload: |
+          payload: >-
             {
               "blocks": [
                 {
