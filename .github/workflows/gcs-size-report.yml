@@ -51,11 +51,16 @@ jobs:
           fi
 
           echo "${bucket_prefixes[@]}"
-          REPORT="*Bucket Size Report:*
-          \`\`\`
-          | Bucket/Prefix | Size |
-          |---------------|------|"
+          # Define column widths
+          col1_width=30
+          col2_width=8
 
+          # Prepare header with padding
+          REPORT="*Bucket Size Report:*\n\`\`\`\n"
+          REPORT+="| $(printf "%-${col1_width}s" "Bucket/Prefix") | $(printf "%-${col2_width}s" "Size") |\n"
+          REPORT+="|$(printf -- '-%.0s' $(seq 1 $col1_width))|$(printf -- '-%.0s' $(seq 1 $col2_width))|\n"
+
+          # Add rows
           for prefix in "${bucket_prefixes[@]}"; do
             dirs=$(rclone lsd "gcs:$prefix" --max-depth 1 | awk '{print $NF}' || true)
             for dir in $dirs; do
@@ -67,11 +72,12 @@ jobs:
               bytes=$(echo "$size_json" | jq '.bytes')
               human_size=$(numfmt --to=iec --suffix=B "$bytes")
 
-              REPORT="${REPORT}"$'\n'"| $prefix/$dir | $human_size |"
+              row_bucket="$prefix/$dir"
+              REPORT+=$(printf "| %-${col1_width}s | %${col2_width}s |\n" "$row_bucket" "$human_size")
             done
           done
 
-          REPORT="${REPORT}"$'\n''```'
+          REPORT+='\`\`\`'
 
 
           # Write output with backticks wrapped around report
