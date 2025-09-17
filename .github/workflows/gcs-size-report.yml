@@ -50,18 +50,15 @@ jobs:
           fi
 
           REPORT_HEADER="*Bucket Size Report*"
-
-          # Use `<<-` to strip leading tabs.
-          # The content and EOF must be indented with tabs, not spaces.
           REPORT_TABLE=$(cat <<-EOF
           | Bucket/Prefix | Size |
           |---|---|
           EOF
-          )
+                  )
 
           for prefix in "${bucket_prefixes[@]}"; do
             dirs=$(rclone lsd "gcs:$prefix" --max-depth 1 | awk '{print $NF}' || true)
-
+            
             for dir in $dirs; do
               if [[ -z "$dir" || "$dir" == "." ]]; then
                 continue
@@ -74,13 +71,12 @@ jobs:
               REPORT_TABLE+="\n| $prefix/$dir | $human_size |"
             done
           done
-
-          REPORT_MESSAGE=$(printf '%s\n\`\`\`\n%s\n\`\`\`' "$REPORT_HEADER" "$REPORT_TABLE")
-
-          json_safe_report=$(echo "$REPORT_MESSAGE" | jq -R)
-
-          echo "report=$json_safe_report" >> $GITHUB_OUTPUT
-
+          
+          # Use a single printf command to construct the entire message
+          # and pipe its output directly to jq.
+          REPORT_MESSAGE=$(printf '%s\n\`\`\`\n%s\n\`\`\`' "$REPORT_HEADER" "$REPORT_TABLE" | jq -R)
+          
+          echo "report=$REPORT_MESSAGE" >> $GITHUB_OUTPUT
       - name: Post bucket report to Slack
         uses: slackapi/slack-github-action@v2.1.1
         with:
