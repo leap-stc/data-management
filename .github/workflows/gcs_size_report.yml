@@ -1,0 +1,31 @@
+name: Create a report on bucket sizes in gcs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * 0"
+
+env:
+  RCLONE_CONFIG_GCS_TYPE: google cloud storage
+  RCLONE_CONFIG_GCS_PROJECT_NUMBER: ${{ secrets.GCP_PROJECT_NUMBER }}
+  RCLONE_CONFIG_GCS_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+  # List your bucket prefixes here
+  BUCKET_PREFIXES: "leap-persistent,leap-persistent-ro,leap-persistent/data-library"
+
+jobs:
+  size-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Rclone
+        uses: AnimMouse/setup-rclone@v1
+        with:
+          rclone_config: |
+            [gcs]
+            type = google cloud storage
+          disable_base64: true
+
+      - name: Generate size report
+        id: report
+        run: |
+          echo "$BUCKET_PREFIXES"
