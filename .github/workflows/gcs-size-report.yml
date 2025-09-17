@@ -55,7 +55,7 @@ jobs:
 
           for prefix in "${bucket_prefixes[@]}"; do
             echo "gcs:$prefix"
-            REPORT+="\n$prefix:\n"
+            REPORT="*Bucket Size Report:*\n\n| Bucket/Prefix | Size |\n|---------------|------|"
 
             dirs=$(rclone lsd "gcs:$prefix" --max-depth 1 | awk '{print $NF}' || true)
 
@@ -69,6 +69,7 @@ jobs:
 
               size_json=$(rclone size "gcs:$prefix/$dir" --fast-list --json)
               bytes=$(echo "$size_json" | jq '.bytes')
+              echo "Raw bytes: $bytes"
               human_size=$(numfmt --to=iec --suffix=B "$bytes")
 
               REPORT+="\n| $prefix/$dir | $human_size |"
@@ -79,6 +80,7 @@ jobs:
           echo "report<<EOF" >> $GITHUB_OUTPUT
           echo -e "$REPORT" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
+
 
       - name: print report output
         run: echo "${{ steps.report.outputs.report }}"
