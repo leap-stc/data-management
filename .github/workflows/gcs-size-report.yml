@@ -7,7 +7,6 @@ on:
 
 env:
   RCLONE_CONFIG_GCS_TYPE: google cloud storage
-  # List your bucket prefixes here
   BUCKET_PREFIXES: "leap-persistent,leap-persistent-ro,leap-persistent/data-library"
 
 jobs:
@@ -15,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo 
+      - name: Checkout repo
         uses: actions/checkout@v5
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
@@ -47,6 +46,7 @@ jobs:
               REPORT+="$bucket_prefix/$dir: $size_json\n"
             done
           done
+
 
           echo "report<<EOF" >> $GITHUB_OUTPUT
           echo -e "$REPORT" >> $GITHUB_OUTPUT
