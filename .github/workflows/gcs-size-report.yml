@@ -34,12 +34,14 @@ jobs:
         id: report
         run: |
           #!/bin/bash
+          set -x
           set -euo pipefail
 
           input_prefix="${{ github.event.inputs.bucket_prefix || '' }}"
 
           if [[ -n "$input_prefix" ]]; then
             bucket_prefixes=("$input_prefix")
+            echo "$bucket_prefixes"
           else
             bucket_prefixes=(
               leap-persistent
@@ -48,11 +50,11 @@ jobs:
             )
           fi
 
-          REPORT="*Bucket Size Report:*\n\`\`\`\n| Bucket/Prefix | Size |\n|---------------|------|"
+          echo "${bucket_prefixes[@]}"
+          REPORT="*Bucket Size Report:*\n| Bucket/Prefix | Size |\n|---------------|------|"
 
           for prefix in "${bucket_prefixes[@]}"; do
             dirs=$(rclone lsd "gcs:$prefix" --max-depth 1 | awk '{print $NF}' || true)
-
             for dir in $dirs; do
               if [[ -z "$dir" || "$dir" == "." ]]; then
                 continue
@@ -66,9 +68,7 @@ jobs:
             done
           done
 
-          REPORT+="\n\`\`\`"
-
-          # Safely write to GitHub output
+          # Write output without backticks
           echo "report<<EOF" >> $GITHUB_OUTPUT
           echo -e "$REPORT" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
