@@ -88,7 +88,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ${{ steps.report.outputs.report }}
+                    "text": ${{ toJson("```" + steps.report.outputs.report + "```") }}
                   }
                 }
               ]
