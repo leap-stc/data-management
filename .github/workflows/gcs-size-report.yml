@@ -45,7 +45,7 @@ jobs:
               --bucket-url "${{ inputs.bucket }}" \
               --min-size-gb "${{ inputs.min_size_gb }}" \
               --send-slack \
-              --slack-webhook-url "${{ secrets.SLACK_WEBHOOK }}"
+              --slack-webhook-url "${{ secrets.SLACK_WEBHOOK_URL }}"
           else
 
             buckets=(
@@ -60,8 +60,8 @@ jobs:
                 --bucket-url "$bucket" \
                 --min-size-gb 10 \
                 --send-slack \
-                --slack-webhook-url "${{ secrets.SLACK_WEBHOOK }}"
+                --slack-webhook-url "${{ secrets.SLACK_WEBHOOK_URL }}"
             done
           fi
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
