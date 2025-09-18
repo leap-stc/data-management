@@ -34,14 +34,14 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: install cloud-dir-size
+      - name: install shopvac
         run: |
-          uv add "git+https://${{ secrets.PAT }}@github.com/norlandrhagen/cloud-bucket-size.git"
+          uv add "git+https://${{ secrets.PAT }}@github.com/norlandrhagen/shopvac.git"
 
       - name: run
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            uv run cloud-dir-size \
+            uv run shopvac \
               --bucket-url "${{ inputs.bucket }}" \
               --min-size-gb "${{ inputs.min_size_gb }}" \
               --send-slack \
@@ -56,7 +56,7 @@ jobs:
 
             for bucket in "${buckets[@]}"; do
               echo "Getting size of dirs in: $bucket"
-              uv run cloud-dir-size \
+              uv run shopvac \
                 --bucket-url "$bucket" \
                 --min-size-gb 10 \
                 --send-slack \
