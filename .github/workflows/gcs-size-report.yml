@@ -36,7 +36,7 @@ jobs:
 
       - name: install cloud-dir-size
         run: |
-          uv add "git+https://${{ secrets.PAT }}@github.com/norlandrhagen/cloud-bucket-size.git"
+          uv add "git+https://${{ secrets.PAT }}@github.com/norlandrhagen/shopvac.git"
 
       - name: run
         run: |
