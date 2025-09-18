@@ -24,6 +24,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: "${{ secrets.LEAP_BAKERY_SERVICE_ACCOUNT }}"
+
       - name: install uv
         uses: astral-sh/setup-uv@v6
         with:
