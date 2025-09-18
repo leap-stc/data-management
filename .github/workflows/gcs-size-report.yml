@@ -36,7 +36,7 @@ jobs:
       - name: run
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            cloud-dir-size \
+            uv run cloud-dir-size \
               --bucket-url "${{ inputs.bucket }}" \
               --min-size-gb "${{ inputs.min_size_gb }}" \
               --send-slack \
@@ -51,7 +51,7 @@ jobs:
 
             for bucket in "${buckets[@]}"; do
               echo "Getting size of dirs in: $bucket"
-              cloud-dir-size \
+              uv run cloud-dir-size \
                 --bucket-url "$bucket" \
                 --min-size-gb 10 \
                 --send-slack \
