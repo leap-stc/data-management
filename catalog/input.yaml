@@ -29,4 +29,4 @@ feedstocks:
   - https://github.com/leap-stc/GLAB-CSIF/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/SRTMGL1_DEM/blob/main/feedstock/catalog.yaml
   - https://github.com/leap-stc/Caravan/blob/main/feedstock/catalog.yaml
-  - https://github.com/leap-stc/PISCOeo_pm/blob/main/feedstock/meta.yaml
+  - https://github.com/leap-stc/PISCOeo_pm/blob/main/feedstock/catalog.yaml
