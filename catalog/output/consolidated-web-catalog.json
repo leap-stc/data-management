@@ -1558,5 +1558,63 @@
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/Caravan/blob/main/feedstock/meta.yaml"
+  },
+  {
+    "title": "PISCOeo_pm & PISCOt Evapotranspiration and Tmax",
+    "description": "High-resolution daily gridded air temperature and evapotranspiration over Peru. Tmax is sourced from the PISCOt v1.2 dataset (High-resolution grids of daily air temperature for Peru.) (DOI: https://figshare.com/collections/_/5959863). Evapotranspiration comes from the PISCOeo_pm dataset (a reference evapotranspiration gridded database based on FAO Penman-Monteith in Peru.) (DOI: https://figshare.com/collections/_/5633182).\n",
+    "maintainers": [
+      {
+        "name": "Jiameng Wu",
+        "github": "just-meng"
+      }
+    ],
+    "provenance": {
+      "providers": [
+        {
+          "name": "Figshare",
+          "description": "Figshare",
+          "roles": ["producer", "licensor"],
+          "url": null
+        }
+      ],
+      "license": "CC BY 4.0",
+      "license_link": null
+    },
+    "thumbnail": null,
+    "tags": [
+      "peru",
+      "south america",
+      "evapotranspiration",
+      "temperature",
+      "tmax"
+    ],
+    "links": null,
+    "stores": [
+      {
+        "id": "evapotranspiration",
+        "name": "PISCOeo_pm_evapotranspiration",
+        "url": "gs://leap-persistent/data-library/PISCOeo_pm/evapotranspiration.zarr",
+        "rechunking": null,
+        "public": false,
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
+      },
+      {
+        "id": "tmax",
+        "name": "PISCOeo_pm_tmax",
+        "url": "gs://leap-persistent/data-library/PISCOeo_pm/tmax.zarr",
+        "rechunking": null,
+        "public": false,
+        "geospatial": null,
+        "xarray_open_kwargs": {
+          "engine": "zarr"
+        },
+        "last_updated": null
+      }
+    ],
+    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/PISCOeo_pm/blob/main/feedstock/meta.yaml"
   }
 ]
