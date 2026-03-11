@@ -12,7 +12,7 @@ repos:
       - id: mixed-line-ending
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: "v0.14.10"
+    rev: "v0.15.5"
     hooks:
       - id: ruff
         args: ["--fix"]
@@ -22,5 +22,3 @@ repos:
     rev: v4.0.0-alpha.8
     hooks:
       - id: prettier
-        additional_dependencies:
-          - prettier@3.5.1
