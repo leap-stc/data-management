@@ -5,7 +5,7 @@ on:
     branches:
   workflow_dispatch:
   schedule:
-    - cron: "*/30 * * * *" # every 30 minutes. https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+    - cron: "0 0 * * *" # daily at midnight UTC. https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
 
 permissions:
   contents: write
