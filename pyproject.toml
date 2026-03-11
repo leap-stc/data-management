@@ -1,76 +1,71 @@
 
 [project]
 
-
-
-dynamic         = ["version"]
-name            = "feedstock"
-requires-python = ">= 3.13"
-dependencies = [
-    "pre-commit",
-]
+    dependencies    = ["pre-commit"]
+    dynamic         = ["version"]
+    name            = "feedstock"
+    requires-python = ">= 3.13"
 
 [tool.setuptools.packages.find]
     include = ["feedstock*"]
 
 [tool.ruff]
-line-length = 100
-target-version = "py310"
-builtins = ["ellipsis"]
-extend-include = ["*.ipynb"]
-# Exclude a variety of commonly ignored directories.
-exclude = [
-    ".bzr",
-    ".direnv",
-    ".eggs",
-    ".git",
-    ".hg",
-    ".mypy_cache",
-    ".nox",
-    ".pants.d",
-    ".ruff_cache",
-    ".svn",
-    ".tox",
-    ".venv",
-    "__pypackages__",
-    "_build",
-    "buck-out",
-    "build",
-    "dist",
-    "node_modules",
-    "venv",
-]
+    builtins       = ["ellipsis"]
+    extend-include = ["*.ipynb"]
+    line-length    = 100
+    target-version = "py310"
+    # Exclude a variety of commonly ignored directories.
+    exclude = [
+        ".bzr",
+        ".direnv",
+        ".eggs",
+        ".git",
+        ".hg",
+        ".mypy_cache",
+        ".nox",
+        ".pants.d",
+        ".ruff_cache",
+        ".svn",
+        ".tox",
+        ".venv",
+        "__pypackages__",
+        "_build",
+        "buck-out",
+        "build",
+        "dist",
+        "node_modules",
+        "venv",
+    ]
 [tool.ruff.lint]
-exclude = ["*.ipynb"]
-per-file-ignores = {}
-# E402: module level import not at top of file
-# E501: line too long - let black worry about that
-# E731: do not assign a lambda expression, use a def
-ignore = ["E402", "E501", "E731"]
-select = [
-    # Pyflakes
-    "F",
-    # Pycodestyle
-    "E",
-    "W",
-    # isort
-    "I",
-    # Pyupgrade
-    "UP",
-]
-
+    exclude          = ["*.ipynb"]
+    per-file-ignores = {}
+    # E402: module level import not at top of file
+    # E501: line too long - let black worry about that
+    # E731: do not assign a lambda expression, use a def
+    ignore = ["E402", "E501", "E731"]
+    select = [
+        # Pyflakes
+        "F",
+        # Pycodestyle
+        "E",
+        "W",
+        # isort
+        "I",
+        # Pyupgrade
+        "UP",
+    ]
 
 [tool.ruff.lint.mccabe]
-max-complexity = 18
+    max-complexity = 18
 
 [tool.ruff.lint.isort]
-known-first-party = []
-combine-as-imports = true
+    combine-as-imports = true
+    known-first-party  = []
 
 [tool.ruff.format]
-exclude = ["*.ipynb"]
-quote-style = "single"
-docstring-code-format = true
+    docstring-code-format = true
+    exclude               = ["*.ipynb"]
+    quote-style           = "single"
 
 [tool.ruff.lint.pydocstyle]
-convention = "numpy"
+    convention = "numpy"
