@@ -1,546 +1,5 @@
 [
   {
-    "title": "CorrDiff NYC Downscaling Datasets",
-    "description": "A collection of atmospheric datasets and model outputs prepared for CorrDiff-based climate downscaling experiments over the New York City region. The collection includes ERA5 inputs interpolated to the HRRR grid, HRRR reference datasets, CorrDiff model inputs, generated outputs, and target datasets. Data are stored as NetCDF files on the Open Storage Network.\n",
-    "maintainers": [
-      {
-        "name": "Sarika de Bruyn",
-        "github": "sarika-debruyn"
-      }
-    ],
-    "provenance": {
-      "providers": [
-        {
-          "name": "LEAP",
-          "description": "Dataset collection hosted by LEAP on the Open Storage Network.\n",
-          "roles": ["host"],
-          "url": null
-        }
-      ],
-      "license": "Apache Version 2.0",
-      "license_link": null
-    },
-    "thumbnail": null,
-    "tags": [
-      "atmosphere",
-      "climate",
-      "corrdiff",
-      "downscaling",
-      "machine-learning",
-      "netcdf",
-      "new-york-city",
-      "open-storage-network"
-    ],
-    "links": null,
-    "stores": [
-      {
-        "id": "era5-hrrr-interp-128-2020",
-        "name": "ERA5 atmospheric fields interpolated to the 128-by-128 HRRR grid for 2020.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/ERA5_hrrr_interp_128_2020.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "era5-hrrr-interp-128-2021",
-        "name": "ERA5 atmospheric fields interpolated to the 128-by-128 HRRR grid for 2021.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/ERA5_hrrr_interp_128_2021.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "era5-hrrr-interp-128-2022",
-        "name": "ERA5 atmospheric fields interpolated to the 128-by-128 HRRR grid for 2022.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/ERA5_hrrr_interp_128_2022.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "era5-hrrr-interp-128-2023",
-        "name": "ERA5 atmospheric fields interpolated to the 128-by-128 HRRR grid for 2023.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/ERA5_hrrr_interp_128_2023.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "era5-hrrr-interp-128-2024",
-        "name": "ERA5 atmospheric fields interpolated to the 128-by-128 HRRR grid for 2024.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/ERA5_hrrr_interp_128_2024.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "era5-hrrr-interp-128-2025",
-        "name": "ERA5 atmospheric fields interpolated to the 128-by-128 HRRR grid for 2025.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/ERA5_hrrr_interp_128_2025.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "hrrr-nyc-128-2020-2025",
-        "name": "HRRR atmospheric reference data for the New York City region covering 2020\u20132025.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/hrrr_NYC_128_2020_2025.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "hrrr-nyc-128-2021",
-        "name": "HRRR atmospheric reference data for the New York City region for 2021.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/hrrr_NYC_128_2021.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "hrrr-nyc-128-2022",
-        "name": "HRRR atmospheric reference data for the New York City region for 2022.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/hrrr_NYC_128_2022.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "hrrr-nyc-128-2023",
-        "name": "HRRR atmospheric reference data for the New York City region for 2023.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/hrrr_NYC_128_2023.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "hrrr-nyc-128-2024",
-        "name": "HRRR atmospheric reference data for the New York City region for 2024.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/hrrr_NYC_128_2024.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "hrrr-nyc-128-2025",
-        "name": "HRRR atmospheric reference data for the New York City region for 2025.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/hrrr_NYC_128_2025.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "input-1945",
-        "name": "CorrDiff model input dataset for 1945.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/input_1945.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "input-1955",
-        "name": "CorrDiff model input dataset for 1955.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/input_1955.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "input-1965",
-        "name": "CorrDiff model input dataset for 1965.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/input_1965.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "input-1975",
-        "name": "CorrDiff model input dataset for 1975.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/input_1975.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "input-1985",
-        "name": "CorrDiff model input dataset for 1985.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/input_1985.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "input-1995",
-        "name": "CorrDiff model input dataset for 1995.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/input_1995.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "input-2005",
-        "name": "CorrDiff model input dataset for 2005.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/input_2005.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "input-2020",
-        "name": "CorrDiff model input dataset for 2020.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/input_2020.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "input-2021",
-        "name": "CorrDiff model input dataset for 2021.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/input_2021.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "input-2025",
-        "name": "CorrDiff model input dataset for 2025.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/input_2025.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "output-1945",
-        "name": "CorrDiff-generated atmospheric output for 1945.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/output_1945.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "output-1955",
-        "name": "CorrDiff-generated atmospheric output for 1955.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/output_1955.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "output-1965",
-        "name": "CorrDiff-generated atmospheric output for 1965.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/output_1965.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "output-1975",
-        "name": "CorrDiff-generated atmospheric output for 1975.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/output_1975.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "output-1985",
-        "name": "CorrDiff-generated atmospheric output for 1985.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/output_1985.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "output-1995",
-        "name": "CorrDiff-generated atmospheric output for 1995.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/output_1995.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "output-2005",
-        "name": "CorrDiff-generated atmospheric output for 2005.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/output_2005.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "output-2020",
-        "name": "CorrDiff-generated atmospheric output for 2020.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/output_2020.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "output-2021",
-        "name": "CorrDiff-generated atmospheric output for 2021.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/output_2021.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "output-2025",
-        "name": "CorrDiff-generated atmospheric output for 2025.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/output_2025.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "target-1945",
-        "name": "CorrDiff reference target dataset for 1945.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/target_1945.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "target-1955",
-        "name": "CorrDiff reference target dataset for 1955.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/target_1955.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "target-1965",
-        "name": "CorrDiff reference target dataset for 1965.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/target_1965.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "target-1975",
-        "name": "CorrDiff reference target dataset for 1975.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/target_1975.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "target-1985",
-        "name": "CorrDiff reference target dataset for 1985.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/target_1985.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "target-1995",
-        "name": "CorrDiff reference target dataset for 1995.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/target_1995.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "target-2005",
-        "name": "CorrDiff reference target dataset for 2005.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/target_2005.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "target-2020",
-        "name": "CorrDiff reference target dataset for 2020.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/target_2020.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "target-2021",
-        "name": "CorrDiff reference target dataset for 2021.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/target_2021.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      },
-      {
-        "id": "target-2025",
-        "name": "CorrDiff reference target dataset for 2025.",
-        "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/hackathon-2026/corrdiff/target_2025.nc",
-        "rechunking": null,
-        "public": false,
-        "geospatial": null,
-        "xarray_open_kwargs": {
-          "engine": "zarr"
-        },
-        "last_updated": null
-      }
-    ],
-    "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/corrdiff_feedstock/blob/main/feedstock/meta.yaml"
-  },
-  {
     "title": "OSTIA Reprocessed",
     "description": "GHRSST Level 4 OSTIA Global Historical Reprocessed Foundation Sea Surface Temperature Analysis produced by the UK Meteorological Office.\n",
     "maintainers": [
@@ -638,7 +97,7 @@
         "url": "s3://carbonplan-data-viewer/demo/leap-data-stories/GCB-2023_dataprod_LDEO-HPD_1959-2022-updated-flipped-lon.zarr/",
         "rechunking": null,
         "public": true,
-        "geospatial": true,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -650,7 +109,7 @@
         "url": "s3://carbonplan-data-viewer/demo/leap-data-stories/annual-sfco2.zarr/",
         "rechunking": null,
         "public": true,
-        "geospatial": true,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -696,8 +155,8 @@
         "name": "AGCD",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/AGDC-feedstock/AGCD.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -737,7 +196,7 @@
         "url": "gs://gcp-public-data-arco-era5/ar/full_37-1h-0p25deg-chunk-1.zarr-v3",
         "rechunking": null,
         "public": true,
-        "geospatial": true,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -749,7 +208,7 @@
         "url": "gs://gcp-public-data-arco-era5/ar/model-level-1h-0p25deg.zarr-v1",
         "rechunking": null,
         "public": true,
-        "geospatial": true,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -796,8 +255,8 @@
         "name": "noaa-oisst",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/noaa_oisst/v2.1-avhrr.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -836,8 +295,8 @@
         "name": "cesm-atm-025deg",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/cesm-atm-025deg-feedstock/cesm-atm-025deg.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -877,7 +336,7 @@
         "url": "gs://cmip6/GFDL_CM2_6/control/surface",
         "rechunking": null,
         "public": true,
-        "geospatial": true,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -889,7 +348,7 @@
         "url": "gs://cmip6/GFDL_CM2_6/control/atmos_daily.zarr",
         "rechunking": null,
         "public": true,
-        "geospatial": true,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -974,8 +433,8 @@
         "name": null,
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-wind-speed.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -986,8 +445,8 @@
         "name": null,
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-tg-tn-tx-rr-hu-pp.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -998,8 +457,8 @@
         "name": null,
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/EOBS-feedstock/eobs-surface-downwelling.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1050,8 +509,8 @@
         "name": "eVolv2k",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/eVolv2k-feedstock/eVolv2k.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": false,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1158,8 +617,8 @@
         "name": "hadisst",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/HadISST-feedstock/hadisst.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1262,8 +721,8 @@
         "name": "LMRv2p1_MCruns_ensemble_gridded",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/pangeo-forge/LMRv2p1_MCruns_ensemble_gridded-feedstock/LMRv2p1_MCruns_ensemble_gridded.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1367,8 +826,8 @@
         "name": "noaa-coastwatch-geopolar-sst",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/noaa-coastwatch-geopolar-sst-feedstock/noaa-coastwatch-geopolar-sst.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1425,8 +884,8 @@
         "name": "AVISO",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-cmems-duacs",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1465,8 +924,8 @@
         "name": "woa18-1deg-monthly",
         "url": "https://ncsa.osn.xsede.org/Pangeo/pangeo-forge/WOA_1degree_monthly-feedstock/woa18-1deg-monthly.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1552,7 +1011,7 @@
         "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/LLC4320_12h_3D-regions/agulhas.zarr",
         "rechunking": null,
         "public": true,
-        "geospatial": true,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1592,11 +1051,11 @@
         "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/chirps_feedstock/chirps-global-daily.zarr",
         "rechunking": null,
         "public": true,
-        "geospatial": true,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
-        "last_updated": "2024-11-19T21:19:44.192735+00:00"
+        "last_updated": null
       }
     ],
     "ncviewjs:meta_yaml_url": "https://github.com/leap-stc/chirps_feedstock/blob/main/feedstock/meta.yaml"
@@ -1632,7 +1091,7 @@
         "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/GOTM/raw_training_data.zarr",
         "rechunking": null,
         "public": true,
-        "geospatial": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1644,7 +1103,7 @@
         "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-manual/GOTM/sf_training_data.zarr",
         "rechunking": null,
         "public": true,
-        "geospatial": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1693,8 +1152,8 @@
         "name": "CASM: Consistent Artificial-intelligence Soil Moisture",
         "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/CASM/casm.zarr",
         "rechunking": null,
-        "public": true,
-        "geospatial": true,
+        "public": false,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1752,7 +1211,7 @@
         "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/MODIS_LAI/MODIS_LAI.zarr",
         "rechunking": null,
         "public": true,
-        "geospatial": true,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
@@ -1873,7 +1332,7 @@
         "url": "https://nyu1.osn.mghpcc.org/leap-pangeo-pipeline/GRACE-GRACE-FO-TWS/GRACE-GRACE-FO-TWS.zarr",
         "rechunking": null,
         "public": true,
-        "geospatial": true,
+        "geospatial": null,
         "xarray_open_kwargs": {
           "engine": "zarr"
         },
